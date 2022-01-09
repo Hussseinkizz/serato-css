@@ -1,0 +1,57 @@
+$animation-ring-speed: 2s;
+@use '../options' as *;
+
+@keyframes ring {
+  0% {
+    transform: rotate(-15deg);
+  }
+  2% {
+    transform: rotate(15deg);
+  }
+  4%,
+  12% {
+    transform: rotate(-18deg);
+  }
+  6%,
+  14% {
+    transform: rotate(18deg);
+  }
+  8% {
+    transform: rotate(-22deg);
+  }
+  10% {
+    transform: rotate(22deg);
+  }
+  16% {
+    transform: rotate(-12deg);
+  }
+  18% {
+    transform: rotate(12deg);
+  }
+  20%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.animation-ring.is-animating,
+.animation-ring.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-ring {
+  animation: ring $animation-ring-speed ease infinite;
+  transform-origin-x: 50%;
+  transform-origin-y: 0px;
+  transform-origin-z: initial;
+}
+.animation-ring.is-animating.is-animating-fast,
+.animation-ring.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-ring.is-animating-fast {
+  animation: ring ($animation-ring-speed * $animation-speed-coeff-fast) ease
+    infinite;
+}
+.animation-ring.is-animating.is-animating-slow,
+.animation-ring.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-ring.is-animating-slow {
+  animation: ring ($animation-ring-speed * $animation-speed-coeff-slow) ease
+    infinite;
+}

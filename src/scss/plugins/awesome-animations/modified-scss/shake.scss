@@ -1,0 +1,22 @@
+$animation-shake-speed: 2.5s;
+@use '../options' as *;
+
+.animation-shake.is-animating,
+.animation-shake.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-shake {
+  animation: wrench $animation-shake-speed ease infinite;
+}
+.animation-shake.is-animating.is-animating-fast,
+.animation-shake.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-shake.is-animating-fast {
+  animation: wrench ($animation-shake-speed * $animation-speed-coeff-fast) ease
+    infinite;
+}
+.animation-shake.is-animating.is-animating-slow,
+.animation-shake.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-shake.is-animating-slow {
+  animation: wrench ($animation-shake-speed * $animation-speed-coeff-slow) ease
+    infinite;
+}

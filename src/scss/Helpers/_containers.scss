@@ -1,0 +1,239 @@
+@use '../utilities/utilities.scss' as *;
+@use '../utilities/media-queries' as *;
+
+// container helpers
+.container {
+  display: block;
+  width: 100%;
+  max-width: 1170px;
+
+  padding: $serato-padding;
+  @include center-with-margin;
+
+  &-fluid {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    padding: 1rem 0px;
+  }
+}
+
+// grid helpers
+.grid-columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@for $i from 1 through $total-columns {
+  .grid-column-#{$i} {
+    flex: 0 0 100% / $total-columns * $i;
+  }
+}
+
+// generate grid columns for responsive viewports
+@each $breakpoint, $value in $breakpoints {
+  @media only screen and (min-width: $value) {
+    @for $i from 1 through $total-columns {
+      .grid-column-#{$i}-on-#{$breakpoint} {
+        width: (100% / ($total-columns / $i));
+        padding: $serato-padding;
+      }
+    }
+  }
+}
+
+// for extra small viewport.....needs revision!!!
+@media only screen and (max-width: $extra-small-screen-breakpoint) {
+  @for $i from 1 through $total-columns {
+    .grid-column-on-#{$i} {
+      width: (100% / ($total-columns / $i));
+      padding: 0px 1rem;
+    }
+  }
+}
+
+// flex helpers
+.flex {
+  display: flex;
+  gap: $simple-gap;
+  flex: 1 1 100%;
+}
+.flex-all-center {
+  @extend .flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$flex-direction-values: (row, row-reverse, column, column-reverse);
+$flex-wrap-values: (nowrap, wrap, wrap-reverse);
+$justify-content-values: (
+  flex-start,
+  flex-end,
+  center,
+  space-between,
+  space-around,
+  space-evenly,
+  start,
+  end,
+  left,
+  right
+);
+
+$align-content-values: (
+  flex-start,
+  flex-end,
+  center,
+  space-between,
+  space-around,
+  space-evenly,
+  stretch,
+  start,
+  end,
+  baseline
+);
+$align-items-values: (
+  stretch,
+  flex-start,
+  flex-end,
+  center,
+  baseline,
+  start,
+  end,
+  self-start,
+  self-end
+);
+$align-self-values: (auto, flex-start, flex-end, center, baseline, stretch);
+$flex-operators: (grow, shrink);
+
+@each $flex-direction-value in $flex-direction-values {
+  .flex-#{$flex-direction-value} {
+    flex-direction: $flex-direction-value !important;
+    @extend .flex;
+  }
+}
+@each $flex-wrap-value in $flex-wrap-values {
+  .flex-#{$flex-wrap-value} {
+    flex-wrap: $flex-wrap-value !important;
+  }
+}
+
+// -> Doing the justify and align content stlyes manually for better dx based helper classes
+// @each $justify-content-value in $justify-content-values {
+//   .justify-content-#{$justify-content-value} {
+//     justify-content: $justify-content-value !important;
+//   }
+// }
+
+// -> Manual justify-content styles start...
+.justify-content-flex-start {
+  justify-content: flex-start !important;
+}
+
+.justify-content-flex-end {
+  justify-content: flex-end !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.justify-content-around {
+  justify-content: space-around !important;
+}
+
+.justify-content-evenly {
+  justify-content: space-evenly !important;
+}
+
+.justify-content-start {
+  justify-content: start !important;
+}
+
+.justify-content-end {
+  justify-content: end !important;
+}
+
+.justify-content-left {
+  justify-content: left !important;
+}
+
+.justify-content-right {
+  justify-content: right !important;
+}
+
+// -> Manual align-content styles start...
+
+// @each $align-content-value in $align-content-values {
+//   .align-content-#{$align-content-value} {
+//     align-content: $align-content-value !important;
+//   }
+// }
+.align-content-flex-start {
+  align-content: flex-start !important;
+}
+
+.align-content-flex-end {
+  align-content: flex-end !important;
+}
+
+.align-content-center {
+  align-content: center !important;
+}
+
+.align-content-between {
+  align-content: space-between !important;
+}
+
+.align-content-around {
+  align-content: space-around !important;
+}
+
+.align-content-evenly {
+  align-content: space-evenly !important;
+}
+
+.align-content-stretch {
+  align-content: stretch !important;
+}
+
+.align-content-start {
+  align-content: start !important;
+}
+
+.align-content-end {
+  align-content: end !important;
+}
+
+.align-content-baseline {
+  align-content: baseline !important;
+}
+
+// -> Manual align-content styles ends...
+
+@each $align-items-value in $align-items-values {
+  .align-items-#{$align-items-value} {
+    align-items: $align-items-value !important;
+  }
+}
+
+@each $align-self-value in $align-self-values {
+  .align-self-#{$align-self-value} {
+    align-self: $align-self-value !important;
+  }
+}
+
+@each $flex-operator in $flex-operators {
+  @for $i from 0 through 5 {
+    .#{$flex-operator}-#{$i} {
+      flex-#{$flex-operator}: $i !important;
+    }
+  }
+}

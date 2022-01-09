@@ -1,0 +1,39 @@
+@use '../utilities/global-variables' as *;
+
+// generate spacing helpers eg margins & paddings
+.margin-none {
+  margin: 0 !important;
+}
+.padding-none {
+  padding: 0 !important;
+}
+
+@each $spacing in $spacings {
+  @each $name, $value in $spacing-values {
+    // All directions
+    .#{$spacing}-#{$name} {
+      #{$spacing}: $value !important;
+    }
+
+    // Cardinal directions
+    @each $direction in $spacing-directions {
+      .#{$spacing}-#{$direction}-#{$name} {
+        #{$spacing}-#{$direction}: $value !important;
+      }
+    }
+    // Horizontal axis
+    @if ($spacing-horizontal != null) {
+      .#{$spacing}-#{$spacing-horizontal}-#{$name} {
+        #{$spacing}-left: $value !important;
+        #{$spacing}-right: $value !important;
+      }
+    }
+    // Vertical axis
+    @if ($spacing-vertical != null) {
+      .#{$spacing}-#{$spacing-vertical}-#{$name} {
+        #{$spacing}-top: $value !important;
+        #{$spacing}-bottom: $value !important;
+      }
+    }
+  }
+}

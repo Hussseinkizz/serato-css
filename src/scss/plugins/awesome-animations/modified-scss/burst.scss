@@ -1,0 +1,34 @@
+$animation-burst-speed: 2s;
+@use '../options' as *;
+
+@keyframes burst {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.animation-burst.is-animating,
+.animation-burst.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-burst {
+  animation: burst $animation-burst-speed infinite linear;
+}
+.animation-burst.is-animating.is-animating-fast,
+.animation-burst.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-burst.is-animating-fast {
+  animation: burst ($animation-burst-speed * $animation-speed-coeff-fast)
+    infinite linear;
+}
+.animation-burst.is-animating.is-animating-slow,
+.animation-burst.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-burst.is-animating-slow {
+  animation: burst ($animation-burst-speed * $animation-speed-coeff-slow)
+    infinite linear;
+}

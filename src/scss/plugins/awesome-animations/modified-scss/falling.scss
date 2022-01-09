@@ -1,0 +1,76 @@
+$animation-falling-speed: 2s;
+@use '../options' as *;
+
+@keyframes falling {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+}
+@keyframes falling-reverse {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
+.animation-falling.is-animating,
+.animation-falling.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-falling {
+  animation: falling $animation-falling-speed linear infinite;
+}
+.animation-falling.is-animating.is-animating-fast,
+.animation-falling.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-falling.is-animating-fast {
+  animation: falling ($animation-falling-speed * $animation-speed-coeff-fast)
+    linear infinite;
+}
+.animation-falling.is-animating.is-animating-slow,
+.animation-falling.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-falling.is-animating-slow {
+  animation: falling ($animation-falling-speed * $animation-speed-coeff-slow)
+    linear infinite;
+}
+.animation-falling.is-animated-in-reverse.is-animating,
+.animation-falling.is-animated-in-reverse.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-falling.is-animated-in-reverse,
+.animation-rising.is-animating,
+.animation-rising.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-rising {
+  animation: falling-reverse $animation-falling-speed linear infinite;
+}
+.animation-falling.is-animated-in-reverse.is-animating.is-animating-fast,
+.animation-falling.is-animated-in-reverse.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-falling.is-animated-in-reverse.is-animating-fast,
+.animation-rising.is-animating.is-animating-fast,
+.animation-rising.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-rising.is-animating-fast {
+  animation: falling-reverse
+    ($animation-falling-speed * $animation-speed-coeff-fast) linear infinite;
+}
+.animation-falling.is-animated-in-reverse.is-animating.is-animating-slow,
+.animation-falling.is-animated-in-reverse.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-falling.is-animated-in-reverse.is-animating-slow,
+.animation-rising.is-animating.is-animating-slow,
+.animation-rising.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-rising.is-animating-slow {
+  animation: falling-reverse
+    ($animation-falling-speed * $animation-speed-coeff-slow) linear infinite;
+}

@@ -1,0 +1,111 @@
+// Everything about typography here...
+@use '../utilities/global-variables' as *;
+@use '../themes/colors/color-variables' as *;
+
+// Generate font weight classes
+@each $font-weight-name, $value in $font-weights {
+  .font-#{$font-weight-name} {
+    font-weight: $value !important;
+  }
+}
+
+// align text
+$text-alignments: (center, justify, left, right);
+
+@each $text-alignment in $text-alignments {
+  .text-align-#{$text-alignment} {
+    text-align: $text-alignment !important;
+  }
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.font-italic {
+  font-style: italic !important;
+}
+
+.text-underlined {
+  text-decoration: underline !important;
+}
+
+// font combos
+.font-heading {
+  font-size: $size-9;
+  font-weight: bold; // fallback
+  font-weight: map-get($font-weights, bold);
+  text-transform: uppercase;
+  text-align: center;
+}
+.font-subheading {
+  font-size: $size-7;
+  font-weight: medium; // fallback
+  font-weight: map-get($font-weights, semibold);
+  text-transform: capitalize;
+}
+.font-small {
+  font-size: $size-2;
+  font-weight: small; // fallback
+  font-weight: map-get($font-weights, light);
+  text-transform: lowercase;
+}
+
+// Text truncate
+// Requires inline-block or block for proper styling
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reset-text {
+  // We deliberately do NOT reset font-size or overflow-wrap / word-wrap.
+  // for font family and defualt line height see the typography partial in base direcotry...
+  font-family: inherit;
+  font-style: normal;
+  font-weight: normal; // fallback
+  font-weight: map-get($font-weights, normal);
+  line-height: inherit;
+  text-align: left; // Fallback for where `start` is not supported
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+}
+
+// Paragraphs
+//
+// Style p element.
+
+$paragraph-margin-bottom: 1rem !default;
+
+// Generate font-size classes
+.font-size-normal {
+  font-size: $serato-font-size !important;
+}
+.font-size-small {
+  font-size: $font-size-small !important;
+}
+.font-size-large {
+  font-size: $font-size-large !important;
+}
+
+@each $name, $font-size in $font-sizes {
+  .font-size-#{$name} {
+    font-size: $font-size !important;
+  }
+}

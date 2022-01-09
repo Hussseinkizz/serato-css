@@ -1,0 +1,10 @@
+/* serato color gradients */
+@use './color-variables' as *;
+@use '../../utilities/mixins' as *;
+@use '../colors/famous-colors' as *;
+
+// serato gradient
+@include gradient-generator('serato', $serato-primary, $serato-secondary);
+
+// css tricks gradient
+@include gradient-generator('css-tricks', $css-tricks-yellow, $css-tricks-pink);

@@ -1,0 +1,73 @@
+@use 'basic-colors' as *;
+@use 'color-variables' as *;
+
+/* famous brand colors for stuff like social media icon colors, generated with color manager vscode extension by Roy Action */
+
+// famous brand colors start
+$android-green: #a4c639;
+$css-tricks-yellow: #ff8a00;
+$css-tricks-pink: #da1b60;
+$ebay-red: #e53238;
+$ebay-blue: #0064d3;
+$ebay-yellow: #f4ae01;
+$ebay-green: #88b719;
+$facebook-blue: #3b5998;
+$google-blue: #4285f4;
+$google-red: #db4437;
+$google-yellow: #f4b400;
+$google-green: #0f9d58;
+$google-plus-red: #d34836;
+$hello-kitty-pink: #b01455;
+$linkedin-blue: #0077b5;
+$microsoft-red: #f25022;
+$microsoft-green: #7fba00;
+$microsoft-blue: #00a4ef;
+$microsoft-yellow: #ffb900;
+$microsoft-grey: #737373;
+$netflix-red: #e50914;
+$pinterest-red: #e60023;
+$quora-red: #b92b27;
+$spotify-green: #1db954;
+$stackoverflow-orange: #f48024;
+$ups-brown: #330000;
+$ups-yellow: #ffd100;
+$twitter-blue: #1da1f2;
+$youtube-red: #ff0000;
+// famous brand colors end...
+
+// famous brand colors map start
+$famous-brand-colors: (
+  'android-green': $android-green,
+  'css-tricks-yellow': $css-tricks-yellow,
+  'css-tricks-pink': $css-tricks-pink,
+  'ebay-red': $ebay-red,
+  'ebay-blue': $ebay-blue,
+  'ebay-yellow': $ebay-yellow,
+  'ebay-green': $ebay-green,
+  'facebook-blue': $facebook-blue,
+  'google-blue': $google-blue,
+  'google-red': $google-red,
+  'google-yellow': $google-yellow,
+  'google-green': $google-green,
+  'google-plus-red': $google-plus-red,
+  'hello-kitty-pink': $hello-kitty-pink,
+  'linkedin-blue': $linkedin-blue,
+  'microsoft-red': $microsoft-red,
+  'microsoft-green': $microsoft-green,
+  'microsoft-blue': $microsoft-blue,
+  'microsoft-yellow': $microsoft-yellow,
+  'microsoft-grey': $microsoft-grey,
+  'netflix-red': $netflix-red,
+  'pinterest-red': $pinterest-red,
+  'quora-red': $quora-red,
+  'spotify-green': $spotify-green,
+  'stackoverflow-orange': $stackoverflow-orange,
+  'serato-primary': $serato-primary,
+  'serato-secondary': $serato-secondary,
+  'serato-complement': $serato-complement,
+  'ups-brown': $ups-brown,
+  'ups-yellow': $ups-yellow,
+  'twitter-blue': $twitter-blue,
+  'youtube-red': $youtube-red,
+) !default;
+// famous brand colors map end...

@@ -1,0 +1,30 @@
+/* Icon Bounce Out */
+@include keyframes(#{$nameSpace}-icon-bounce-out) {
+  50% {
+    @include prefixed(transform, scale(1.5));
+  }
+}
+
+@mixin icon-bounce-out {
+  @include hacks();
+  @include prefixed(transition-duration, $mediumDuration);
+
+  .animated-icon {
+    @include prefixed(transform, translateZ(0));
+    @include prefixed(transition-duration, $mediumDuration);
+    @include prefixed(transition-property, transform);
+    @include prefixed(transition-timing-function, ease-out);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    .animated-icon {
+      @include prefixed(transform, scale(0.9));
+      @include prefixed(
+        transition-timing-function,
+        cubic-bezier(0.47, 2.02, 0.31, -0.36)
+      );
+    }
+  }
+}

@@ -1,0 +1,7 @@
+$display-values: (block, flex, inline, inline-block, inline-flex);
+
+@each $display-value in $display-values {
+  .display-#{$display-value} {
+    display: $display-value !important;
+  }
+}

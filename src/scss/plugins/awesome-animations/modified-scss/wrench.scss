@@ -1,0 +1,53 @@
+$animation-wrench-speed: 2.5s;
+@use '../options' as *;
+
+@keyframes wrench {
+  0% {
+    transform: rotate(-12deg);
+  }
+  8% {
+    transform: rotate(12deg);
+  }
+  10%,
+  28%,
+  30%,
+  48%,
+  50%,
+  68% {
+    transform: rotate(24deg);
+  }
+  18%,
+  20%,
+  38%,
+  40%,
+  58%,
+  60% {
+    transform: rotate(-24deg);
+  }
+  75%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.animation-wrench.is-animating,
+.animation-wrench.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-wrench {
+  animation: wrench $animation-wrench-speed ease infinite;
+  transform-origin-x: 90%;
+  transform-origin-y: 35%;
+  transform-origin-z: initial;
+}
+.animation-wrench.is-animating.is-animating-fast,
+.animation-wrench.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-wrench.is-animating-fast {
+  animation: wrench ($animation-wrench-speed * $animation-speed-coeff-fast) ease
+    infinite;
+}
+.animation-wrench.is-animating.is-animating-slow,
+.animation-wrench.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-wrench.is-animating-slow {
+  animation: wrench ($animation-wrench-speed * $animation-speed-coeff-slow) ease
+    infinite;
+}

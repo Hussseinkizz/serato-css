@@ -1,0 +1,58 @@
+$animation-spin-speed: 1.5s;
+@use '../options' as *;
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-359deg);
+  }
+}
+.animation-spin.is-animating,
+.animation-spin.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-spin {
+  animation: spin $animation-spin-speed linear infinite;
+}
+.animation-spin.is-animating.is-animating-fast,
+.animation-spin.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-spin.is-animating-fast {
+  animation: spin ($animation-spin-speed * $animation-speed-coeff-fast) linear
+    infinite;
+}
+.animation-spin.is-animating.is-animating-slow,
+.animation-spin.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-spin.is-animating-slow {
+  animation: spin ($animation-spin-speed * $animation-speed-coeff-slow) linear
+    infinite;
+}
+.animation-spin.is-animating-in-reverse.is-animating,
+.animation-spin.is-animating-in-reverse.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-spin.is-animating-in-reverse {
+  animation: spin-reverse $animation-spin-speed linear infinite;
+}
+.animation-spin.is-animating-in-reverse.is-animating.is-animating-fast,
+.animation-spin.is-animating-in-reverse.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-spin.is-animating-in-reverse.is-animating-fast {
+  animation: spin-reverse ($animation-spin-speed * $animation-speed-coeff-fast)
+    linear infinite;
+}
+.animation-spin.is-animating-in-reverse.is-animating.is-animating-slow,
+.animation-spin.is-animating-in-reverse.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-spin.is-animating-in-reverse.is-animating-slow {
+  animation: spin-reverse ($animation-spin-speed * $animation-speed-coeff-slow)
+    linear infinite;
+}

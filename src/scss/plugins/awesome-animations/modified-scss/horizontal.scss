@@ -1,0 +1,70 @@
+$animation-horizontal-speed: 2s;
+@use '../options' as *;
+
+@keyframes horizontal {
+  0%,
+  12%,
+  24%,
+  36%,
+  100% {
+    transform: translate(0, 0);
+  }
+  6%,
+  18%,
+  30% {
+    transform: translate(5px, 0);
+  }
+}
+@keyframes horizontal-reverse {
+  0%,
+  12%,
+  24%,
+  36%,
+  100% {
+    transform: translate(0, 0);
+  }
+  6%,
+  18%,
+  30% {
+    transform: translate(-5px, 0);
+  }
+}
+.animation-horizontal.is-animating,
+.animation-horizontal.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-horizontal {
+  animation: horizontal $animation-horizontal-speed ease infinite;
+}
+.animation-horizontal.is-animating.is-animating-fast,
+.animation-horizontal.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-horizontal.is-animating-fast {
+  animation: horizontal
+    ($animation-horizontal-speed * $animation-speed-coeff-fast) ease infinite;
+}
+.animation-horizontal.is-animating.is-animating-slow,
+.animation-horizontal.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-horizontal.is-animating-slow {
+  animation: horizontal
+    ($animation-horizontal-speed * $animation-speed-coeff-slow) ease infinite;
+}
+.animation-horizontal.is-animating-in-reverse.is-animating,
+.animation-horizontal.is-animating-in-reverse.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-horizontal.is-animating-in-reverse {
+  animation: horizontal-reverse $animation-horizontal-speed ease infinite;
+}
+.animation-horizontal.is-animating-in-reverse.is-animating.is-animating-fast,
+.animation-horizontal.is-animating-in-reverse.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-horizontal.is-animating-in-reverse.is-animating-fast {
+  animation: horizontal-reverse
+    ($animation-horizontal-speed * $animation-speed-coeff-fast) ease infinite;
+}
+.animation-horizontal.is-animating-in-reverse.is-animating.is-animating-slow,
+.animation-horizontal.is-animating-in-reverse.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-horizontal.is-animating-in-reverse.is-animating-slow {
+  animation: horizontal-reverse
+    ($animation-horizontal-speed * $animation-speed-coeff-slow) ease infinite;
+}

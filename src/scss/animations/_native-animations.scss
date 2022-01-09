@@ -1,0 +1,21 @@
+/* Built-in animations here, for internal use only thus mixins and not extendable classes, for other animation purposes see animations from plugins!!! */
+
+// for clicking effect on components eg. buttons
+@mixin animation-clickin {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+
+  &:focus,
+  &:active {
+    -webkit-animation-name: on-hover-push;
+    animation-name: on-hover-push;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
+}

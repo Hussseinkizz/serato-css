@@ -1,0 +1,24 @@
+$position-values: (static, relative, sticky, absolute, fixed);
+$zindex-fixed: 1030 !default;
+
+@each $position-value in $position-values {
+  .position-#{$position-value} {
+    position: $position-value;
+  }
+}
+
+.fixed-to-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: $zindex-fixed;
+}
+
+.fixed-to-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-fixed;
+}

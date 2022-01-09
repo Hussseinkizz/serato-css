@@ -1,0 +1,34 @@
+/* Media Queries */
+
+// breakpoints for varied device viewports
+$extra-small-screen-breakpoint: 322px;
+$breakpoints: (
+  'small': 576px,
+  'medium': 768px,
+  'large': 992px,
+  'xlarge': 1200px,
+);
+
+@mixin media-sm {
+  @media screen and (min-width: 580px) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
+}

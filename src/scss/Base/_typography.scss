@@ -1,0 +1,115 @@
+/*! sanitize.css (font family stuff only) v13.0.0 | CC0-1.0 License | https://github.com/csstools/sanitize.css */
+@use 'font-definitions' as *; // system-ui & ui-monospace font definitions
+@use '../utilities/global-variables' as *;
+@use '../themes/colors/color-variables' as *;
+
+/**
+ * Serato Typography
+ */
+
+/**
+ * Use the default user interface font in all browsers (opinionated).
+ */
+
+html {
+  font-family: system-ui, /* macOS 10.11-10.12 */ -apple-system,
+    /* Windows 6+ */ 'Segoe UI', /* Android 4+ */ 'Roboto',
+    /* Ubuntu 10.10+ */ 'Ubuntu', /* Gnome 3+ */ 'Cantarell',
+    /* KDE Plasma 5+ */ 'Noto Sans', /* fallback */ sans-serif,
+    /* macOS emoji */ 'Apple Color Emoji', /* Windows emoji */ 'Segoe UI Emoji',
+    /* Windows emoji */ 'Segoe UI Symbol', /* Linux emoji */ 'Noto Color Emoji';
+}
+
+/**
+ * Use the default monospace user interface font in all browsers (opinionated).
+ */
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, /* macOS 10.10+ */ 'Menlo',
+    /* Windows 6+ */ 'Consolas', /* Android 4+ */ 'Roboto Mono',
+    /* Ubuntu 10.10+ */ 'Ubuntu Monospace', /* KDE Plasma 5+ */ 'Noto Mono',
+    /* KDE Plasma 4+ */ 'Oxygen Mono',
+    /* Linux/OpenOffice fallback */ 'Liberation Mono', /* fallback */ monospace,
+    /* macOS emoji */ 'Apple Color Emoji', /* Windows emoji */ 'Segoe UI Emoji',
+    /* Windows emoji */ 'Segoe UI Symbol', /* Linux emoji */ 'Noto Color Emoji';
+}
+
+html,
+body {
+  font-weight: $serato-font-weight;
+}
+
+html {
+  font-size: $font-size-html;
+}
+
+body {
+  color: $serato-text-color;
+  font-size: $font-size-body;
+  line-height: $line-height-normal;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $serato-header-font;
+  font-weight: map-get($font-weights, bold);
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  color: $serato-text-color;
+}
+
+a {
+  color: $serato-text-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $serato-text-color;
+    text-decoration: none;
+    outline: 0;
+  }
+
+  &:focus,
+  &:active,
+  &:hover {
+    color: $serato-text-color;
+    text-decoration: underline;
+    outline: 0;
+  }
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: map-get($font-weights, bold);
+}
+
+input {
+  &:focus {
+    outline: none;
+  }
+}
+
+[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.br {
+  display: block;
+}

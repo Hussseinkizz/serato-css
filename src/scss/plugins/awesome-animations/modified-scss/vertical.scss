@@ -1,0 +1,38 @@
+$animation-vertical-speed: 2s;
+@use '../options' as *;
+
+@keyframes vertical {
+  0%,
+  8%,
+  16% {
+    transform: translate(0, -3px);
+  }
+  4%,
+  12%,
+  20% {
+    transform: translate(0, 3px);
+  }
+  22%,
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.animation-vertical.is-animating,
+.animation-vertical.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-vertical {
+  animation: vertical $animation-vertical-speed ease infinite;
+}
+.animation-vertical.is-animating.is-animating-fast,
+.animation-vertical.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-vertical.is-animating-fast {
+  animation: vertical ($animation-vertical-speed * $animation-speed-coeff-fast)
+    ease infinite;
+}
+.animation-vertical.is-animating.is-animating-slow,
+.animation-vertical.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-vertical.is-animating-slow {
+  animation: vertical ($animation-vertical-speed * $animation-speed-coeff-slow)
+    ease infinite;
+}

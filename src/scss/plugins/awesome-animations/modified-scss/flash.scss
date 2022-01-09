@@ -1,0 +1,33 @@
+$animation-flash-speed: 2s;
+@use '../options' as *;
+
+@keyframes flash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+.animation-flash.is-animating,
+.animation-flash.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-flash {
+  animation: flash $animation-flash-speed ease infinite;
+}
+.animation-flash.is-animating.is-animating-fast,
+.animation-flash.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-flash.is-animating-fast {
+  animation: flash ($animation-flash-speed * $animation-speed-coeff-fast) ease
+    infinite;
+}
+.animation-flash.is-animating.is-animating-slow,
+.animation-flash.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-flash.is-animating-slow {
+  animation: flash ($animation-flash-speed * $animation-speed-coeff-slow) ease
+    infinite;
+}

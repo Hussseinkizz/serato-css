@@ -1,0 +1,106 @@
+@use '../../utilities/global-variables' as *;
+@use 'color-variables' as *;
+@use 'gray-shades' as *;
+@use 'basic-colors' as *;
+@use './../colors/_famous-colors.scss' as *;
+@use 'gradients' as *;
+
+// ~~~~~~~~ Generate color classes ~~~~~~~ //
+
+// basic flagging colors eg. success, info, danger etc
+@each $name, $color in $theme-colors {
+  .color-#{$name} {
+    color: $color !important;
+  }
+  .background-#{$name} {
+    background: $color !important;
+  }
+}
+
+// generate gray shades classes eg. gray-100
+.color-white {
+  color: $white !important;
+}
+.background-white {
+  background: $white !important;
+}
+.color-black {
+  color: $black !important;
+}
+.background-black {
+  background: $black !important;
+}
+@each $name, $gray-shade in $grays {
+  .color-#{$name} {
+    color: $gray-shade !important;
+  }
+  .background-#{$name} {
+    background: $gray-shade !important;
+  }
+}
+
+/* generate other color shades from basic colors eg. cyan-100 */
+@each $shades-map, $value in $all-basic-color-shades-map {
+  @each $name, $color-shade in $value {
+    .color-#{$name} {
+      color: $color-shade !important;
+    }
+    .background-#{$name} {
+      background: $color-shade !important;
+    }
+  }
+}
+
+// generate other serato colors eg. hibiscus
+@each $name, $color in $serato-colors {
+  .color-#{$name} {
+    color: $color !important;
+  }
+  .background-#{$name} {
+    background: $color !important;
+  }
+}
+
+// generate serato brands colors eg. twitter-blue
+@each $name, $color in $famous-brand-colors {
+  .color-#{$name} {
+    color: $color !important;
+  }
+  .background-#{$name} {
+    background: $color !important;
+  }
+}
+
+// ~~~~~~~~ serato theming classes ~~~~~~~~ //
+// use @exend to apply them...
+
+// default color theme
+.serato-theme {
+  color: lighten($serato-primary-color, 90%);
+  background-color: $serato-primary-color;
+}
+
+// default color theme for hoverable coponents eg. buttons
+.serato-theme--hoverable {
+  color: lighten($serato-primary-color, 90%);
+  background-color: $serato-primary-color;
+  box-shadow: $box-shadow-small;
+
+  &:hover {
+    transition: $serato-transition;
+    background-color: lighten($serato-primary-color, 10%);
+  }
+}
+
+// default serato components styling eg. cards
+.serato-common-design {
+  color: $serato-component-color--light;
+  background-color: $serato-component-background--light;
+  border: 1px solid transparent;
+  border-radius: $serato-border-radius;
+  box-shadow: $serato-box-shadow;
+  padding: $medium-components-padding;
+  text-align: center;
+}
+
+// TODO: .serato-common-design--dark

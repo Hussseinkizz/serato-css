@@ -1,0 +1,94 @@
+$animation-bounce-speed: 2s;
+@use '../options' as *;
+
+@keyframes bounce {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,
+  60% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce-reverse {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,
+  60% {
+    transform: translateY(15px);
+  }
+}
+
+.animation-bounce .is-animating,
+.animation-bounce .is-animated-on-hover:hover,
+.animation-to-child .is-animated-on-hover:hover > .animation-bounce {
+  animation: bounce $animation-bounce-speed ease infinite;
+}
+
+.animation-bounce .is-animating.is-animating-fast,
+.animation-bounce .is-animated-on-hover .is-animating-fast:hover,
+.animation-to-child
+  .is-animated-on-hover:hover
+  > .animation-bounce
+  .is-animating-fast {
+  animation: bounce ($animation-bounce-speed * $animation-speed-coeff-fast) ease
+    infinite;
+}
+
+.animation-bounce .is-animating .is-animating-slow,
+.animation-bounce .is-animated-on-hover .is-animating-slow:hover,
+.animation-to-child
+  .is-animated-on-hover:hover
+  > .animation-bounce
+  .is-animating-slow {
+  animation: bounce ($animation-bounce-speed * $animation-speed-coeff-slow) ease
+    infinite;
+}
+
+.animation-bounce .is-animated-in-reverse.is-animating,
+.animation-bounce .is-animated-in-reverse .is-animated-on-hover:hover,
+.animation-to-child
+  .is-animated-on-hover:hover
+  > .animation-bounce
+  .is-animated-in-reverse {
+  animation: bounce-reverse $animation-bounce-speed ease infinite;
+}
+
+.animation-bounce .is-animated-in-reverse .is-animating .is-animating-fast,
+.animation-bounce
+  .is-animated-in-reverse
+  .is-animated-on-hover
+  .is-animating-fast:hover,
+.animation-to-child
+  .is-animated-on-hover:hover
+  > .animation-bounce
+  .is-animated-in-reverse
+  .is-animating-fast {
+  animation: bounce-reverse
+    ($animation-bounce-speed * $animation-speed-coeff-fast) ease infinite;
+}
+
+.animation-bounce .is-animated-in-reverse .is-animating .is-animating-slow,
+.animation-bounce
+  .is-animated-in-reverse
+  .is-animated-on-hover
+  .is-animating-slow:hover,
+.animation-to-child
+  .is-animated-on-hover:hover
+  > .animation-bounce
+  .is-animated-in-reverse
+  .is-animating-slow {
+  animation: bounce-reverse
+    ($animation-bounce-speed * $animation-speed-coeff-slow) ease infinite;
+}

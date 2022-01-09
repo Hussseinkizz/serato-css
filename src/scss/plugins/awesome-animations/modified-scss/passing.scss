@@ -1,0 +1,70 @@
+$animation-passing-speed: 2s;
+@use '../options' as *;
+
+@keyframes passing {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+@keyframes passing-reverse {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+}
+.animation-passing.is-animating,
+.animation-passing.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-passing {
+  animation: passing $animation-passing-speed linear infinite;
+}
+.animation-passing.is-animating.is-animating-fast,
+.animation-passing.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-passing.is-animating-fast {
+  animation: passing ($animation-passing-speed * $animation-speed-coeff-fast)
+    linear infinite;
+}
+.animation-passing.is-animating.is-animating-slow,
+.animation-passing.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-passing.is-animating-slow {
+  animation: passing ($animation-passing-speed * $animation-speed-coeff-slow)
+    linear infinite;
+}
+.animation-passing.is-animating-in-reverse.is-animating,
+.animation-passing.is-animating-in-reverse.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-passing.is-animating-in-reverse {
+  animation: passing-reverse $animation-passing-speed linear infinite;
+}
+.animation-passing.is-animating-in-reverse.is-animating.is-animating-fast,
+.animation-passing.is-animating-in-reverse.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-passing.reverse.is-animating-fast {
+  animation: passing-reverse
+    ($animation-passing-speed * $animation-speed-coeff-fast) linear infinite;
+}
+.animation-passing.is-animating-in-reverse.is-animating.is-animating-slow,
+.animation-passing.is-animating-in-reverse.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-passing.is-animating-in-reverse.is-animating-slow {
+  animation: passing-reverse
+    ($animation-passing-speed * $animation-speed-coeff-slow) linear infinite;
+}

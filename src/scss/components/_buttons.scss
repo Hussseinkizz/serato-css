@@ -1,0 +1,31 @@
+@use '../utilities/global-variables' as *;
+@use '../themes/colors/color-variables' as *;
+@use '../themes/colors/colors.scss' as *;
+@use '../animations/animations.scss' as *;
+
+.button {
+  @extend .serato-theme--hoverable;
+  display: inline-block;
+  padding: $simple-components-padding;
+  font-weight: map-get($font-weights, normal);
+  font-size: $serato-font-size;
+  border-radius: $serato-border-radius;
+  text-transform: capitalize;
+
+  @if $enable-native-animations {
+    @include animation-clickin;
+  }
+}
+
+@each $name, $color in $theme-colors {
+  .button-#{$name} {
+    @extend .button;
+    background-color: $color !important;
+    color: lighten($color, 90%) !important;
+
+    &:hover {
+      color: lighten($color, 90%) !important;
+      background-color: lighten($color, 10%) !important;
+    }
+  }
+}

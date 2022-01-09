@@ -1,0 +1,785 @@
+/*! Serato CSS Modified Version Of Hvr CSS,
+* Thanks to Ian Lunn For Making Great CSS Hover Animations! 😇 */
+/*!
+/*! Hover.css v2.3.2 | MIT License | https://github.com/IanLunn/Hover */
+
+@import 'options';
+@import 'mixins';
+@import 'hacks';
+
+/* 2D TRANSITIONS */
+@import 'effects/2d-transitions/grow';
+@if $includeClasses {
+  .grow-#{$nameSpace} {
+    @include grow();
+  }
+}
+
+@import 'effects/2d-transitions/shrink';
+@if $includeClasses {
+  .shrink-#{$nameSpace} {
+    @include shrink();
+  }
+}
+
+@import 'effects/2d-transitions/pulse';
+@if $includeClasses {
+  .pulse-#{$nameSpace} {
+    @include pulse();
+  }
+}
+
+@import 'effects/2d-transitions/pulse-grow';
+@if $includeClasses {
+  .pulse-grow-#{$nameSpace} {
+    @include pulse-grow();
+  }
+}
+
+@import 'effects/2d-transitions/pulse-shrink';
+@if $includeClasses {
+  .pulse-shrink-#{$nameSpace} {
+    @include pulse-shrink();
+  }
+}
+
+@import 'effects/2d-transitions/push';
+@if $includeClasses {
+  .push-#{$nameSpace} {
+    @include push();
+  }
+}
+
+@import 'effects/2d-transitions/pop';
+@if $includeClasses {
+  .pop-#{$nameSpace} {
+    @include pop();
+  }
+}
+
+@import 'effects/2d-transitions/bounce-in';
+@if $includeClasses {
+  .bounce-in-#{$nameSpace} {
+    @include bounce-in();
+  }
+}
+
+@import 'effects/2d-transitions/bounce-out';
+@if $includeClasses {
+  .bounce-out-#{$nameSpace} {
+    @include bounce-out();
+  }
+}
+
+@import 'effects/2d-transitions/rotate';
+@if $includeClasses {
+  .rotate-#{$nameSpace} {
+    @include rotate();
+  }
+}
+
+@import 'effects/2d-transitions/grow-rotate';
+@if $includeClasses {
+  .grow-rotate-#{$nameSpace} {
+    @include grow-rotate();
+  }
+}
+
+@import 'effects/2d-transitions/float';
+@if $includeClasses {
+  .float-#{$nameSpace} {
+    @include float();
+  }
+}
+
+@import 'effects/2d-transitions/sink';
+@if $includeClasses {
+  .sink-#{$nameSpace} {
+    @include sink();
+  }
+}
+
+@import 'effects/2d-transitions/bob';
+@if $includeClasses {
+  .bob-#{$nameSpace} {
+    @include bob();
+  }
+}
+
+@import 'effects/2d-transitions/hang';
+@if $includeClasses {
+  .hang-#{$nameSpace} {
+    @include hang();
+  }
+}
+
+@import 'effects/2d-transitions/skew';
+@if $includeClasses {
+  .skew-#{$nameSpace} {
+    @include skew();
+  }
+}
+
+@import 'effects/2d-transitions/skew-forward';
+@if $includeClasses {
+  .skew-forward-#{$nameSpace} {
+    @include skew-forward();
+  }
+}
+
+@import 'effects/2d-transitions/skew-backward';
+@if $includeClasses {
+  .skew-backward-#{$nameSpace} {
+    @include skew-backward();
+  }
+}
+
+@import 'effects/2d-transitions/wobble-vertical';
+@if $includeClasses {
+  .wobble-vertical-#{$nameSpace} {
+    @include wobble-vertical();
+  }
+}
+
+@import 'effects/2d-transitions/wobble-horizontal';
+@if $includeClasses {
+  .wobble-horizontal-#{$nameSpace} {
+    @include wobble-horizontal();
+  }
+}
+
+@import 'effects/2d-transitions/wobble-to-bottom-right';
+@if $includeClasses {
+  .wobble-to-bottom-right-#{$nameSpace} {
+    @include wobble-to-bottom-right();
+  }
+}
+
+@import 'effects/2d-transitions/wobble-to-top-right';
+@if $includeClasses {
+  .wobble-to-top-right-#{$nameSpace} {
+    @include wobble-to-top-right();
+  }
+}
+
+@import 'effects/2d-transitions/wobble-top';
+@if $includeClasses {
+  .wobble-top-#{$nameSpace} {
+    @include wobble-top();
+  }
+}
+
+@import 'effects/2d-transitions/wobble-bottom';
+@if $includeClasses {
+  .wobble-bottom-#{$nameSpace} {
+    @include wobble-bottom();
+  }
+}
+
+@import 'effects/2d-transitions/wobble-skew';
+@if $includeClasses {
+  .wobble-skew-#{$nameSpace} {
+    @include wobble-skew();
+  }
+}
+
+@import 'effects/2d-transitions/buzz';
+@if $includeClasses {
+  .buzz-#{$nameSpace} {
+    @include buzz();
+  }
+}
+
+@import 'effects/2d-transitions/buzz-out';
+@if $includeClasses {
+  .buzz-out-#{$nameSpace} {
+    @include buzz-out();
+  }
+}
+
+@import 'effects/2d-transitions/forward';
+@if $includeClasses {
+  .forward-#{$nameSpace} {
+    @include forward();
+  }
+}
+
+@import 'effects/2d-transitions/backward';
+@if $includeClasses {
+  .backward-#{$nameSpace} {
+    @include backward();
+  }
+}
+
+/* BACKGROUND TRANSITIONS */
+@import 'effects/background-transitions/fade';
+@if $includeClasses {
+  .fade-#{$nameSpace} {
+    @include fade();
+  }
+}
+
+@import 'effects/background-transitions/back-pulse';
+@if $includeClasses {
+  .back-pulse-#{$nameSpace} {
+    @include back-pulse();
+  }
+}
+
+@import 'effects/background-transitions/sweep-to-right';
+@if $includeClasses {
+  .sweep-to-right-#{$nameSpace} {
+    @include sweep-to-right();
+  }
+}
+
+@import 'effects/background-transitions/sweep-to-left';
+@if $includeClasses {
+  .sweep-to-left-#{$nameSpace} {
+    @include sweep-to-left();
+  }
+}
+
+@import 'effects/background-transitions/sweep-to-bottom';
+@if $includeClasses {
+  .sweep-to-bottom-#{$nameSpace} {
+    @include sweep-to-bottom();
+  }
+}
+
+@import 'effects/background-transitions/sweep-to-top';
+@if $includeClasses {
+  .sweep-to-top-#{$nameSpace} {
+    @include sweep-to-top();
+  }
+}
+
+@import 'effects/background-transitions/bounce-to-right';
+@if $includeClasses {
+  .bounce-to-right-#{$nameSpace} {
+    @include bounce-to-right();
+  }
+}
+
+@import 'effects/background-transitions/bounce-to-left';
+@if $includeClasses {
+  .bounce-to-left-#{$nameSpace} {
+    @include bounce-to-left();
+  }
+}
+
+@import 'effects/background-transitions/bounce-to-bottom';
+@if $includeClasses {
+  .bounce-to-bottom-#{$nameSpace} {
+    @include bounce-to-bottom();
+  }
+}
+
+@import 'effects/background-transitions/bounce-to-top';
+@if $includeClasses {
+  .bounce-to-top-#{$nameSpace} {
+    @include bounce-to-top();
+  }
+}
+
+@import 'effects/background-transitions/radial-out';
+@if $includeClasses {
+  .radial-out-#{$nameSpace} {
+    @include radial-out();
+  }
+}
+
+@import 'effects/background-transitions/radial-in';
+@if $includeClasses {
+  .radial-in-#{$nameSpace} {
+    @include radial-in();
+  }
+}
+
+@import 'effects/background-transitions/rectangle-in';
+@if $includeClasses {
+  .rectangle-in-#{$nameSpace} {
+    @include rectangle-in();
+  }
+}
+
+@import 'effects/background-transitions/rectangle-out';
+@if $includeClasses {
+  .rectangle-out-#{$nameSpace} {
+    @include rectangle-out();
+  }
+}
+
+@import 'effects/background-transitions/shutter-in-horizontal';
+@if $includeClasses {
+  .shutter-in-horizontal-#{$nameSpace} {
+    @include shutter-in-horizontal();
+  }
+}
+
+@import 'effects/background-transitions/shutter-out-horizontal';
+@if $includeClasses {
+  .shutter-out-horizontal-#{$nameSpace} {
+    @include shutter-out-horizontal();
+  }
+}
+
+@import 'effects/background-transitions/shutter-in-vertical';
+@if $includeClasses {
+  .shutter-in-vertical-#{$nameSpace} {
+    @include shutter-in-vertical();
+  }
+}
+
+@import 'effects/background-transitions/shutter-out-vertical';
+@if $includeClasses {
+  .shutter-out-vertical-#{$nameSpace} {
+    @include shutter-out-vertical();
+  }
+}
+
+/* BORDER TRANSITIONS */
+@import 'effects/border-transitions/border-fade';
+@if $includeClasses {
+  .border-fade-#{$nameSpace} {
+    @include border-fade();
+  }
+}
+
+@import 'effects/border-transitions/hollow';
+@if $includeClasses {
+  .hollow-#{$nameSpace} {
+    @include hollow();
+  }
+}
+
+@import 'effects/border-transitions/trim';
+@if $includeClasses {
+  .trim-#{$nameSpace} {
+    @include trim();
+  }
+}
+
+@import 'effects/border-transitions/ripple-out';
+@if $includeClasses {
+  .ripple-out-#{$nameSpace} {
+    @include ripple-out();
+  }
+}
+
+@import 'effects/border-transitions/ripple-in';
+@if $includeClasses {
+  .ripple-in-#{$nameSpace} {
+    @include ripple-in();
+  }
+}
+
+@import 'effects/border-transitions/outline-out';
+@if $includeClasses {
+  .outline-out-#{$nameSpace} {
+    @include outline-out();
+  }
+}
+
+@import 'effects/border-transitions/outline-in';
+@if $includeClasses {
+  .outline-in-#{$nameSpace} {
+    @include outline-in();
+  }
+}
+
+@import 'effects/border-transitions/round-corners';
+@if $includeClasses {
+  .round-corners-#{$nameSpace} {
+    @include round-corners();
+  }
+}
+
+@import 'effects/border-transitions/underline-from-left';
+@if $includeClasses {
+  .underline-from-left-#{$nameSpace} {
+    @include underline-from-left();
+  }
+}
+
+@import 'effects/border-transitions/underline-from-center';
+@if $includeClasses {
+  .underline-from-center-#{$nameSpace} {
+    @include underline-from-center();
+  }
+}
+
+@import 'effects/border-transitions/underline-from-right';
+@if $includeClasses {
+  .underline-from-right-#{$nameSpace} {
+    @include underline-from-right();
+  }
+}
+
+@import 'effects/border-transitions/overline-from-left';
+@if $includeClasses {
+  .overline-from-left-#{$nameSpace} {
+    @include overline-from-left();
+  }
+}
+
+@import 'effects/border-transitions/overline-from-center';
+@if $includeClasses {
+  .overline-from-center-#{$nameSpace} {
+    @include overline-from-center();
+  }
+}
+
+@import 'effects/border-transitions/overline-from-right';
+@if $includeClasses {
+  .overline-from-right-#{$nameSpace} {
+    @include overline-from-right();
+  }
+}
+
+@import 'effects/border-transitions/reveal';
+@if $includeClasses {
+  .reveal-#{$nameSpace} {
+    @include reveal();
+  }
+}
+
+@import 'effects/border-transitions/underline-reveal';
+@if $includeClasses {
+  .underline-reveal-#{$nameSpace} {
+    @include underline-reveal();
+  }
+}
+
+@import 'effects/border-transitions/overline-reveal';
+@if $includeClasses {
+  .overline-reveal-#{$nameSpace} {
+    @include overline-reveal();
+  }
+}
+
+/* SHADOW/GLOW TRANSITIONS */
+@import 'effects/shadow-and-glow-transitions/glow';
+@if $includeClasses {
+  .glow-#{$nameSpace} {
+    @include glow();
+  }
+}
+
+@import 'effects/shadow-and-glow-transitions/shadow';
+@if $includeClasses {
+  .shadow-#{$nameSpace} {
+    @include shadow();
+  }
+}
+
+@import 'effects/shadow-and-glow-transitions/grow-shadow';
+@if $includeClasses {
+  .grow-shadow-#{$nameSpace} {
+    @include grow-shadow();
+  }
+}
+
+@import 'effects/shadow-and-glow-transitions/box-shadow-outset';
+@if $includeClasses {
+  .box-shadow-outset-#{$nameSpace} {
+    @include box-shadow-outset();
+  }
+}
+
+@import 'effects/shadow-and-glow-transitions/box-shadow-inset';
+@if $includeClasses {
+  .box-shadow-inset-#{$nameSpace} {
+    @include box-shadow-inset();
+  }
+}
+
+@import 'effects/shadow-and-glow-transitions/float-shadow';
+@if $includeClasses {
+  .float-shadow-#{$nameSpace} {
+    @include float-shadow();
+  }
+}
+
+@import 'effects/shadow-and-glow-transitions/shadow-radial';
+@if $includeClasses {
+  .shadow-radial-#{$nameSpace} {
+    @include shadow-radial();
+  }
+}
+
+/* SPEECH BUBBLES */
+@import 'effects/speech-bubbles/bubble-top';
+@if $includeClasses {
+  .bubble-top-#{$nameSpace} {
+    @include bubble-top();
+  }
+}
+
+@import 'effects/speech-bubbles/bubble-right';
+@if $includeClasses {
+  .bubble-right-#{$nameSpace} {
+    @include bubble-right();
+  }
+}
+
+@import 'effects/speech-bubbles/bubble-bottom';
+@if $includeClasses {
+  .bubble-bottom-#{$nameSpace} {
+    @include bubble-bottom();
+  }
+}
+
+@import 'effects/speech-bubbles/bubble-left';
+@if $includeClasses {
+  .bubble-left-#{$nameSpace} {
+    @include bubble-left();
+  }
+}
+
+@import 'effects/speech-bubbles/bubble-float-top';
+@if $includeClasses {
+  .bubble-float-top-#{$nameSpace} {
+    @include bubble-float-top();
+  }
+}
+
+@import 'effects/speech-bubbles/bubble-float-right';
+@if $includeClasses {
+  .bubble-float-right-#{$nameSpace} {
+    @include bubble-float-right();
+  }
+}
+
+@import 'effects/speech-bubbles/bubble-float-bottom';
+@if $includeClasses {
+  .bubble-float-bottom-#{$nameSpace} {
+    @include bubble-float-bottom();
+  }
+}
+
+@import 'effects/speech-bubbles/bubble-float-left';
+@if $includeClasses {
+  .bubble-float-left-#{$nameSpace} {
+    @include bubble-float-left();
+  }
+}
+
+/* ICONS */
+@import 'effects/icons/icon-back';
+@if $includeClasses {
+  .icon-back-#{$nameSpace} {
+    @include icon-back();
+  }
+}
+
+@import 'effects/icons/icon-forward';
+@if $includeClasses {
+  .icon-forward-#{$nameSpace} {
+    @include icon-forward();
+  }
+}
+
+@import 'effects/icons/icon-down';
+@if $includeClasses {
+  .icon-down-#{$nameSpace} {
+    @include icon-down();
+  }
+}
+
+@import 'effects/icons/icon-up';
+@if $includeClasses {
+  .icon-up-#{$nameSpace} {
+    @include icon-up();
+  }
+}
+
+@import 'effects/icons/icon-spin';
+@if $includeClasses {
+  .icon-spin-#{$nameSpace} {
+    @include icon-spin();
+  }
+}
+
+@import 'effects/icons/icon-drop';
+@if $includeClasses {
+  .icon-drop-#{$nameSpace} {
+    @include icon-drop();
+  }
+}
+
+@import 'effects/icons/icon-fade';
+@if $includeClasses {
+  .icon-fade-#{$nameSpace} {
+    @include icon-fade();
+  }
+}
+
+@import 'effects/icons/icon-float-away';
+@if $includeClasses {
+  .icon-float-away-#{$nameSpace} {
+    @include icon-float-away();
+  }
+}
+
+@import 'effects/icons/icon-sink-away';
+@if $includeClasses {
+  .icon-sink-away-#{$nameSpace} {
+    @include icon-sink-away();
+  }
+}
+
+@import 'effects/icons/icon-grow';
+@if $includeClasses {
+  .icon-grow-#{$nameSpace} {
+    @include icon-grow();
+  }
+}
+
+@import 'effects/icons/icon-shrink';
+@if $includeClasses {
+  .icon-shrink-#{$nameSpace} {
+    @include icon-shrink();
+  }
+}
+
+@import 'effects/icons/icon-pulse';
+@if $includeClasses {
+  .icon-pulse-#{$nameSpace} {
+    @include icon-pulse();
+  }
+}
+
+@import 'effects/icons/icon-pulse-grow';
+@if $includeClasses {
+  .icon-pulse-grow-#{$nameSpace} {
+    @include icon-pulse-grow();
+  }
+}
+
+@import 'effects/icons/icon-pulse-shrink';
+@if $includeClasses {
+  .icon-pulse-shrink-#{$nameSpace} {
+    @include icon-pulse-shrink();
+  }
+}
+
+@import 'effects/icons/icon-push';
+@if $includeClasses {
+  .icon-push-#{$nameSpace} {
+    @include icon-push();
+  }
+}
+
+@import 'effects/icons/icon-pop';
+@if $includeClasses {
+  .icon-pop-#{$nameSpace} {
+    @include icon-pop();
+  }
+}
+
+@import 'effects/icons/icon-bounce';
+@if $includeClasses {
+  .icon-bounce-#{$nameSpace} {
+    @include icon-bounce();
+  }
+}
+
+@import 'effects/icons/icon-rotate';
+@if $includeClasses {
+  .icon-rotate-#{$nameSpace} {
+    @include icon-rotate();
+  }
+}
+
+@import 'effects/icons/icon-grow-rotate';
+@if $includeClasses {
+  .icon-grow-rotate-#{$nameSpace} {
+    @include icon-grow-rotate();
+  }
+}
+
+@import 'effects/icons/icon-float';
+@if $includeClasses {
+  .icon-float-#{$nameSpace} {
+    @include icon-float();
+  }
+}
+
+@import 'effects/icons/icon-sink';
+@if $includeClasses {
+  .icon-sink-#{$nameSpace} {
+    @include icon-sink();
+  }
+}
+
+@import 'effects/icons/icon-bob';
+@if $includeClasses {
+  .icon-bob-#{$nameSpace} {
+    @include icon-bob();
+  }
+}
+
+@import 'effects/icons/icon-hang';
+@if $includeClasses {
+  .icon-hang-#{$nameSpace} {
+    @include icon-hang();
+  }
+}
+
+@import 'effects/icons/icon-wobble-horizontal';
+@if $includeClasses {
+  .icon-wobble-horizontal-#{$nameSpace} {
+    @include icon-wobble-horizontal();
+  }
+}
+
+@import 'effects/icons/icon-wobble-vertical';
+@if $includeClasses {
+  .icon-wobble-vertical-#{$nameSpace} {
+    @include icon-wobble-vertical();
+  }
+}
+
+@import 'effects/icons/icon-buzz';
+@if $includeClasses {
+  .icon-buzz-#{$nameSpace} {
+    @include icon-buzz();
+  }
+}
+
+@import 'effects/icons/icon-buzz-out';
+@if $includeClasses {
+  .icon-buzz-out-#{$nameSpace} {
+    @include icon-buzz-out();
+  }
+}
+
+/* CURLS */
+@import 'effects/curls/curl-top-left';
+@if $includeClasses {
+  .curl-top-left-#{$nameSpace} {
+    @include curl-top-left();
+  }
+}
+
+@import 'effects/curls/curl-top-right';
+@if $includeClasses {
+  .curl-top-right-#{$nameSpace} {
+    @include curl-top-right();
+  }
+}
+
+@import 'effects/curls/curl-bottom-right';
+@if $includeClasses {
+  .curl-bottom-right-#{$nameSpace} {
+    @include curl-bottom-right();
+  }
+}
+
+@import 'effects/curls/curl-bottom-left';
+@if $includeClasses {
+  .curl-bottom-left-#{$nameSpace} {
+    @include curl-bottom-left();
+  }
+}

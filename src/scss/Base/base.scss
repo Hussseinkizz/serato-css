@@ -1,0 +1,14 @@
+/* Serato Base */
+// A greatly tweaked combination of scss-reset, css-reset-and-normalize-sass flavors and sanitize.css
+
+@forward 'reset';
+@forward 'typography'; // typography tweaks
+@forward 'experiments'; // beta serato css default tweaks
+
+/*! serato-css v1.0.0 | MIT License | https://github.com/Hussseinkizz/serato-css */
+
+/*! scss-reset v1.2.2 | MIT License | https://github.com/andreymatin/scss-reset */
+
+/*! sanitize.css v13.0.0 | CC0-1.0 License | https://github.com/csstools/sanitize.css */
+
+/*! css-reset-and-normalize-sass (flavor only) v0.1.2 | MIT License | https://github.com/webdesignberlin/css-reset-and-normalize-sass */

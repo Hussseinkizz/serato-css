@@ -1,0 +1,174 @@
+/*  serato adapted color system inspired by apple watch os color system  */
+// link to watch os figma resource and link to apple color system guidline //
+// 1. https://www.figma.com/community/file/905936953158689549
+// 2. https://developer.apple.com/design/human-interface-guidelines/watchos/visual/color/
+
+// watch os color system starts...
+$red: #df1125;
+$neon-pink: #fb212f;
+$electric-pink: #fc3644;
+$hibiscus: #fb0049;
+$pink: #fd4154;
+$pink-citrus: #ea383a;
+$dragon-fruit: #f12e6d;
+$pomagranate: #d80e4f;
+$camellia: #bf3138;
+$red-rose: #ab1438;
+$plum: #81323d;
+
+$orange: #fc4e12;
+$clementine: #fd513b;
+$apricot: #fc5c42;
+$papaya: #fd7036;
+$kumquat: #fd7441;
+$light-orange: #fd820b;
+$peach: #e0694e;
+$flamingo: #ca6f59;
+$rose-gold: #e99475;
+$pink-sand: #feb69c;
+$light-pink: #f19f9d;
+$vintage-rose: #f29c98;
+$grapefruit: #fda27e;
+
+$cream: #ffe0ab;
+$mellow-yellow: #f7f6af;
+$canary-yellow: #ffda3a;
+$pollen: #fecb4d;
+$yellow: #e8c511;
+$flash-light: #faed0b;
+$lemon-cream: #ffeb6d;
+$flash: #dff81e;
+$green: #80e220;
+$spearmint: #77ea7e;
+$mint: #a2ec8e;
+$beryl: #d0f2b1;
+$sea-foam: #cff1d6;
+$turquoise: #91cec2;
+
+$blue: #1ea5fc;
+$light-blue: #5ebad9;
+$cerulian: #87b9e7;
+$surf-blue: #1871ac;
+$pacific-green: #0f6d8e;
+$blue-cobalt: #3a6b8e;
+$dark-teal: #2c6184;
+$blue-horizon: #1e538f;
+$denim-blue: #4b709a;
+$linen-blue: #455785;
+$alaskan-blue: #525c73;
+$deep-navy: #3a4565;
+$midnight-blue: #383b65;
+
+$purple: #8962f8;
+$ultra-violet: #5f41b2;
+$lilac: #a990dd;
+$ocean-blue: #6273bd;
+$delft-blue: #4662b2;
+$indigo: #474e95;
+$lavender-gray: #757397;
+$lavender: #a58998;
+$cocoa: #8b7d7d;
+
+$storm-gray: #578887;
+$cactus: #5b7971;
+$pine-green: #4e6c54;
+$cyprus-green: #cda986;
+$northern-blue: #638a8d;
+$azure: #788991;
+$mist-blue: #a7ab99;
+$dark-olive: #7c7a66;
+$khaki: #7a6e49;
+
+$soft-white: #d8c9af;
+$antique-white: #cda986;
+$yellow-gold: #cc996d;
+$gold: #b08053;
+$camel: #a97d4f;
+$walnut: #a17455;
+$stone: #a28872;
+$pebble: #9f8d7e;
+$coastal-gray: #715d50;
+// watch os color system ends...
+
+// serato colors mapping starts...
+$serato-colors: (
+  'red': $red,
+  'neon-pink': $neon-pink,
+  'electric-pink': $electric-pink,
+  'hibiscus': $hibiscus,
+  'pink': $pink,
+  'pink-citrus': $pink-citrus,
+  'dragon-fruit': $dragon-fruit,
+  'pomagranate': $pomagranate,
+  'camellia': $camellia,
+  'red-rose': $red-rose,
+  'plum': $plum,
+  'orange': $orange,
+  'clementine': $clementine,
+  'apricot': $apricot,
+  'papaya': $papaya,
+  'kumquat': $kumquat,
+  'light-orange': $light-orange,
+  'peach': $peach,
+  'flamingo': $flamingo,
+  'rose-gold': $rose-gold,
+  'pink-sand': $pink-sand,
+  'light-pink': $light-pink,
+  'vintage-rose': $vintage-rose,
+  'grapefruit': $grapefruit,
+  'cream': $cream,
+  'mellow-yellow': $mellow-yellow,
+  'canary-yellow': $canary-yellow,
+  'pollen': $pollen,
+  'yellow': $yellow,
+  'flash-light': $flash-light,
+  'lemon-cream': $lemon-cream,
+  'flash': $flash,
+  'green': $green,
+  'spearmint': $spearmint,
+  mint: $mint,
+  'beryl': $beryl,
+  'sea-foam': $sea-foam,
+  'turquoise': $turquoise,
+  'blue': $blue,
+  'light-blue': $light-blue,
+  'cerulian': $cerulian,
+  'surf-blue': $surf-blue,
+  'pacific-green': $pacific-green,
+  'blue-cobalt': $blue-cobalt,
+  'dark-teal': $dark-teal,
+  'blue-horizon': $blue-horizon,
+  'denim-blue': $denim-blue,
+  'linen-blue': $linen-blue,
+  'alaskan-blue': $alaskan-blue,
+  'deep-navy': $deep-navy,
+  'midnight-blue': $midnight-blue,
+  'purple': $purple,
+  'ultra-violet': $ultra-violet,
+  'lilac': $lilac,
+  'ocean-blue': $ocean-blue,
+  'delft-blue': $delft-blue,
+  'indigo': $indigo,
+  'lavender-gray': $lavender-gray,
+  'lavender': $lavender,
+  'cocoa': $cocoa,
+  'storm-gray': $storm-gray,
+  'cactus': $cactus,
+  'pine-green': $pine-green,
+  'cyprus-green': $cyprus-green,
+  'northern-blue': $northern-blue,
+  'azure': $azure,
+  'mist-blue': $mist-blue,
+  'dark-olive': $dark-olive,
+  'khaki': $khaki,
+  'soft-white': $soft-white,
+  'antique-white': $antique-white,
+  'yellow-gold': $yellow-gold,
+  'gold': $gold,
+  'camel': $camel,
+  'walnut': $walnut,
+  'stone': $stone,
+  'pebble': $pebble,
+  'coastal-gray': $coastal-gray,
+) !default;
+// serato colors mapping ends...

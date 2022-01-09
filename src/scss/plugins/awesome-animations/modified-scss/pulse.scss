@@ -1,0 +1,31 @@
+$animation-pulse-speed: 2s;
+@use '../options' as *;
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+}
+.animation-pulse.is-animating,
+.animation-pulse.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-pulse {
+  animation: pulse $animation-pulse-speed linear infinite;
+}
+.animation-pulse.is-animating.is-animating-fast,
+.animation-pulse.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-pulse.is-animating-fast {
+  animation: pulse ($animation-pulse-speed * $animation-speed-coeff-fast) linear
+    infinite;
+}
+.animation-pulse.is-animating.is-animating-slow,
+.animation-pulse.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-pulse.is-animating-slow {
+  animation: pulse ($animation-pulse-speed * $animation-speed-coeff-slow) linear
+    infinite;
+}

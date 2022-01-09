@@ -1,0 +1,9 @@
+@use '../utilities/global-variables' as *;
+@use '../themes/colors/color-variables' as *;
+@use '../themes/colors/colors.scss' as *;
+// @use '../animations/animations.scss' as *;
+
+.card {
+  @extend .serato-common-design;
+  width: clamp(250px, 300px, 350px);
+}

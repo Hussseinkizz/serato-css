@@ -1,0 +1,18 @@
+/* Icon Fade */
+@mixin icon-fade {
+  @include hacks();
+
+  .animated-icon {
+    @include prefixed(transform, translateZ(0));
+    @include prefixed(transition-duration, 0.5s);
+    @include prefixed(transition-property, color);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    .animated-icon {
+      color: #0f9e5e;
+    }
+  }
+}

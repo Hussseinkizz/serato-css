@@ -1,0 +1,31 @@
+$animation-float-speed: 2s;
+@use '../options' as *;
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.animation-float.is-animating,
+.animation-float.is-animated-on-hover:hover,
+.animation-to-child.is-animated-on-hover:hover > .animation-float {
+  animation: float $animation-float-speed linear infinite;
+}
+.animation-float.is-animating.is-animating-fast,
+.animation-float.is-animated-on-hover.is-animating-fast:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-float.is-animating-fast {
+  animation: float ($animation-float-speed * $animation-speed-coeff-fast) linear
+    infinite;
+}
+.animation-float.is-animating.is-animating-slow,
+.animation-float.is-animated-on-hover.is-animating-slow:hover,
+.animation-to-child.is-animated-on-hover:hover
+  > .animation-float.is-animating-slow {
+  animation: float ($animation-float-speed * $animation-speed-coeff-slow) linear
+    infinite;
+}
