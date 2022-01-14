@@ -1,5 +1,7 @@
 // All mixins go here!
 @use './global-variables' as *;
+@use '../themes/colors/color-variables' as *;
+@use './functions' as *;
 // @use '../themes/colors/colors.scss' as *;
 
 // centering mixins
@@ -30,6 +32,7 @@
   @include center-with-flex;
 }
 
+// overlay mixin
 @mixin overlay($offset: 0) {
   bottom: $offset;
   left: $offset;
@@ -46,6 +49,44 @@
   overflow-y: auto;
   scroll-behavior: smooth;
   scrollbar-width: thin;
+
+  /**
+ * Customized scrollbar // get a better one!
+ */
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 6px;
+    background-color: #eff1f5; // scrollbar track color
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: $serato-border-radius;
+    background-color: $transparent-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: $serato-border-radius;
+    height: 6px;
+    background-color: #9ca3af; // scrollbar hover color
+    border: 2px solid #eff1f5; // scrollbar track color
+
+    &:hover {
+      background-color: #bbc5d4; // scrollbar hover color
+    }
+  }
+}
+
+// selection disabled mixin
+@mixin selection-disabled {
+  pointer-events: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 // ultimate gradient generating mixin
@@ -76,6 +117,7 @@
   .#{$gradient-name}-gradient-on-text {
     background: linear-gradient(to right, $first-color, $second-color);
     background-clip: text;
+    user-select: none;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -86,81 +128,76 @@
         $first-color 0%,
         $second-color 100%
       );
+      user-select: none;
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
   }
 }
-@mixin border-gradient($alignment, $breadth, $gradient) {
+
+// border gradient mixin
+@mixin border-gradient($alignment, $breadth: 2px, $gradient) {
   border-#{$alignment}: $breadth solid;
   border-image: $gradient 3;
 }
 
-// text gradient effect
+// text gradient mixin
 @mixin text-gradient($grad) {
   background: $grad;
+  user-select: none;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-@mixin transit-ease {
-  transition: all 0.3s ease-in-out;
-}
+// glass-morphism generating mixin eg. background-glass-gray-500
+@mixin make-blur($name, $blur-color) {
+  .background-glass-#{$name} {
+    background: rgba($blur-color, 0.2);
+    backdrop-filter: blur(40px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  .background-glass-#{$name}--hoverable {
+    background: rgba($blur-color, 0.2);
+    backdrop-filter: blur(40px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
 
-@mixin rams-grid($grid-value) {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($grid-value, 1fr));
-}
-
-@mixin pans-flex($flex-value) {
-  display: flex;
-  flex: 1 1 $flex-value;
-}
-
-@mixin fader {
-  animation: fader 6s infinite;
-
-  @keyframes fader {
-    0% {
-      opacity: 0.2;
-    }
-    50% {
-      opacity: 1;
+    &:hover {
+      transition: $transition-smooth;
+      background: rgba($blur-color, 0.35);
     }
   }
-}
-
-@mixin blur($blur-color) {
-  background: rgba($blur-color, 0.2);
-  backdrop-filter: blur(40px);
-  border: 2px solid transparent;
-  background-clip: padding-box;
-}
-
-@mixin selection-disabled {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}
-// Ripple effect //
-@mixin ripple($ripplecolor) {
-  .ripple {
-    background-position: center;
-    transition: background 0.8s;
+  // glass effect for text eg. color-glass-black--hoverable
+  .color-glass-#{$name} {
+    color: transparent;
+    user-select: none;
+    background-clip: text;
+    backdrop-filter: blur(40px);
+    background: rgba($blur-color, 0.2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-  .ripple:hover {
-    background: $ripplecolor
-      radial-gradient(circle, transparent 1%, $ripplecolor 1%) center/15000%;
-  }
-  .ripple:active {
-    background-color: lighten($ripplecolor, 5%);
-    background-size: 100%;
-    transition: background 0s;
+  .color-glass-#{$name}--hoverable {
+    color: transparent;
+    user-select: none;
+    background-clip: text;
+    backdrop-filter: blur(40px);
+    background: rgba($blur-color, 0.2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &:hover {
+      transition: $transition-smooth;
+      color: transparent;
+      user-select: none;
+      background-clip: text;
+      backdrop-filter: blur(40px);
+      background: rgba($blur-color, 0.35);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 }
 
@@ -245,25 +282,13 @@
   }
 }
 
-@mixin scaler {
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  transition: all 0.2s linear;
+// space-on-hover mixin
+@mixin space-on-hover {
+  width: $width-content;
+  will-change: auto;
 
   &:hover {
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    transform: scale(1.2);
-  }
-}
-
-@mixin tap {
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-
-  &:hover {
-    margin-top: 1rem;
+    transition: margin 0.35s ease;
     margin-bottom: 1rem;
   }
 }
@@ -320,6 +345,39 @@
     }
     100% {
       opacity: 1;
+    }
+  }
+}
+
+/* A mega hover state color & background color generator mixin */
+@mixin make-hoverable($name, $hoverable-color) {
+  // add color to element on-hover eg. color-gray-400-on-hover
+  .color-#{$name}-on-hover:hover {
+    transition: $transition-colors;
+    color: $hoverable-color !important;
+  }
+  // add background color to element on-hover eg. background-gray-400-on-hover
+  .background-#{$name}-on-hover:hover {
+    transition: $transition-colors;
+    background-color: $hoverable-color !important;
+  }
+
+  // make a color hoverable when asigned a hoverable modifier eg. color-green--hoverable
+  .color-#{$name}--hoverable {
+    color: $hoverable-color !important;
+
+    &:hover {
+      transition: $transition-colors;
+      color: color-modifier($hoverable-color) !important;
+    }
+  }
+  // make a background color hoverable when asigned a hoverable modifier eg. background-green--hoverable
+  .background-#{$name}--hoverable {
+    background-color: $hoverable-color !important;
+
+    &:hover {
+      transition: $transition-colors;
+      background-color: color-modifier($hoverable-color) !important;
     }
   }
 }

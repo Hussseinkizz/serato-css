@@ -1,0 +1,14 @@
+/* Serato Functions */
+
+// Get an appropriate color for text and background based on whether the text is on a light / dark background and vis a vis for the background, also use tint and shade functions respectively to highlight or darkify any given color on hover instead of using lightness and darken sass builtin functions. This is really a rabbit hole!!!
+
+// function to determine whether the passed in color is light or dark and return a modified variant eg. a shade of it, it is not viable for determining appropriate text color!
+@function color-modifier($color) {
+  $result: lighten($color, 10%);
+  $lightness: lightness($color);
+
+  @if ($lightness > 50) {
+    $result: darken($color, 10%);
+  }
+  @return $result;
+}

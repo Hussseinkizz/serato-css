@@ -1,0 +1,190 @@
+/* Serato Layouts */
+// Great layout techniques by Una Kravets, https://www.youtube.com/watch?v=qm0IfG1GyZU
+
+@use '../utilities/global-variables' as *;
+@use '../themes/colors/color-variables' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/media-queries' as *;
+
+@mixin rams-grid($grid-value) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($grid-value, 1fr));
+}
+
+// fill as much as you can
+@mixin pans-flex($flex-value: 150px) {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 $flex-value;
+}
+
+// sidebar says
+.parent {
+  display: grid;
+  grid-template-columns: minmax(150px, 25%) 1fr; // 1fr vs auto
+}
+// pancake stack eg. app tool bars
+.parent {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+// standard layout eg. daily.dev ui, combines pancake + sidebar says
+.page-layout-standard {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: fixed;
+
+  // use header for positioning, setting colors and some horizontal-padding
+  > header.page-header {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    padding-left: $gap-2;
+    padding-right: $gap-2;
+    color: $serato-complement;
+    background: $serato-primary;
+    // position: sticky; revise!
+
+    > nav.navbar {
+      display: flex;
+      flex: 1;
+      gap: $gap-2;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: $gap-1 $gap-2;
+
+      > .navbar-start,
+      .navbar-end {
+        display: flex;
+        gap: $gap-1;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      > .navbar-start > .navbar-brand {
+        font-weight: map-get($font-weights, bold);
+        font-size: $font-size-large;
+
+        > a.navbar-link {
+          font-style: normal !important;
+          color: $common-color;
+
+          &:hover {
+            text-decoration: none !important;
+          }
+        }
+      }
+    }
+  }
+  > main.page-content {
+    display: grid;
+    width: $width-full;
+    height: $height-viewport;
+    // on devices other than mobile
+    @include breakpoint(sm) {
+      grid-template-columns: minmax(150px, 25%) auto; // 1fr vs auto
+    }
+
+    > aside.sidebar {
+      display: flex;
+      gap: $gap-2;
+      padding: $gap-3 $gap-2;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      border-right: $border-width solid $serato-border-color;
+      display: none; // reveal with media query!
+
+      // on devices other than mobile
+      @include breakpoint(sm) {
+        display: flex;
+      }
+
+      // > ul.sidebar-list, usually has a down listing...
+    }
+
+    > section.main-section {
+      display: flex;
+      gap: $gap-4;
+      padding: $gap-6 map-get($responsive-spacing-values, medium);
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      @include scroll;
+
+      > h1.page-title {
+        font-size: $size-9;
+        font-weight: bold; // fallback
+        font-weight: map-get($font-weights, bold);
+        text-transform: uppercase;
+        text-align: center;
+      }
+    }
+  }
+  // optional but we recommend leaving that out for this layout!
+  // > footer.page-footer {
+  //   display: flex;
+  //   gap: $gap-2;
+  //   flex-direction: row;
+  //   justify-content: center;
+  //   align-items: center;
+  //   color: $serato-text-color;
+  //   background-color: $light;
+  // }
+}
+
+// holy grail layout eg. twitter ui
+.page-layout-holy-grail {
+  display: grid;
+  grid-template: auto 1fr auto / auto 1fr auto;
+
+  > header.page-header {
+    grid-column: 1/4;
+  }
+  > aside.sidebar-left {
+    grid-column: 1/2;
+  }
+  > main.page-content {
+    grid-column: 2/3;
+  }
+  > aside.sidebar-right {
+    grid-column: 3/4;
+  }
+  > footer.page-footer {
+    grid-column: 1/4;
+  }
+}
+
+// ram technique, take as much as you can but stack when you hit 150px base value; eg. cards-grid
+.parent {
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+  // apply responsive padding
+  grid-template-columns: repeat (auto-fit, minmax(150px, 1fr));
+}
+
+// clamp my text
+.text {
+  font-size: clamp(1.5rem, 10vw, 3rem);
+}
+
+// aspect ratio
+.aspect-ratio {
+  //ratio = width / height
+  .rectangle-horizontal {
+    aspect-ratio: 16/9;
+  }
+  .square {
+    aspect-ratio: 1/1;
+  }
+  .rectangle-verticle {
+    aspect-ratio: 1/2;
+  }
+}

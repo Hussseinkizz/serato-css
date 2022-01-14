@@ -109,3 +109,23 @@ $paragraph-margin-bottom: 1rem !default;
     font-size: $font-size !important;
   }
 }
+
+// text decorations
+.text-decoration-none {
+  text-decoration: none !important;
+}
+.text-decoration-line-through {
+  text-decoration: line-through !important;
+}
+.text-decoration-double {
+  text-decoration: double !important;
+}
+.text-decoration-dotted {
+  text-decoration: dotted !important;
+}
+.text-decoration-dashed {
+  text-decoration: dashed !important;
+}
+.text-decoration-overline {
+  text-decoration: overline !important;
+}

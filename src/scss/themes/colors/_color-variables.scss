@@ -7,7 +7,7 @@
 // serato brand colors
 $serato-primary: indigo;
 $serato-secondary: purple;
-$serato-complement: $gray-400;
+$serato-complement: $gray-100;
 
 //theme-color-variables
 $primary: $serato-primary !default; // brand primary color
@@ -16,7 +16,7 @@ $success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
 $danger: $red !default;
-$light: $gray-100 !default;
+$light: $gray-200 !default;
 $dark: $gray-900 !default;
 
 //theme-colors-map
@@ -27,7 +27,6 @@ $theme-colors: (
   'info': $info,
   'warning': $warning,
   'danger': $danger,
-  'light': $light,
   'dark': $dark,
 ) !default;
 

@@ -1,4 +1,6 @@
 @use '../../utilities/global-variables' as *;
+@use '../../themes/colors/color-variables' as *;
+@use '../../themes/colors/gray-shades' as *;
 
 // DEFAULT OPTIONS
 
@@ -12,10 +14,10 @@ $mediumDuration: 0.3s !default;
 $slowDuration: 0.5s !default;
 
 // Colors
-$primaryColor: #e1e1e1 !default;
-$secondaryColor: #666 !default;
-$highlightColor: #ccc !default;
-$activeColor: #2098d1 !default;
+$primaryColor: $serato-primary !default;
+$secondaryColor: $serato-secondary !default;
+$highlightColor: $serato-complement !default;
+$activeColor: currentColor !default; // serato fix, orignal: #2098d1
 $shadowColor: rgba(0, 0, 0, 0.6) !default;
 
 // Speech bubbles options
@@ -31,10 +33,10 @@ $curlWidth: 25px !default;
 $curlHeight: 25px !default;
 
 // Curl colors
-$revealAreaColor: white !default; // reveal area behind the curl
-$curlLineColor: #aaa !default; // crease line
-$curlTransitionColor: #ccc !default; // color transitioning from crease line to final color
-$curlLastColor: white !default; // final color of the back of the curl
+$revealAreaColor: $serato-complement !default; // reveal area behind the curl
+$curlLineColor: $gray-300 !default; // crease line
+$curlTransitionColor: $gray-200 !default; // color transitioning from crease line to final color
+$curlLastColor: $serato-complement !default; // final color of the back of the curl
 
 // Browser Prefixes - Which CSS prefixes should be used?
 $webkit: true !default;

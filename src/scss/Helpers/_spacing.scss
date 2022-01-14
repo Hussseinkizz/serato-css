@@ -37,3 +37,22 @@
     }
   }
 }
+
+// generate spacing helpers eg margins & paddings for responsive horizontal spacing!
+@each $spacing in $spacings {
+  @each $name, $value in $responsive-spacing-values {
+    // Cardinal directions
+    @each $direction in $responsive-spacing-directions {
+      .responsive-#{$spacing}-#{$direction}-#{$name} {
+        #{$spacing}-#{$direction}: $value !important;
+      }
+    }
+    // Horizontal axis
+    @if ($spacing-horizontal != null) {
+      .responsive-#{$spacing}-#{$spacing-horizontal}-#{$name} {
+        #{$spacing}-left: $value !important;
+        #{$spacing}-right: $value !important;
+      }
+    }
+  }
+}

@@ -25,6 +25,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: $gap-1;
   width: 100%;
 }
 
@@ -35,7 +36,7 @@
 }
 
 // generate grid columns for responsive viewports
-@each $breakpoint, $value in $breakpoints {
+@each $breakpoint, $value in $breakpoints-map {
   @media only screen and (min-width: $value) {
     @for $i from 1 through $total-columns {
       .grid-column-#{$i}-on-#{$breakpoint} {
@@ -59,7 +60,7 @@
 // flex helpers
 .flex {
   display: flex;
-  gap: $simple-gap;
+  gap: $gap-1;
   flex: 1 1 100%;
 }
 .flex-all-center {
@@ -235,5 +236,12 @@ $flex-operators: (grow, shrink);
     .#{$flex-operator}-#{$i} {
       flex-#{$flex-operator}: $i !important;
     }
+  }
+}
+
+// generate gap helpers
+@each $name, $gap-value in $gap-values {
+  .flex-gap-#{$name} {
+    gap: $gap-value !important;
   }
 }

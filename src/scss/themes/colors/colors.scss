@@ -4,17 +4,24 @@
 @use 'basic-colors' as *;
 @use './../colors/_famous-colors.scss' as *;
 @use 'gradients' as *;
+@use '../../utilities/mixins' as *;
 
-// ~~~~~~~~ Generate color classes ~~~~~~~ //
+/* ~~~~~~~~
+Generate color classes & respective hoverable classes
+~~~~~~~ */
 
 // basic flagging colors eg. success, info, danger etc
 @each $name, $color in $theme-colors {
   .color-#{$name} {
-    color: $color !important;
+    color: $color;
   }
   .background-#{$name} {
-    background: $color !important;
+    background: $color;
   }
+  // magic mixin to make hover state variants!
+  @include make-hoverable($name, $color);
+  // another magic to make glass-morphic variants
+  @include make-blur($name, $color);
 }
 
 // generate gray shades classes eg. gray-100
@@ -30,45 +37,55 @@
 .background-black {
   background: $black !important;
 }
+.color-gray {
+  color: $gray-500 !important;
+}
+.background-gray {
+  background: $gray-500 !important;
+}
 @each $name, $gray-shade in $grays {
   .color-#{$name} {
-    color: $gray-shade !important;
+    color: $gray-shade;
   }
   .background-#{$name} {
-    background: $gray-shade !important;
+    background: $gray-shade;
   }
+  @include make-hoverable($name, $gray-shade);
 }
 
 /* generate other color shades from basic colors eg. cyan-100 */
 @each $shades-map, $value in $all-basic-color-shades-map {
   @each $name, $color-shade in $value {
     .color-#{$name} {
-      color: $color-shade !important;
+      color: $color-shade;
     }
     .background-#{$name} {
-      background: $color-shade !important;
+      background: $color-shade;
     }
+    @include make-hoverable($name, $color-shade);
   }
 }
 
 // generate other serato colors eg. hibiscus
 @each $name, $color in $serato-colors {
   .color-#{$name} {
-    color: $color !important;
+    color: $color;
   }
   .background-#{$name} {
-    background: $color !important;
+    background: $color;
   }
+  @include make-hoverable($name, $color);
 }
 
 // generate serato brands colors eg. twitter-blue
 @each $name, $color in $famous-brand-colors {
   .color-#{$name} {
-    color: $color !important;
+    color: $color;
   }
   .background-#{$name} {
-    background: $color !important;
+    background: $color;
   }
+  @include make-hoverable($name, $color);
 }
 
 // ~~~~~~~~ serato theming classes ~~~~~~~~ //

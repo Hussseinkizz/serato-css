@@ -1,8 +1,30 @@
 {
   "name": "serato-css",
-  "version": "1.0.0",
+  "version": "1.0.3",
+  "description": "A Simple Modern CSS Framework Full Of SCSS Dj Mixins!",
   "main": "index.js",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hussseinkizz/serato-css.git"
+  },
+  "keywords": [
+    "CSS",
+    "Framework",
+    "Sass",
+    "SCSS",
+    "Serato",
+    "Friendly",
+    "Modern"
+  ],
+  "author": "Hussein Kizz",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hussseinkizz/serato-css/issues"
+  },
+  "homepage": "https://github.com/Hussseinkizz/serato-css#readme",
   "dependencies": {
     "browser-sync": "^2.27.7",
     "cssnano": "^5.0.14",

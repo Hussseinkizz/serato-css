@@ -1,10 +1,42 @@
 /* serato color gradients */
+@use '../../utilities/global-variables' as *;
 @use './color-variables' as *;
 @use '../../utilities/mixins' as *;
 @use '../colors/famous-colors' as *;
+
+$serato-gradient: linear-gradient(to right, $serato-primary, $serato-secondary);
+$css-tricks-gradient: linear-gradient(
+  to right,
+  $css-tricks-yellow,
+  $css-tricks-pink
+);
+
+// gradients map
+$gradients: (
+  'serato-gradient': $serato-gradient,
+  'css-tricks-gradient': $css-tricks-gradient,
+) !default;
 
 // serato gradient
 @include gradient-generator('serato', $serato-primary, $serato-secondary);
 
 // css tricks gradient
 @include gradient-generator('css-tricks', $css-tricks-yellow, $css-tricks-pink);
+
+// generate border gradients eg. serato-gradient-on-border
+@each $gradient-name, $gradient in $gradients {
+  // Cardinal directions
+  .#{$gradient-name}-on-border {
+    border: 2px solid; // $breadth
+    border-image: $gradient 3;
+    margin: $gap-1;
+  }
+  // specified directions
+  @each $direction in $serato-directions {
+    .#{$gradient-name}-on-border-#{$direction} {
+      border-#{$direction}: 2px solid; // $breadth
+      border-image: $gradient 3;
+      margin-#{$direction}: $gap-1;
+    }
+  }
+}

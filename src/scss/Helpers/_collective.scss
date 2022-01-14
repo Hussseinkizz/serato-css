@@ -1,5 +1,11 @@
 // All non-categorized utilities go here...
 @use '../utilities/global-variables' as *;
+@use '../utilities/mixins' as *;
+@forward '../animations/native-animations';
+@use '../themes/colors/color-variables' as *;
+@use '../themes/colors/gray-shades' as *;
+@use '../themes/colors/basic-colors' as *;
+@use '../themes/colors/serato-colors' as *;
 
 // float & clear
 .clearfix {
@@ -88,4 +94,237 @@ video {
   aspect-ratio: auto;
   max-width: 100%;
   height: auto;
+}
+
+// width helpers
+.width-auto {
+  width: $width-auto !important;
+}
+.width-none {
+  width: $width-none !important;
+}
+.width-content {
+  width: $width-content !important;
+}
+.width-small {
+  width: $width-small !important;
+}
+.width-normal {
+  width: $width-normal !important;
+}
+.width-medium {
+  width: $width-medium !important;
+}
+.width-full {
+  max-width: $width-full !important;
+}
+.width-viewport {
+  max-width: $width-viewport !important;
+}
+// height helpers
+.height-auto {
+  height: $height-auto !important;
+}
+.height-none {
+  height: $height-none !important;
+}
+.height-content {
+  height: $height-content !important;
+}
+.height-small {
+  height: $height-small !important;
+}
+.height-normal {
+  height: $height-normal !important;
+}
+.height-medium {
+  height: $height-medium !important;
+}
+.height-full {
+  min-height: $height-full !important;
+}
+.height-viewport {
+  min-height: $height-viewport !important;
+}
+
+// generate aspect-ratio helpers
+@each $name, $ratio in $aspect-ratios {
+  .aspect-ratio-#{$name} {
+    aspect-ratio: $ratio !important;
+  }
+}
+
+// object fit helpers
+.object-fit-none {
+  object-fit: none !important;
+}
+.object-fit-cover {
+  object-fit: cover !important;
+}
+.object-fit-contain {
+  object-fit: contain !important;
+}
+.object-fit-fill {
+  object-fit: fill !important;
+}
+.object-fit-scale-down {
+  object-fit: scale-down !important;
+}
+
+// opacity helpers
+
+// generate opacity helpers
+@each $name, $opacity in $opacities {
+  .opacity-#{$name} {
+    opacity: $opacity !important;
+  }
+
+  // on-hover
+  .opacity-#{$name}-on-hover:hover {
+    transition: $transition-opacity;
+    opacity: $opacity !important;
+  }
+}
+
+// transition helpers
+.transition-normal {
+  transition: $serato-transition !important;
+}
+.transition-colors {
+  transition: $transition-colors !important;
+}
+.transition-linear {
+  transition: $transition-linear !important;
+}
+.transition-smooth {
+  transition: $transition-smooth !important;
+}
+.transition-opacity {
+  transition: $transition-opacity !important;
+}
+.transition-height {
+  transition: $transition-height !important;
+}
+.transition-width {
+  transition: $transition-width !important;
+}
+
+// list helpers
+.list--hoverable > * {
+  color: $primary;
+  list-style-type: circle;
+  @include space-on-hover;
+
+  &:hover,
+  &:active,
+  &:focus {
+    // transition: $transition-colors;
+    color: lighten($primary, 15%);
+  }
+}
+
+// spacing between list items, to list without space-on-hover effect
+.list li:not(:last-child) {
+  margin-bottom: $gap-x !important;
+}
+
+@each $name, $list-style in $list-styles {
+  .list-style-#{$list-style} {
+    list-style-type: $list-style !important;
+  }
+}
+
+// box-shadow helpers
+@each $name, $box-shadow in $shadows {
+  .box-shadow-#{$name} {
+    box-shadow: $box-shadow !important;
+  }
+}
+
+/* Border Helpers */
+.border {
+  border: $serato-border-width solid $serato-border-color;
+}
+
+// generate border widths
+@each $name, $border-width in $border-widths {
+  .border-width-#{$name} {
+    border-width: $border-width !important;
+  }
+}
+
+// generate border colors from gray shades eg. border-color-gray-100
+.border-color-gray {
+  border-color: $gray !important;
+}
+
+@each $name, $gray-shade in $grays {
+  .border-color-#{$name} {
+    border-color: $gray-shade !important;
+  }
+}
+
+// generate border colors from basic colors eg. border-color-cyan-100 //
+@each $shades-map, $value in $all-basic-color-shades-map {
+  @each $name, $color-shade in $value {
+    .border-color-#{$name} {
+      border-color: $color-shade !important;
+    }
+  }
+}
+
+// generate border colors from serato colors eg. border-color-hibiscus
+@each $name, $color in $serato-colors {
+  .border-color-#{$name} {
+    border-color: $color !important;
+  }
+}
+
+// link helpers
+a.link {
+  color: $primary;
+  width: $width-content;
+}
+a.link-default {
+  color: $primary;
+  width: $width-content;
+}
+a.link--no-underline {
+  color: $primary;
+  width: $width-content;
+}
+
+.link {
+  font-style: italic;
+  text-underline-offset: 5px;
+  @extend .underline-from-center;
+
+  &:hover,
+  &:active,
+  &:focus {
+    transition: $transition-colors;
+    color: lighten($primary, 15%);
+  }
+}
+
+.link-default {
+  font-style: italic;
+  text-underline-offset: 5px;
+}
+
+.link--no-underline {
+  font-style: italic;
+
+  &:hover,
+  &:active,
+  &:focus {
+    transition: $transition-colors;
+    color: lighten($primary, 15%);
+    text-decoration: none !important;
+  }
+}
+
+// selection disabled helper class
+.selection-disabled {
+  @include selection-disabled;
 }

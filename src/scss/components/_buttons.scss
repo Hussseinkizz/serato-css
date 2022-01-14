@@ -4,28 +4,63 @@
 @use '../animations/animations.scss' as *;
 
 .button {
-  @extend .serato-theme--hoverable;
   display: inline-block;
   padding: $simple-components-padding;
   font-weight: map-get($font-weights, normal);
   font-size: $serato-font-size;
   border-radius: $serato-border-radius;
   text-transform: capitalize;
+  box-shadow: $box-shadow-small;
+  background-color: $light;
+  color: $serato-text-color;
+
+  &:hover {
+    transition: $serato-transition;
+    background-color: darken($light, 10%);
+  }
 
   @if $enable-native-animations {
     @include animation-clickin;
   }
 }
 
+// for icons acting as buttons
+.iconic-button {
+  display: grid;
+  place-items: center;
+  width: $width-content;
+  height: $height-content;
+  padding: 0px 8px;
+  border-radius: $border-radius-circle;
+  font-size: $font-size-2;
+  box-shadow: $box-shadow-small;
+  background-color: $light;
+  color: $serato-text-color;
+
+  &:hover {
+    transition: $serato-transition;
+    color: darken($light, 10%);
+  }
+
+  @if $enable-native-animations {
+    @include animation-clickin;
+  }
+}
+// for icons acting as buttons without background
+.iconic-button--no-background {
+  @extend .iconic-button;
+  background: $transparent-color;
+}
+
 @each $name, $color in $theme-colors {
   .button-#{$name} {
     @extend .button;
-    background-color: $color !important;
-    color: lighten($color, 90%) !important;
+    background-color: $color;
+    color: lighten($color, 90%);
 
     &:hover {
-      color: lighten($color, 90%) !important;
-      background-color: lighten($color, 10%) !important;
+      color: lighten($color, 90%);
+      background-color: lighten($color, 10%);
     }
   }
 }

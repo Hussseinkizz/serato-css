@@ -66,3 +66,58 @@
 - css: Added media queries, next working on responsiveness
 - css: added more mixins, just non configured yet but coming...
 - Dev: release of beta v1.0.1 pending...
+- Dev: starteed to work on gulp and other preprocessing tasks to compile production ready css!
+
+*Warning: Dev dependencies and packages need to be installed along with gulp-cli
+
+## [1.0.2 Beta] - Beta relaese fixes & improvements!, 2022-01-12
+
+- fixies: fixed button light issue,
+- css: added height and width helpers,
+- css: added responsive margin and padding helpers,
+- css: added gap spacing helpers for flexbox,
+- css: added aspect ratio helpers but need revision,
+- css: added object-fit property helpers,
+- css: added list-style-type helpers,
+- css: added opacity & opacity on-hover helpers
+
+## [1.0.3 Beta] - More improvements!, 2022-01-13
+
+- css: added transition helpers
+- css: fixed spacing between list items
+- css: added functions & make hoverable mixin
+- css: button-light variant made default variant for button component and removed the button-light helper class!
+- css: added color helpers for hover states!
+- css: added box-shadow helpers
+- css: added width-content helper for buttons to not span the whole width but respect their content within!
+- animations: fixed colors in hover animations!
+- css: added text decoration helpers
+- css: added link helpers
+- css: added iconic button helpers
+
+## [1.0.3 Beta] - Almost ready to launch!, 2022-01-14
+
+- css: added gradient borders
+- mixins: added space-on-hover mixin
+- css: changed transiton helpers to more predictable class names!
+- css: added more list helpers, plus hoverable variant which uses space-on-hover as default animation
+- css: disabled user selection on all gradient and glass-morphic styled elements!
+- css: added transition smooth
+- css: added smallest gap helper gap-x
+- css: added glass morphism helper
+- css: added layouts and started working on them!
+- layouts: completed the standard layout!
+- responsiveness: added breakpoints & breakpoints mixin
+
+### Back log ( Todos )
+
+*Add dark mode for all components
+*Improve color functions and mixins - rabit hole!
+*Add hoverable border-colors & border helpers*
+*Add form & input helpers*
+*design product page, product card and layout components*
+*Animations should be in repect to prefers-reduced-motion media query*
+
+#### Special Issue
+
+> Get an appropriate color for text and background based on whether the text is on a light / dark background and vis a vis for the background, also use tint and shade functions respectively to highlight or darkify any given color on hover instead of using lightness and darken sass builtin functions. This is really a rabbit hole!!!

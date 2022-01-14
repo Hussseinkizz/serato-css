@@ -17,10 +17,49 @@ $awesome-animations-disabled: false !default;
 
 // ~~~ spacing, layout & responsiveness ~~ //
 
+// gap variables & map
+$gap-0: 0;
+$gap-x: 0.25rem;
+$gap-1: 0.5rem;
+$gap-2: 1.5rem;
+$gap-3: 2rem;
+$gap-4: 2.5rem;
+$gap-5: 3rem;
+$gap-6: 4rem;
+
+$gap-values: (
+  '0': $gap-0,
+  'x': $gap-x,
+  '1': $gap-1,
+  '2': $gap-2,
+  '3': $gap-3,
+  '4': $gap-4,
+  '5': $gap-5,
+  '6': $gap-6,
+) !default;
+
 // total columns in a single row
 $total-columns: 12;
-$simple-gap: 0.5rem;
 $serato-directions: (top, right, bottom, left) !default;
+
+// width & height measures
+$width-auto: auto;
+$width-none: 0;
+$width-small: 15%;
+$width-normal: 25%;
+$width-medium: 50%;
+$width-full: 100%;
+$width-content: fit-content;
+$width-viewport: 100vw;
+
+$height-auto: auto;
+$height-none: 0;
+$height-small: 15%;
+$height-normal: 25%;
+$height-medium: 50%;
+$height-full: 100%;
+$height-content: fit-content;
+$height-viewport: 100vh;
 
 // default gutter padding on elements eg grid
 $serato-padding: 0.5rem 1rem !default;
@@ -66,6 +105,7 @@ $box-shadow-inset: inset 0 1px 2px rgba($black, 0.075) !default;
 // margin and padding variables
 $spacings: (margin, padding) !default;
 $spacing-directions: (top, right, bottom, left) !default;
+$responsive-spacing-directions: (left, right) !default;
 $spacing-horizontal: 'x' !default;
 $spacing-vertical: 'y' !default;
 $spacing-values: (
@@ -82,18 +122,79 @@ $spacing-values: (
   'auto': auto,
 ) !default;
 
+// responsive spacings -- only for the horizontal (x) axis eg. width not height, for height use the default spacings!
+$responsive-spacing-values: (
+  'small': 1.5vw,
+  'normal': 2.5vw,
+  'medium': 6.5vw,
+  'large': 10vw,
+) !default;
+
+// opacity variables
+$opacity-none: 0;
+$opacity-low: 0.5;
+$opacity-medium: 0.6;
+$opacity-normal: 1;
+
+$opacities: (
+  'none': $opacity-none,
+  'low': $opacity-low,
+  'medium': $opacity-medium,
+  'normal': $opacity-normal,
+) !default;
+
 // transitions
 $serato-transition: all 0.2s ease-in-out !default;
-$transition-fade: opacity 0.15s linear !default;
-$transition-collapse-height: height 0.35s ease !default;
-$transition-collapse-width: width 0.35s ease !default;
+$transition-smooth: all 0.3s ease !default;
+$transition-colors: color 0.2s ease-in-out !default;
+$transition-linear: all 0.2s linear !default;
+$transition-opacity: opacity 0.15s linear !default;
+$transition-height: height 0.35s ease !default;
+$transition-width: width 0.35s ease !default;
 
 // aspect-ratio declarations...
 $aspect-ratios: (
+  'auto': auto,
   '1x1': 100%,
   '4x3': calc(3 / 4 * 100%),
   '16x9': calc(9 / 16 * 100%),
   '21x9': calc(9 / 21 * 100%),
+) !default;
+
+// list styles
+$list-styles: (
+  'auto': auto,
+  'none': none,
+  'circle': circle,
+  'square': square,
+  'disc': disc,
+  'decimal': decimal,
+  'disclosure-open': disclosure-open,
+  'disclosure-closed': disclosure-closed,
+);
+
+// box shadows, todo: check cssscan.com box shadows!
+$box-shadow-normal: 0 0.5rem 1rem rgba($black, 0.15) !default;
+$box-shadow-small: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
+$box-shadow-large: 0 1rem 3rem rgba($black, 0.175) !default;
+$box-shadow-inset: inset 0 1px 2px rgba($black, 0.075) !default;
+
+$shadows: (
+  'small': $box-shadow-small,
+  'normal': $box-shadow-normal,
+  'large': $box-shadow-large,
+  'inset': $box-shadow-inset,
+) !default;
+
+// border variables
+$serato-border-width: 1px !default;
+$serato-border-color: $gray-300 !default;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
 ) !default;
 
 // ~~~~~~~~~~~~~~ Typography ~~~~~~~~~~~~~ //

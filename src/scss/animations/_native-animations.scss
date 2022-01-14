@@ -19,3 +19,36 @@
     animation-iteration-count: 1;
   }
 }
+
+// links animation class i.e @extend .underline-from-center
+.underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: currentColor;
+    height: 2px;
+    transition-property: left, right;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+
+  // &:hover,
+  &:focus,
+  &:active {
+    &:before {
+      left: 0;
+      right: 0;
+    }
+  }
+}
