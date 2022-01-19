@@ -1,6 +1,6 @@
 {
   "name": "serato-css",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A Modern Mini Framework Full Of Handy Utilities, Colors And Animations Inspired To Be Most Predictable And Community Driven.",
   "main": "index.js",
   "scripts": {

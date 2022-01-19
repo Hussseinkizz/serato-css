@@ -119,6 +119,11 @@
 - dev: Created new zip archive for download,
 - dev: Updated package on npm registry!
 
+## [1.0.5] - First Official Release - patch, 2022-01-19
+
+- dev: removed more irrelevant folders and file eg. /dist
+- dev: added .npmignore to avoid pushing uncessary files to npm package.
+
 ### Back log ( Todos )
 
 *Add dark mode for all components
