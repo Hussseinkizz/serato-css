@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use '../utilities/utilities.scss' as *;
 @use '../utilities/media-queries' as *;
 
@@ -31,7 +32,7 @@
 
 @for $i from 1 through $total-columns {
   .grid-column-#{$i} {
-    flex: 0 0 100% / $total-columns * $i;
+    flex: 0 0 math.div(100%, $total-columns) * $i;
   }
 }
 
@@ -40,7 +41,7 @@
   @media only screen and (min-width: $value) {
     @for $i from 1 through $total-columns {
       .grid-column-#{$i}-on-#{$breakpoint} {
-        width: (100% / ($total-columns / $i));
+        width: math.div(100%, math.div($total-columns, $i));
         padding: $serato-padding;
       }
     }
@@ -51,7 +52,7 @@
 @media only screen and (max-width: $extra-small-screen-breakpoint) {
   @for $i from 1 through $total-columns {
     .grid-column-on-#{$i} {
-      width: (100% / ($total-columns / $i));
+      width: math.div(100%, math.div($total-columns, $i));
       padding: 0px 1rem;
     }
   }

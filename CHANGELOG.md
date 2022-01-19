@@ -109,6 +109,16 @@
 - layouts: completed the standard layout!
 - responsiveness: added breakpoints & breakpoints mixin
 
+## [1.0.4] - First Official Release, 2022-01-19
+
+- dev: changed project structure to more standardized structure optimized for npm publishing.
+- dev: configured development environment with gulp and plugins, moved away from using live sass compiler extesion to jump start development.
+- dev: Removed irrelevant files, some are moved to serato docs repo.
+- dev: Fixed slash div sass deprecation warning!
+- dev: Updated Readme!
+- dev: Created new zip archive for download,
+- dev: Updated package on npm registry!
+
 ### Back log ( Todos )
 
 *Add dark mode for all components

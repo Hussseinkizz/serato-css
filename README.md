@@ -1,7 +1,9 @@
-<h1 align="center">Welcome to serato-css 👋</h1>
+<h1 align="center">⚡SERATO CSS</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.3-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/Hussseinkizz/serato-css#readme" target="_blank">
+  <a href="https://www.npmjs.com/package/serato-css" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/serato-css.svg">
+  </a>
+  <a href="https://seratocss.vercel.app/" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
   <a href="https://github.com/Hussseinkizz/serato-css/graphs/commit-activity" target="_blank">
@@ -15,14 +17,22 @@
   </a>
 </p>
 
-> A Simple Modern CSS Framework Full Of SCSS Dj Mixins!
+> A Modern Mini Framework Full Of Handy Utilities, Colors And Animations Inspired To Be Most Predictable And Community Driven.
 
-### 🏠 [Homepage](https://github.com/Hussseinkizz/serato-css#readme)
+### 🚀 [Development](https://github.com/Hussseinkizz/serato-css#readme)
+
+### 📖 [Documentation](https://seratocss.vercel.app/)
 
 ## Install
 
 ```sh
-yarn install
+npm install serato-css
+```
+
+## Usage
+
+```sh
+yarn start
 ```
 
 ## Author
@@ -30,9 +40,9 @@ yarn install
 👤 **Hussein Kizz**
 
 * Website: husseinkizz.netlify.app
-* Twitter: [@SeratoCSS](https://twitter.com/SeratoCSS)
+* Twitter: [@Hussseinkizz](https://twitter.com/Hussseinkizz)
 * Github: [@Hussseinkizz](https://github.com/Hussseinkizz)
-* LinkedIn: [@Husseinkizz](https://linkedin.com/in/Husseinkizz)
+* LinkedIn: [@Hussseinkizz](https://linkedin.com/in/Hussseinkizz)
 
 ## 🤝 Contributing
 
