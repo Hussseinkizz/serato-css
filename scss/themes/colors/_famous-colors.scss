@@ -1,6 +1,3 @@
-@use 'basic-colors' as *;
-@use 'color-variables' as *;
-
 /* famous brand colors for stuff like social media icon colors, generated with color manager vscode extension by Roy Action */
 
 // famous brand colors start
@@ -62,9 +59,6 @@ $famous-brand-colors: (
   'quora-red': $quora-red,
   'spotify-green': $spotify-green,
   'stackoverflow-orange': $stackoverflow-orange,
-  'serato-primary': $serato-primary,
-  'serato-secondary': $serato-secondary,
-  'serato-complement': $serato-complement,
   'ups-brown': $ups-brown,
   'ups-yellow': $ups-yellow,
   'twitter-blue': $twitter-blue,

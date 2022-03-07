@@ -3,8 +3,7 @@
 @use '../utilities/mixins' as *;
 @forward '../animations/native-animations';
 @use '../themes/colors/color-variables' as *;
-@use '../themes/colors/gray-shades' as *;
-@use '../themes/colors/basic-colors' as *;
+@use '../themes/colors/openprop-colors' as *;
 @use '../themes/colors/serato-colors' as *;
 
 // float & clear
@@ -219,7 +218,7 @@ video {
   &:active,
   &:focus {
     // transition: $transition-colors;
-    color: lighten($primary, 15%);
+    color: $primary-hover;
   }
 }
 
@@ -234,10 +233,16 @@ video {
   }
 }
 
-// box-shadow helpers
-@each $name, $box-shadow in $shadows {
-  .box-shadow-#{$name} {
-    box-shadow: $box-shadow !important;
+// shadow helpers
+@each $shadowName, $shadow in $shadows {
+  :where(.#{$shadowName}) {
+    box-shadow: $shadow;
+  }
+}
+// inner shadow helpers
+@each $innerShadowName, $inner-shadow in $inner-shadows {
+  :where(.#{$innerShadowName}) {
+    box-shadow: $inner-shadow;
   }
 }
 
@@ -258,20 +263,20 @@ video {
   border-color: $gray !important;
 }
 
-@each $name, $gray-shade in $grays {
+@each $name, $gray-shade in $gray-shades {
   .border-color-#{$name} {
     border-color: $gray-shade !important;
   }
 }
 
-// generate border colors from basic colors eg. border-color-cyan-100 //
-@each $shades-map, $value in $all-basic-color-shades-map {
-  @each $name, $color-shade in $value {
-    .border-color-#{$name} {
-      border-color: $color-shade !important;
-    }
-  }
-}
+// // generate border colors from basic colors eg. border-color-cyan-100 //
+// @each $shades-map, $value in $all-basic-color-shades-map {
+//   @each $name, $color-shade in $value {
+//     .border-color-#{$name} {
+//       border-color: $color-shade !important;
+//     }
+//   }
+// }
 
 // generate border colors from serato colors eg. border-color-hibiscus
 @each $name, $color in $serato-colors {
@@ -303,7 +308,7 @@ a.link--no-underline {
   &:active,
   &:focus {
     transition: $transition-colors;
-    color: lighten($primary, 15%);
+    color: $primary-hover;
   }
 }
 
@@ -319,7 +324,7 @@ a.link--no-underline {
   &:active,
   &:focus {
     transition: $transition-colors;
-    color: lighten($primary, 15%);
+    color: $primary-hover;
     text-decoration: none !important;
   }
 }

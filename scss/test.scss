@@ -1,3 +1,19 @@
 // 🚀 Test styles in an isolated file...
-// @use './themes/colors/color-variables' as *;
-// @use './themes/colors/basic-colors' as *;
+// @use './themes/colors/openprop-colors' as *;
+// @use './utilities/_mixins.scss' as *;
+// @use './themes/colors/serato-colors' as *;
+// @use './themes/colors/famous-colors' as *;
+// @use './utilities/global-variables' as *;
+
+// // shadow helpers
+// @each $shadowName, $shadow in $shadows {
+//   :where(.#{$shadowName}) {
+//     box-shadow: $shadow;
+//   }
+// }
+// // inner shadow helpers
+// @each $innerShadowName, $inner-shadow in $inner-shadows {
+//   :where(.#{$innerShadowName}) {
+//     box-shadow: $inner-shadow;
+//   }
+// }

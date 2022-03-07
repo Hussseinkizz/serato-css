@@ -1,4 +1,4 @@
-# SERATO CSS V2 - NEW MELODY!
+# SERATO CSS V2 - NEW MELODY
 
 ## Serato CSS V2 Plan & Roadmap
 
@@ -30,5 +30,9 @@
 * We will change the animations library except the hover animations
 
  > We might replace awesome animations plugin for open props animations or any other css animations library like animate.css, the awesome animations cause a funny z-index issue identified on float animation.
+
+* We will use Una Kravet's css gram to mimic instagram photo effects [CSS Gram](https://una.im/CSSgram/)
+
+ > We will allow devs to turn any photo to a lit one with just a single class utility!
 
 *Author: Hussein Kizz*

@@ -4,11 +4,67 @@
 
 // function to determine whether the passed in color is light or dark and return a modified variant eg. a shade of it, it is not viable for determining appropriate text color!
 @function color-modifier($color) {
-  $result: lighten($color, 10%);
+  $result: lighten($color, 15%);
   $lightness: lightness($color);
 
-  @if ($lightness > 50) {
-    $result: darken($color, 10%);
+  @if ($lightness >= 75) {
+    $result: darken($color, 15%);
   }
+  @return $result;
+}
+
+/* Upgrade or downgrade a given color by one shade eg. gray-5 to gray-6 or gray-4 respectively, to mimic the lighten and darken functions of sass! */
+@function make-color-shade-no-vars($name, $base-shade, $criteria) {
+  $result: #{$name}-#{$base-shade}; // eg. gray-5
+
+  @if ($criteria == 'upgrade') {
+    $newShade: $base-shade + 1;
+    $result: #{$name}-#{$newShade}; // eg. gray-6
+  }
+  @if ($criteria == 'downgrade') {
+    $newShade: $base-shade - 1;
+    $result: #{$name}-#{$newShade}; // eg. gray-4
+  }
+
+  @return $result;
+}
+
+// * With Variables
+@function make-color-shade($name, $base-shade, $criteria) {
+  $result: var(--#{$name}-#{$base-shade}); // eg. var(--gray-5)
+
+  @if ($criteria == 'upgrade') {
+    $newShade: $base-shade + 1;
+    $result: var(--#{$name}-#{$newShade}); // eg. var(--gray-6)
+  }
+  @if ($criteria == 'downgrade') {
+    $newShade: $base-shade - 1;
+    $result: var(--#{$name}-#{$newShade}); // eg. var(--gray-4)
+  }
+
+  @return $result;
+}
+
+// * With Variables, auto hover shade generation
+@function make-hover-shade($name, $base-shade) {
+  $result: var(--#{$name}-#{$base-shade}); // eg. var(--gray-9)
+
+  @if ($base-shade > 1) {
+    $hoverShade: $base-shade - 2;
+    $result: var(--#{$name}-#{$hoverShade}); // eg. var(--gray-7)
+  }
+  @if ($base-shade <= 1) {
+    $hoverShade: $base-shade + 2;
+    $result: var(--#{$name}-#{$hoverShade}); // eg. var(--gray-2)
+  }
+  // @if ($base-shade > 0) {
+  //   $hoverShade: $base-shade - 2;
+  //   $result: var(--#{$name}-#{$hoverShade}); // eg. var(--gray-7)
+  // }
+  // @if ($base-shade == 0) {
+  //   $hoverShade: $base-shade + 2;
+  //   $result: var(--#{$name}-#{$hoverShade}); // eg. var(--gray-2)
+  // }
+
   @return $result;
 }

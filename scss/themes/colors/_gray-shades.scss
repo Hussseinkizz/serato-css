@@ -1,27 +1,25 @@
-//gray-color-variables
-$white: #ffffff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black: #000 !default;
+// * Using Open Props Grays
+
+//gray-color-variables!
+:root {
+  --white: var(--gray-0);
+  --black: var(--gray-9);
+}
 
 // gray-colors-map
 $grays: (
-  'gray-100': $gray-100,
-  'gray-200': $gray-200,
-  'gray-300': $gray-300,
-  'gray-400': $gray-400,
-  'gray-500': $gray-500,
-  'gray-600': $gray-600,
-  'gray-700': $gray-700,
-  'gray-800': $gray-800,
-  'gray-900': $gray-900,
+  'gray-0': var(--gray-0),
+  'gray-1': var(--gray-1),
+  'gray-2': var(--gray-2),
+  'gray-3': var(--gray-3),
+  'gray-4': var(--gray-4),
+  'gray-5': var(--gray-5),
+  'gray-6': var(--gray-6),
+  'gray-7': var(--gray-7),
+  'gray-8': var(--gray-8),
+  'gray-9': var(--gray-9),
 ) !default;
 
-$gray: $gray-500;
+$white: var(--white);
+$gray: var(--gray-5);
+$black: var(--black);

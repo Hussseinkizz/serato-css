@@ -1,86 +1,58 @@
 /*
-* Beta Hacks & Experiments ( these are proposed for the next version and still in beta and can change over next realease!)
+* Beta Hacks, Tweaks & Experiments ( these are proposed for the next version and still in beta and can change over next realease or they're here forever!)
 */
 
-@use '../utilities/global-variables' as *;
-@use '../themes/colors/color-variables' as *;
-@use '../themes/colors/gray-shades' as *;
-
 /**
- * Hack from Kevin Powell to automatically add top spacing to all children of any parent, cause usually nobody ever wants them attached
+ * Customized scrollbar
+//  Todo: Use sass hsl functions to change any given brand color to hsl and get it's hue value then use that in scrollbar;
+Users can then alter the hue-color variable in their project styles to their prefered brand color's hue value and this will change the looks else where including the scrollbar!
  */
 
-* + * {
-  margin-top: $size-5;
+/* Change favorite color */
+:where(html) {
+  /* HSL color mode */
+  --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+  --selection-highlight-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+  --scroll-thumb-hover-color: hsl(var(--hue-color), 8%, 65%);
 }
 
-// fixing the hack glitch, we don't want top space on a direct child
-* > * {
-  margin-top: 0;
-}
-
-/**
- * Always hide an element with the `hidden` HTML attribute (from PureCSS).
- */
-
-[hidden] {
-  display: none !important;
-}
-
-/**
- * Natural flow and rythm in articles by default
- */
-
-article > * + * {
-  margin-top: $size-5;
-}
-
-// or ideally
-// article {
-//   h1 + p {
-//     margin-top: 1rem;
-//   }
-// }
-
-/**
-* Hide the horizontal overflow on body by default
- body {
-   overflow-x: hidden;
- }
-*/
-
-// Warning: Make this one a class instead, setting it globally will ruin all child elements sticky position!
-
-/**
- * Customized scrollbar // get a better one!
- */
-
-html::-webkit-scrollbar {
-  width: 12px;
-  height: 6px;
-  background-color: #eff1f5; // scrollbar track color
-}
-
-html::-webkit-scrollbar-track {
-  border-radius: $serato-border-radius;
-  background-color: $transparent-color;
-}
-
-html::-webkit-scrollbar-thumb {
-  border-radius: $serato-border-radius;
-  height: 6px;
-  background-color: #9ca3af; // scrollbar hover color
-  border: 2px solid #eff1f5; // scrollbar track color
-
-  &:hover {
-    background-color: #bbc5d4; // scrollbar hover color
+/*========== Scrollbar Variables For Dark theme ==========*/
+@media (prefers-color-scheme: dark) {
+  :where(html) {
+    --selection-highlight-color: hsl(var(--hue-color), 12%, 48%);
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
   }
+}
+
+/*========== SCROLL BAR ==========*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: var(--scroll-bar-color);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-color);
+  border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-thumb-hover-color);
 }
 
 /**
  * customized on page text selection colors
  */
-
 ::selection {
-  background-color: $gray-500;
+  background-color: var(--selection-highlight-color);
+}
+
+/**
+ * Always hide an element with the `hidden` HTML attribute (adapted from PureCSS).
+ */
+
+[hidden] {
+  display: none !important;
 }

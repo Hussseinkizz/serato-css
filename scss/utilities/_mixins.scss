@@ -150,27 +150,27 @@
   -webkit-text-fill-color: transparent;
 }
 
-// glass-morphism generating mixin eg. background-glass-gray-500
+// glass-morphism generating mixin eg. background-gray-500--glass
 @mixin make-blur($name, $blur-color) {
-  .background-glass-#{$name} {
+  :where(.bg-#{$name}--glass) {
     background: rgba($blur-color, 0.2);
     backdrop-filter: blur(40px);
     border: 2px solid transparent;
     background-clip: padding-box;
   }
-  .background-glass-#{$name}--hoverable {
+  :where(.bg-#{$name}--glass--hoverable) {
     background: rgba($blur-color, 0.2);
     backdrop-filter: blur(40px);
     border: 2px solid transparent;
     background-clip: padding-box;
+    transition: $transition-smooth;
 
     &:hover {
-      transition: $transition-smooth;
       background: rgba($blur-color, 0.35);
     }
   }
-  // glass effect for text eg. color-glass-black--hoverable
-  .color-glass-#{$name} {
+  // glass effect for text eg. color-black--hoverable
+  :where(.color-#{$name}--glass) {
     color: transparent;
     user-select: none;
     background-clip: text;
@@ -179,7 +179,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .color-glass-#{$name}--hoverable {
+  :where(.color-#{$name}--glass--hoverable) {
     color: transparent;
     user-select: none;
     background-clip: text;
@@ -187,9 +187,9 @@
     background: rgba($blur-color, 0.2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: $transition-smooth;
 
     &:hover {
-      transition: $transition-smooth;
       color: transparent;
       user-select: none;
       background-clip: text;
@@ -203,7 +203,7 @@
 
 // text shimmer effect //
 @mixin text-shimmer($text-bg, $text-color) {
-  padding: 0 140px 0 0 !important;
+  padding: 0 140px 0 0;
   color: rgba($text-color, 0.801);
   background-color: $text-bg;
   background: -webkit-gradient(
@@ -293,91 +293,114 @@
   }
 }
 
-@mixin polaroid {
-  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-  z-index: 0;
-  position: relative;
-
-  &:hover {
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    transform: scale(1.2);
-    z-index: 10;
-    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
-    -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
-  }
-}
-
-@mixin ghosty {
-  animation: ghosty 12s ease-in 1s;
-  -webkit-animation: ghosty 12s ease-in 1s;
-
-  @keyframes ghosty {
-    0% {
-      opacity: 0.1;
-    }
-    6% {
-      opacity: 0.2;
-    }
-    12% {
-      opacity: 0.3;
-    }
-    18% {
-      opacity: 0.4;
-    }
-    24% {
-      opacity: 0.6;
-    }
-    30% {
-      opacity: 0.7;
-    }
-    36% {
-      opacity: 0.8;
-    }
-    90% {
-      opacity: 0.9;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-}
-
-/* A mega hover state color & background color generator mixin */
-@mixin make-hoverable($name, $hoverable-color) {
+/* A mega hover state color & background color generator mixin for the in house / serato colors */
+@mixin make-hoverable-native($name, $hoverable-color) {
   // add color to element on-hover eg. color-gray-400-on-hover
-  .color-#{$name}-on-hover:hover {
-    transition: $transition-colors;
-    color: $hoverable-color !important;
+  ._color-#{$name}-on-hover:hover {
+    transition: $serato-transition;
+    color: $hoverable-color;
   }
   // add background color to element on-hover eg. background-gray-400-on-hover
-  .background-#{$name}-on-hover:hover {
-    transition: $transition-colors;
-    background-color: $hoverable-color !important;
+  ._bg-#{$name}-on-hover:hover {
+    transition: $serato-transition;
+    background-color: $hoverable-color;
   }
 
   // make a color hoverable when asigned a hoverable modifier eg. color-green--hoverable
-  .color-#{$name}--hoverable {
-    color: $hoverable-color !important;
+  ._color-#{$name}--hoverable {
+    color: $hoverable-color;
+    transition: $serato-transition;
 
     &:hover {
-      transition: $transition-colors;
-      color: color-modifier($hoverable-color) !important;
+      color: color-modifier($hoverable-color);
     }
   }
   // make a background color hoverable when asigned a hoverable modifier eg. background-green--hoverable
-  .background-#{$name}--hoverable {
-    background-color: $hoverable-color !important;
+  ._bg-#{$name}--hoverable {
+    background-color: $hoverable-color;
+    transition: $serato-transition;
 
     &:hover {
-      transition: $transition-colors;
-      background-color: color-modifier($hoverable-color) !important;
+      background-color: color-modifier($hoverable-color);
+    }
+  }
+}
+
+/* A mega hover state color & background color generator mixin for the open prop generic colors eg. grape, violet, blue etc */
+@mixin make-hoverable-generic($name, $base-color, $hoverable-color) {
+  // add color to element on-hover eg. color-gray-400-on-hover
+  :where(.color-#{$name}-on-hover):hover {
+    transition: $serato-transition;
+    color: $hoverable-color;
+  }
+  // add background color to element on-hover eg. background-gray-400-on-hover
+  :where(.bg-#{$name}-on-hover):hover {
+    transition: $serato-transition;
+    background-color: $hoverable-color;
+  }
+
+  // make a color hoverable when asigned a hoverable modifier eg. color-green--hoverable
+  :where(.color-#{$name}--hoverable) {
+    color: $base-color;
+    transition: $serato-transition;
+
+    &:hover {
+      color: $hoverable-color;
+    }
+  }
+  // make a background color hoverable when asigned a hoverable modifier eg. background-green--hoverable
+  :where(.bg-#{$name}--hoverable) {
+    background-color: $base-color;
+    transition: $serato-transition;
+
+    &:hover {
+      background-color: $hoverable-color;
+    }
+  }
+}
+
+/* A mega hover state color & background generator mixin modded for custom props*/
+@mixin make-hoverable($name, $base-shade) {
+  // make basic helpers for each shade eg. color-grape-1, bg.grape-1 etc
+  :where(.color-#{$name}-#{$base-shade}) {
+    color: var(--#{$name}-#{$base-shade}); // eg. var(--grape-1)
+  }
+  :where(.bg-#{$name}-#{$base-shade}) {
+    background-color: var(--#{$name}-#{$base-shade}); // eg. var(--grape-1)
+  }
+
+  // add color to element on-hover eg. color-gray-4-on-hover
+  :where(.color-#{$name}-#{$base-shade}-on-hover):hover {
+    transition: $serato-transition;
+    color: make-hover-shade($name, $base-shade);
+  }
+
+  // add background color to element on-hover eg. bg-gray-4-on-hover
+  :where(.bg-#{$name}-#{$base-shade}-on-hover):hover {
+    transition: $serato-transition;
+    background-color: make-hover-shade($name, $base-shade);
+  }
+
+  // make a color hoverable when asigned a hoverable modifier eg. color-green--hoverable
+  :where(.color-#{$name}-#{$base-shade}--hoverable) {
+    transition: $serato-transition;
+    color: var(--#{$name}-#{$base-shade}); // eg. var(--gray-5);
+
+    &:hover {
+      color: make-hover-shade($name, $base-shade); // eg. var(--gray-4);
+    }
+  }
+
+  // make a background color hoverable when asigned a hoverable modifier eg. bg-green--hoverable
+  :where(.bg-#{$name}-#{$base-shade}--hoverable) {
+    transition: $serato-transition;
+    background-color: var(--#{$name}-#{$base-shade}); // eg. var(--gray-5);
+
+    &:hover {
+      background-color: make-hover-shade(
+        $name,
+        $base-shade
+      ); // eg. var(--gray-4);
     }
   }
 }

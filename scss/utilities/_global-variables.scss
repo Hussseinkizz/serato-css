@@ -1,5 +1,235 @@
 // All global variables in here!
 
+// * Open Prop in house variables
+
+// * Shadows
+$shadow-1: var(--shadow-1);
+$shadow-2: var(--shadow-2);
+$shadow-3: var(--shadow-3);
+$shadow-4: var(--shadow-4);
+$shadow-5: var(--shadow-5);
+$shadow-6: var(--shadow-6);
+
+// shadows map
+$shadows: (
+  'shadow-1': $shadow-1,
+  'shadow-2': $shadow-2,
+  'shadow-3': $shadow-3,
+  'shadow-4': $shadow-4,
+  'shadow-5': $shadow-5,
+  'shadow-6': $shadow-6,
+) !default;
+
+// inner shadows
+$inner-shadow-0: var(--inner-shadow-0);
+$inner-shadow-1: var(--inner-shadow-1);
+$inner-shadow-2: var(--inner-shadow-2);
+$inner-shadow-3: var(--inner-shadow-3);
+$inner-shadow-4: var(--inner-shadow-4);
+
+// inner shadows map
+$inner-shadows: (
+  'inner-shadow-0': $inner-shadow-0,
+  'inner-shadow-1': $inner-shadow-1,
+  'inner-shadow-2': $inner-shadow-2,
+  'inner-shadow-3': $inner-shadow-3,
+  'inner-shadow-4': $inner-shadow-4,
+) !default;
+
+// * Borders
+// Border Sizes
+$border-size-1: var(--border-size-1);
+$border-size-2: var(--border-size-2);
+$border-size-3: var(--border-size-3);
+$border-size-4: var(--border-size-4);
+$border-size-5: var(--border-size-5);
+
+// border sizes map
+$border-sizes: (
+  'border-size-1': $border-size-1,
+  'border-size-2': $border-size-2,
+  'border-size-3': $border-size-3,
+  'border-size-4': $border-size-4,
+  'border-size-5': $border-size-5,
+) !default;
+
+// Border radii
+$radius-1: var(--radius-1);
+$radius-2: var(--radius-2);
+$radius-3: var(--radius-3);
+$radius-4: var(--radius-4);
+$radius-5: var(--radius-5);
+$radius-round: var(--radius-round);
+
+// border radius map
+$border-radii: (
+  'radius-1': $radius-1,
+  'radius-2': $radius-2,
+  'radius-3': $radius-3,
+  'radius-4': $radius-4,
+  'radius-5': $radius-5,
+  'radius-round': $radius-round,
+) !default;
+
+// Border radii blobs
+$radius-blob-1: var(--radius-blob-1);
+$radius-blob-2: var(--radius-blob-2);
+$radius-blob-3: var(--radius-blob-3);
+$radius-blob-4: var(--radius-blob-4);
+$radius-blob-5: var(--radius-blob-5);
+
+// border radius blobs map
+$radii-blobs: (
+  'radius-blob-1': $radius-blob-1,
+  'radius-blob-2': $radius-blob-2,
+  'radius-blob-3': $radius-blob-3,
+  'radius-blob-4': $radius-blob-4,
+  'radius-blob-5': $radius-blob-5,
+) !default;
+
+// * Z-Index
+// z-index layers
+$layer-1: var(--layer-1);
+$layer-2: var(--layer-2);
+$layer-3: var(--layer-3);
+$layer-4: var(--layer-4);
+$layer-5: var(--layer-5);
+$layer-important: var(--layer-important);
+
+// z-index layers map
+$layers: (
+  'layer-1': $layer-1,
+  'layer-2': $layer-2,
+  'layer-3': $layer-3,
+  'layer-4': $layer-4,
+  'layer-5': $layer-5,
+  'layer-important': $layer-important,
+) !default;
+
+// * Aspect Ratio
+// aspect ratios
+$ratio-square: var(--ratio-square);
+$ratio-landscape: var(--ratio-landscape);
+$ratio-portrait: var(--ratio-portrait);
+$ratio-widescreen: var(--ratio-widescreen);
+$ratio-ultrawide: var(--ratio-ultrawide);
+$ratio-golden: var(--ratio-golden);
+
+// aspect ratios map
+$ratios: (
+  'ratio-square': $ratio-square,
+  'ratio-landscape': $ratio-landscape,
+  'ratio-portrait': $ratio-portrait,
+  'ratio-widescreen': $ratio-widescreen,
+  'ratio-ultrawide': $ratio-ultrawide,
+  'ratio-golden': $ratio-golden,
+) !default;
+
+// * Typography
+// font families
+$font-sans: var(--font-sans);
+$font-serif: var(--font-serif);
+$font-mono: var(--font-mono);
+
+// font weights
+$font-weight-1: var(--font-weight-1);
+$font-weight-2: var(--font-weight-2);
+$font-weight-3: var(--font-weight-3);
+$font-weight-4: var(--font-weight-4);
+$font-weight-5: var(--font-weight-5);
+$font-weight-6: var(--font-weight-6);
+$font-weight-7: var(--font-weight-7);
+$font-weight-8: var(--font-weight-8);
+$font-weight-9: var(--font-weight-9);
+
+// font weights map
+$font-weights: (
+  'font-weight-1': $font-weight-1,
+  'font-weight-2': $font-weight-2,
+  'font-weight-3': $font-weight-3,
+  'font-weight-4': $font-weight-4,
+  'font-weight-5': $font-weight-5,
+  'font-weight-6': $font-weight-6,
+  'font-weight-7': $font-weight-7,
+  'font-weight-8': $font-weight-8,
+  'font-weight-9': $font-weight-9,
+) !default;
+
+// font letter spacings as font spacings
+$font-spacing-0: var(--font-letterspacing-0);
+$font-spacing-1: var(--font-letterspacing-1);
+$font-spacing-2: var(--font-letterspacing-2);
+$font-spacing-3: var(--font-letterspacing-3);
+$font-spacing-4: var(--font-letterspacing-4);
+$font-spacing-5: var(--font-letterspacing-5);
+$font-spacing-6: var(--font-letterspacing-6);
+$font-spacing-7: var(--font-letterspacing-7);
+
+// font spacings map
+$font-spacings: (
+  'font-spacing-0': $font-spacing-0,
+  'font-spacing-1': $font-spacing-1,
+  'font-spacing-2': $font-spacing-2,
+  'font-spacing-3': $font-spacing-3,
+  'font-spacing-4': $font-spacing-4,
+  'font-spacing-5': $font-spacing-5,
+  'font-spacing-6': $font-spacing-6,
+  'font-spacing-7': $font-spacing-7,
+) !default;
+
+// font line heights as font heights
+$font-height-00: var(--font-lineheight-00);
+$font-height-0: var(--font-lineheight-0);
+$font-height-1: var(--font-lineheight-1);
+$font-height-2: var(--font-lineheight-2);
+$font-height-3: var(--font-lineheight-3);
+$font-height-4: var(--font-lineheight-4);
+$font-height-5: var(--font-lineheight-5);
+
+// font heights map
+$font-heights: (
+  'font-height-00': $font-height-00,
+  'font-height-0': $font-height-0,
+  'font-height-1': $font-height-1,
+  'font-height-2': $font-height-2,
+  'font-height-3': $font-height-3,
+  'font-height-4': $font-height-4,
+  'font-height-5': $font-height-5,
+) !default;
+
+// font sizes
+$font-size-00: var(--font-size-00);
+$font-size-0: var(--font-size-0);
+$font-size-1: var(--font-size-1);
+$font-size-2: var(--font-size-2);
+$font-size-3: var(--font-size-3);
+$font-size-4: var(--font-size-4);
+$font-size-5: var(--font-size-5);
+$font-size-6: var(--font-size-6);
+$font-size-7: var(--font-size-7);
+$font-size-8: var(--font-size-8);
+
+// font sizes map
+$font-sizes: (
+  'font-size-00': $font-size-00,
+  'font-size-0': $font-size-0,
+  'font-size-1': $font-size-1,
+  'font-size-2': $font-size-2,
+  'font-size-3': $font-size-3,
+  'font-size-4': $font-size-4,
+  'font-size-5': $font-size-5,
+  'font-size-6': $font-size-6,
+  'font-size-7': $font-size-7,
+  'font-size-8': $font-size-8,
+) !default;
+
+// font size fluid as font fluid
+$font-fluid-0: var(--font-size-fluid-0);
+$font-fluid-1: var(--font-size-fluid-1);
+$font-fluid-2: var(--font-size-fluid-2);
+$font-fluid-3: var(--font-size-fluid-3);
+/* Color variables and gray shades are deprecated in favor of open props's color as of serato v2 */
+//Todo: remove this below!
 // import other variables defined in colors
 @use '../themes/colors/color-variables' as *;
 @use '../themes/colors/gray-shades' as *;
@@ -65,14 +295,14 @@ $height-viewport: 100vh;
 $serato-padding: 0.5rem 1rem !default;
 $simple-components-padding: 0.375rem 0.75rem !default;
 $medium-components-padding: 2rem 1rem !default;
-$component-active-color: $white !default;
+$component-active-color: var(--white);
 $component-active-bg: $primary !default;
 
 // ~~~~~~~~ Components properties ~~~~~~~~ //
 
 // border declarations...
 $border-width: 1px !default;
-$serato-border-color: $gray-200 !default;
+$serato-border-color: var(--gray-200) !default;
 $border-widths: (
   1: 1px,
   2: 2px,
@@ -97,10 +327,10 @@ $border-radius-map: (
 );
 
 // box-shadow-variables
-$serato-box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
-$box-shadow-small: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
-$box-shadow-large: 0 1rem 3rem rgba($black, 0.175) !default;
-$box-shadow-inset: inset 0 1px 2px rgba($black, 0.075) !default;
+$serato-box-shadow: 0 0.5rem 1rem rgba(var(--black), 0.15) !default;
+$box-shadow-small: 0 0.125rem 0.25rem rgba(var(--black), 0.075) !default;
+$box-shadow-large: 0 1rem 3rem rgba(var(--black), 0.175) !default;
+$box-shadow-inset: inset 0 1px 2px rgba(var(--black), 0.075) !default;
 
 // margin and padding variables
 $spacings: (margin, padding) !default;
@@ -174,10 +404,10 @@ $list-styles: (
 );
 
 // box shadows, todo: check cssscan.com box shadows!
-$box-shadow-normal: 0 0.5rem 1rem rgba($black, 0.15) !default;
-$box-shadow-small: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
-$box-shadow-large: 0 1rem 3rem rgba($black, 0.175) !default;
-$box-shadow-inset: inset 0 1px 2px rgba($black, 0.075) !default;
+$box-shadow-normal: 0 0.5rem 1rem rgba(var(--black), 0.15) !default;
+$box-shadow-small: 0 0.125rem 0.25rem rgba(var(--black), 0.075) !default;
+$box-shadow-large: 0 1rem 3rem rgba(var(--black), 0.175) !default;
+$box-shadow-inset: inset 0 1px 2px rgba(var(--black), 0.075) !default;
 
 $shadows: (
   'small': $box-shadow-small,
@@ -188,7 +418,7 @@ $shadows: (
 
 // border variables
 $serato-border-width: 1px !default;
-$serato-border-color: $gray-300 !default;
+$serato-border-color: var(--gray-300) !default;
 $border-widths: (
   1: 1px,
   2: 2px,
@@ -246,7 +476,7 @@ $font-size-5: $serato-font-size * 5 !default;
 $font-size-6: $serato-font-size * 5.5 !default;
 $small-font-size: 0.875em !default;
 $sub-sup-font-size: 0.75em !default;
-$serato-text-muted: $gray-600 !default;
+$serato-text-muted: var(--gray-600) !default;
 
 // font-size mapping
 $font-sizes: (

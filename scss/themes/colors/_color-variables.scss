@@ -1,23 +1,33 @@
 /* color variables && serato color system */
-@use 'basic-colors' as *;
-@use 'gray-shades' as *;
-@forward 'serato-colors';
-// @use 'famous-colors' as *;
 
 // serato brand colors
-$serato-primary: indigo;
-$serato-secondary: purple;
-$serato-complement: $gray-100;
+$serato-primary: var(--violet-7);
+$serato-primary-hover: var(--violet-4);
+$serato-secondary: var(--grape-7);
+$serato-secondary-hover: var(--grape-5);
+$serato-complement: var(--gray-1);
+$serato-complement-hover: var(--gray-2);
+$common-color: currentColor; // respect current preference
+$parent-color: inherit; // respect parent's preference
+$transparent-color: transparent; // respect parent's preference
 
-//theme-color-variables
 $primary: $serato-primary !default; // brand primary color
 $secondary: $serato-secondary !default; // brand secondary color
-$success: $green !default;
-$info: $cyan !default;
-$warning: $yellow !default;
-$danger: $red !default;
-$light: $gray-200 !default;
-$dark: $gray-900 !default;
+$success: var(--green-7);
+$info: var(--cyan-7);
+$warning: var(--yellow-7);
+$danger: var(--red-7);
+$light: var(--gray-2);
+$dark: var(--gray-8);
+
+$primary-hover: $serato-primary-hover !default;
+$secondary-hover: $serato-secondary-hover !default;
+$success-hover: var(--green-5);
+$info-hover: var(--cyan-5);
+$warning-hover: var(--yellow-5);
+$danger-hover: var(--red-5);
+$light-hover: var(--gray-3);
+$dark-hover: var(--gray-7);
 
 //theme-colors-map
 $theme-colors: (
@@ -30,21 +40,32 @@ $theme-colors: (
   'dark': $dark,
 ) !default;
 
+//theme-colors-hover-map
+$theme-colors-hover: (
+  'primary': $primary-hover,
+  'secondary': $secondary-hover,
+  'success': $success-hover,
+  'info': $info-hover,
+  'warning': $warning-hover,
+  'danger': $danger-hover,
+  'dark': $dark-hover,
+) !default;
+
 //! these need revision!
 // These are for internal use only!
 // other color classes should have !important flag to override these easily!
 
 // for text on light backgrounds
-$serato-text-color: $gray-900;
+$serato-text-color: var(--gray-9);
 
 // for text on dark backgrounds
-$serato-text-color--dark: $gray-100;
+$serato-text-color--dark: var(--gray-9);
 
 // for basic styled components
 $serato-component-background--light: $serato-complement;
 
 // for text of basic styled components
-$serato-component-color--light: $gray-700;
+$serato-component-color--light: var(--gray-7);
 
 // for backgrounds
 $serato-primary-color: $serato-primary;
@@ -54,7 +75,3 @@ $serato-secondary-color: $serato-secondary;
 
 // for shades and shadows
 $serato-complement-color: $serato-complement;
-
-$common-color: currentColor; // respect current preference
-$parent-color: inherit; // respect parent's preference
-$transparent-color: transparent; // respect parent's preference

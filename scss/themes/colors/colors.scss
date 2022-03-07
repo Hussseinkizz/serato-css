@@ -1,91 +1,97 @@
 @use '../../utilities/global-variables' as *;
 @use 'color-variables' as *;
-@use 'gray-shades' as *;
-@use 'basic-colors' as *;
-@use './../colors/_famous-colors.scss' as *;
+@use 'openprop-colors' as *;
+@use './_serato-colors' as *;
+@use './famous-colors' as *;
 @use 'gradients' as *;
 @use '../../utilities/mixins' as *;
 
-/* ~~~~~~~~
-Generate color classes & respective hoverable classes
-~~~~~~~ */
+/*
+* Generate color classes & respective hoverable classes
+*/
 
 // basic flagging colors eg. success, info, danger etc
 @each $name, $color in $theme-colors {
-  .color-#{$name} {
+  :where(.color-#{$name}) {
     color: $color;
   }
-  .background-#{$name} {
+  :where(.bg-#{$name}) {
     background: $color;
   }
+
   // magic mixin to make hover state variants!
-  @include make-hoverable($name, $color);
+  @each $hover-name, $hover-color in $theme-colors-hover {
+    @include make-hoverable-generic($hover-name, $color, $hover-color);
+  }
   // another magic to make glass-morphic variants
   @include make-blur($name, $color);
 }
 
-// generate gray shades classes eg. gray-100
+// generate nuetral color classes eg. color-white
+
 .color-white {
-  color: $white !important;
+  color: $white;
 }
-.background-white {
-  background: $white !important;
+
+.bg-white {
+  background: $white;
 }
+
 .color-black {
-  color: $black !important;
-}
-.background-black {
-  background: $black !important;
-}
-.color-gray {
-  color: $gray-500 !important;
-}
-.background-gray {
-  background: $gray-500 !important;
-}
-@each $name, $gray-shade in $grays {
-  .color-#{$name} {
-    color: $gray-shade;
-  }
-  .background-#{$name} {
-    background: $gray-shade;
-  }
-  @include make-hoverable($name, $gray-shade);
+  color: $black;
 }
 
-/* generate other color shades from basic colors eg. cyan-100 */
-@each $shades-map, $value in $all-basic-color-shades-map {
-  @each $name, $color-shade in $value {
-    .color-#{$name} {
-      color: $color-shade;
+.bg-black {
+  background: $black;
+}
+
+/* Generate amazing color classes for all open prop colors! */
+@each $colorName, $color in $openprop-colors {
+  $total-shades-per-color: 9;
+
+  :where(.color-#{$colorName}) {
+    color: $color;
+  }
+  :where(.bg-#{$colorName}) {
+    background: $color;
+  }
+
+  // magic mixin to make hover state variants!
+  @each $hover-name, $hover-color in $openprop-colors-hover {
+    // Make a hover shades for the generic colors eg. color-blue's hover
+    @if ($colorName == $hover-name) {
+      @include make-hoverable-generic($hover-name, $color, $hover-color);
     }
-    .background-#{$name} {
-      background: $color-shade;
-    }
-    @include make-hoverable($name, $color-shade);
+
+    // another magic to make glass-morphic variants
+    @include make-blur($colorName, $color);
+  }
+  // Generate color shades eg. grape-1, gray-0, etc
+  @for $i from 0 through $total-shades-per-color {
+    @include make-hoverable($colorName, $i);
   }
 }
 
-// generate other serato colors eg. hibiscus
+// generate other serato colors eg. _color-hibiscus
 @each $name, $color in $serato-colors {
-  .color-#{$name} {
+  ._color-#{$name} {
     color: $color;
   }
-  .background-#{$name} {
+  ._bg-#{$name} {
     background: $color;
   }
-  @include make-hoverable($name, $color);
+  @include make-hoverable-native($name, $color);
 }
 
-// generate serato brands colors eg. twitter-blue
+// generate serato brands colors eg. _color-twitter-blue
 @each $name, $color in $famous-brand-colors {
-  .color-#{$name} {
+  ._color-#{$name} {
     color: $color;
   }
-  .background-#{$name} {
+  ._bg-#{$name} {
     background: $color;
   }
-  @include make-hoverable($name, $color);
+  @include make-hoverable-native($name, $color);
 }
 
 // ~~~~~~~~ serato theming classes ~~~~~~~~ //
@@ -93,19 +99,19 @@ Generate color classes & respective hoverable classes
 
 // default color theme
 .serato-theme {
-  color: lighten($serato-primary-color, 90%);
+  // color: lighten($serato-primary-color, 90%);
   background-color: $serato-primary-color;
 }
 
 // default color theme for hoverable coponents eg. buttons
 .serato-theme--hoverable {
-  color: lighten($serato-primary-color, 90%);
+  // color: lighten($serato-primary-color, 90%);
   background-color: $serato-primary-color;
   box-shadow: $box-shadow-small;
 
   &:hover {
     transition: $serato-transition;
-    background-color: lighten($serato-primary-color, 10%);
+    // background-color: lighten($serato-primary-color, 10%);
   }
 }
 

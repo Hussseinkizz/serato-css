@@ -1,0 +1,104 @@
+// Todo: Make Shades Of Serato Theme Mode
+
+// * Serato Themes And Default Open Props Themes
+
+// No Preference (Light)
+:where(html) {
+  --brand-light: var(--orange-6);
+
+  --text1-light: var(--gray-8);
+  --text2-light: var(--gray-7);
+
+  --surface1-light: var(--gray-2);
+  --surface2-light: var(--gray-0);
+  --surface3-light: var(--gray-1);
+  --surface4-light: var(--gray-3);
+}
+:root {
+  --brand: var(--brand-light);
+
+  --text1: var(--text1-light);
+  --text2: var(--text2-light);
+
+  --surface1: var(--surface1-light);
+  --surface2: var(--surface2-light);
+  --surface3: var(--surface3-light);
+  --surface4: var(--surface4-light);
+}
+
+// Prefers Dark
+:where(html) {
+  --brand-dark: var(--orange-3);
+
+  --text1-dark: var(--gray-1);
+  --text2-dark: var(--gray-3);
+
+  --surface1-dark: var(--gray-9);
+  --surface2-dark: var(--gray-8);
+  --surface3-dark: var(--gray-7);
+  --surface4-dark: var(--gray-6);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: var(--brand-dark);
+
+    --text1: var(--text1-dark);
+    --text2: var(--text2-dark);
+
+    --surface1: var(--surface1-dark);
+    --surface2: var(--surface2-dark);
+    --surface3: var(--surface3-dark);
+    --surface4: var(--surface4-dark);
+  }
+}
+
+// Prefers Dim
+:where(html) {
+  --brand-dim: var(--orange-4);
+
+  --text1-dim: var(--gray-3);
+  --text2-dim: var(--gray-4);
+
+  --surface1-dim: var(--gray-8);
+  --surface2-dim: var(--gray-7);
+  --surface3-dim: var(--gray-6);
+  --surface4-dim: var(--gray-5);
+}
+@media (prefers-contrast: less) {
+  :root {
+    --brand: var(--brand-dim);
+
+    --text1: var(--text1-dim);
+    --text2: var(--text2-dim);
+
+    --surface1: var(--surface1-dim);
+    --surface2: var(--surface2-dim);
+    --surface3: var(--surface3-dim);
+    --surface4: var(--surface4-dim);
+  }
+}
+
+// Prefers Grape
+:where(html) {
+  --brand-grape: var(--grape-5);
+
+  --text1-grape: var(--grape-9);
+  --text2-grape: var(--grape-7);
+
+  --surface1-grape: var(--grape-0);
+  --surface2-grape: var(--grape-1);
+  --surface3-grape: var(--grape-2);
+  --surface4-grape: var(--grape-3);
+}
+
+[color-scheme='grape'] {
+  --brand: var(--brand-grape);
+
+  --text1: var(--text1-grape);
+  --text2: var(--text2-grape);
+
+  --surface1: var(--surface1-grape);
+  --surface2: var(--surface2-grape);
+  --surface3: var(--surface3-grape);
+  --surface4: var(--surface4-grape);
+}

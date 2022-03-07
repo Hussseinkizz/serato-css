@@ -34,8 +34,10 @@ $curlHeight: 25px !default;
 
 // Curl colors
 $revealAreaColor: $serato-complement !default; // reveal area behind the curl
-$curlLineColor: $gray-300 !default; // crease line
-$curlTransitionColor: $gray-200 !default; // color transitioning from crease line to final color
+$curlLineColor: var(--gray-300) !default; // crease line
+$curlTransitionColor: var(
+  --gray-200
+) !default; // color transitioning from crease line to final color
 $curlLastColor: $serato-complement !default; // final color of the back of the curl
 
 // Browser Prefixes - Which CSS prefixes should be used?

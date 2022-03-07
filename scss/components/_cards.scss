@@ -4,6 +4,18 @@
 // @use '../animations/animations.scss' as *;
 
 .card {
-  @extend .serato-common-design;
   width: clamp(250px, 300px, 350px);
+  box-shadow: $shadow-1;
+  transition: $serato-transition;
+  text-align: center;
+  padding-inline: var(--size-4);
+  padding-block: var(--size-3);
+  overflow: auto;
+  border-radius: var(--radius-conditional-2);
+  border: var(--border-size-1) solid var(--surface-3);
+  background: var(--surface-2);
+
+  &:hover {
+    box-shadow: $shadow-3;
+  }
 }

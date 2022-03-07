@@ -1,7 +1,5 @@
 /*! sanitize.css (font family stuff only) v13.0.0 | CC0-1.0 License | https://github.com/csstools/sanitize.css */
 @use 'font-definitions' as *; // system-ui & ui-monospace font definitions
-@use '../utilities/global-variables' as *;
-@use '../themes/colors/color-variables' as *;
 
 /**
  * Serato Typography
@@ -37,58 +35,6 @@ pre {
     /* Windows emoji */ 'Segoe UI Symbol', /* Linux emoji */ 'Noto Color Emoji';
 }
 
-html,
-body {
-  font-weight: $serato-font-weight;
-}
-
-html {
-  font-size: $font-size-html;
-}
-
-body {
-  color: $serato-text-color;
-  font-size: $font-size-body;
-  line-height: $line-height-normal;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeSpeed;
-}
-
-h1,
-h2,
-h3 {
-  font-family: $serato-header-font;
-  font-weight: map-get($font-weights, bold);
-}
-
-html,
-button,
-input,
-select,
-textarea {
-  color: $serato-text-color;
-}
-
-a {
-  color: $serato-text-color;
-  text-decoration: none;
-
-  &:visited {
-    color: $serato-text-color;
-    text-decoration: none;
-    outline: 0;
-  }
-
-  &:focus,
-  &:active,
-  &:hover {
-    color: $serato-text-color;
-    text-decoration: underline;
-    outline: 0;
-  }
-}
-
 i,
 em {
   font-style: italic;
@@ -96,7 +42,7 @@ em {
 
 b,
 strong {
-  font-weight: map-get($font-weights, bold);
+  font-weight: bold;
 }
 
 input {
@@ -113,3 +59,59 @@ input {
 .br {
   display: block;
 }
+
+/* These below are deprecated as of version 2
+ we are leaving that to open props's normalize and other utility helpers!
+ */
+
+// html,
+// body {
+//   font-weight: $serato-font-weight;
+// }
+
+// html {
+//   font-size: $font-size-html;
+// }
+
+// body {
+//   color: $serato-text-color;
+//   font-size: $font-size-body;
+//   line-height: $line-height-normal;
+//   -moz-osx-font-smoothing: grayscale;
+//   -webkit-font-smoothing: antialiased;
+//   text-rendering: optimizeSpeed;
+// }
+
+// h1,
+// h2,
+// h3 {
+//   font-family: $serato-header-font;
+//   font-weight: map-get($font-weights, bold);
+// }
+
+// html,
+// button,
+// input,
+// select,
+// textarea {
+//   color: $serato-text-color;
+// }
+
+// a {
+//   color: $serato-text-color;
+//   text-decoration: none;
+
+//   &:visited {
+//     color: $serato-text-color;
+//     text-decoration: none;
+//     outline: 0;
+//   }
+
+//   &:focus,
+//   &:active,
+//   &:hover {
+//     color: $serato-text-color;
+//     text-decoration: underline;
+//     outline: 0;
+//   }
+// }

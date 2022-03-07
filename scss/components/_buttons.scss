@@ -3,24 +3,53 @@
 @use '../themes/colors/colors.scss' as *;
 @use '../animations/animations.scss' as *;
 
-.button {
+:where(.button) {
   display: inline-block;
   padding: $simple-components-padding;
   font-weight: map-get($font-weights, normal);
   font-size: $serato-font-size;
   border-radius: $serato-border-radius;
   text-transform: capitalize;
-  box-shadow: $box-shadow-small;
+  box-shadow: $shadow-1;
   background-color: $light;
-  color: $serato-text-color;
+  color: var(--gray-7);
+  transition: $serato-transition;
 
   &:hover {
-    transition: $serato-transition;
-    background-color: darken($light, 10%);
+    background-color: $light-hover;
   }
 
   @if $enable-native-animations {
     @include animation-clickin;
+  }
+}
+
+@each $name, $color in $theme-colors {
+  :where(.button-#{$name}) {
+    display: inline-block;
+    padding: $simple-components-padding;
+    font-weight: map-get($font-weights, normal);
+    font-size: $serato-font-size;
+    border-radius: $serato-border-radius;
+    text-transform: capitalize;
+    box-shadow: $shadow-1;
+
+    transition: $serato-transition;
+    background-color: $color;
+    color: var(--gray-0);
+
+    @if $enable-native-animations {
+      @include animation-clickin;
+    }
+
+    @each $hover-name, $hover-color in $theme-colors-hover {
+      @if ($name == $hover-name) {
+        &:hover {
+          color: var(--gray-1);
+          background-color: $hover-color;
+        }
+      }
+    }
   }
 }
 
@@ -34,33 +63,20 @@
   border-radius: $border-radius-circle;
   font-size: $font-size-2;
   box-shadow: $box-shadow-small;
-  background-color: $light;
+  // background-color: $light;
   color: $serato-text-color;
 
-  &:hover {
-    transition: $serato-transition;
-    color: darken($light, 10%);
-  }
+  // &:hover {
+  //   transition: $serato-transition;
+  //   background-color: $light-hover;
+  // }
 
   @if $enable-native-animations {
     @include animation-clickin;
   }
 }
 // for icons acting as buttons without background
-.iconic-button--no-background {
-  @extend .iconic-button;
-  background: $transparent-color;
-}
-
-@each $name, $color in $theme-colors {
-  .button-#{$name} {
-    @extend .button;
-    background-color: $color;
-    color: lighten($color, 90%);
-
-    &:hover {
-      color: lighten($color, 90%);
-      background-color: lighten($color, 10%);
-    }
-  }
-}
+// .iconic-button--no-background {
+//   @extend .iconic-button;
+//   background: $transparent-color;
+// }
