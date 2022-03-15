@@ -11,12 +11,12 @@
   border-radius: $serato-border-radius;
   text-transform: capitalize;
   box-shadow: $shadow-1;
-  background-color: $light;
-  color: var(--gray-7);
+  color: var(--text-1);
+  background-color: var(--surface-3);
   transition: $serato-transition;
 
   &:hover {
-    background-color: $light-hover;
+    background-color: var(--surface-4);
   }
 
   @if $enable-native-animations {
@@ -50,6 +50,24 @@
         }
       }
     }
+  }
+}
+
+// fix dark button for responsive light or dark mode theme
+.button-light {
+  color: var(--text-1);
+  background-color: var(--surface-3);
+
+  &:hover {
+    background-color: var(--surface-4);
+  }
+}
+.button-dark {
+  color: var(--text1-dark);
+  background-color: var(--surface1-dark);
+
+  &:hover {
+    background-color: var(--surface3-dark);
   }
 }
 

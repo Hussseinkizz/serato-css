@@ -228,129 +228,204 @@ $font-fluid-0: var(--font-size-fluid-0);
 $font-fluid-1: var(--font-size-fluid-1);
 $font-fluid-2: var(--font-size-fluid-2);
 $font-fluid-3: var(--font-size-fluid-3);
-/* Color variables and gray shades are deprecated in favor of open props's color as of serato v2 */
-//Todo: remove this below!
-// import other variables defined in colors
-@use '../themes/colors/color-variables' as *;
-@use '../themes/colors/gray-shades' as *;
 
-// ~~~~~~~~~~~~ config options ~~~~~~~~~~~ //
+// * Sizes
+// relative sizes
+$size-000: var(--size-000);
+$size-00: var(--size-00);
+$size-1: var(--size-1);
+$size-2: var(--size-2);
+$size-3: var(--size-3);
+$size-4: var(--size-4);
+$size-5: var(--size-5);
+$size-6: var(--size-6);
+$size-7: var(--size-7);
+$size-8: var(--size-8);
+$size-9: var(--size-9);
+$size-10: var(--size-10);
+$size-11: var(--size-11);
+$size-12: var(--size-12);
+$size-13: var(--size-13);
+$size-14: var(--size-14);
+$size-15: var(--size-15);
 
-// Allow Native built in animations
-$enable-native-animations: true !default;
-
-// Enable or Disable hvr-css Animations
-$hvr-animations-disabled: false !default;
-
-// Enable or Disable font awesome Animations
-$awesome-animations-disabled: false !default;
-
-// ~~~ spacing, layout & responsiveness ~~ //
-
-// gap variables & map
-$gap-0: 0;
-$gap-x: 0.25rem;
-$gap-1: 0.5rem;
-$gap-2: 1.5rem;
-$gap-3: 2rem;
-$gap-4: 2.5rem;
-$gap-5: 3rem;
-$gap-6: 4rem;
-
-$gap-values: (
-  '0': $gap-0,
-  'x': $gap-x,
-  '1': $gap-1,
-  '2': $gap-2,
-  '3': $gap-3,
-  '4': $gap-4,
-  '5': $gap-5,
-  '6': $gap-6,
+// sizes map
+$sizes: (
+  'size-000': $size-000,
+  'size-00': $size-00,
+  'size-1': $size-1,
+  'size-2': $size-2,
+  'size-3': $size-3,
+  'size-4': $size-4,
+  'size-5': $size-5,
+  'size-6': $size-6,
+  'size-7': $size-7,
+  'size-8': $size-8,
+  'size-9': $size-9,
+  'size-10': $size-10,
+  'size-11': $size-11,
+  'size-12': $size-12,
+  'size-13': $size-13,
+  'size-14': $size-14,
+  'size-15': $size-15,
 ) !default;
 
-// total columns in a single row
-$total-columns: 12;
-$serato-directions: (top, right, bottom, left) !default;
+// fluid sizes
+$size-fluid-1: var(--size-fluid-1);
+$size-fluid-2: var(--size-fluid-2);
+$size-fluid-3: var(--size-fluid-3);
+$size-fluid-4: var(--size-fluid-4);
+$size-fluid-5: var(--size-fluid-5);
+$size-fluid-6: var(--size-fluid-6);
+$size-fluid-7: var(--size-fluid-7);
+$size-fluid-8: var(--size-fluid-8);
+$size-fluid-9: var(--size-fluid-9);
+$size-fluid-10: var(--size-fluid-10);
 
-// width & height measures
-$width-auto: auto;
-$width-none: 0;
-$width-small: 15%;
-$width-normal: 25%;
-$width-medium: 50%;
-$width-full: 100%;
-$width-content: fit-content;
-$width-viewport: 100vw;
-
-$height-auto: auto;
-$height-none: 0;
-$height-small: 15%;
-$height-normal: 25%;
-$height-medium: 50%;
-$height-full: 100%;
-$height-content: fit-content;
-$height-viewport: 100vh;
-
-// default gutter padding on elements eg grid
-$serato-padding: 0.5rem 1rem !default;
-$simple-components-padding: 0.375rem 0.75rem !default;
-$medium-components-padding: 2rem 1rem !default;
-$component-active-color: var(--white);
-$component-active-bg: $primary !default;
-
-// ~~~~~~~~ Components properties ~~~~~~~~ //
-
-// border declarations...
-$border-width: 1px !default;
-$serato-border-color: var(--gray-200) !default;
-$border-widths: (
-  1: 1px,
-  2: 2px,
-  3: 3px,
-  4: 4px,
-  5: 5px,
+// fluid sizes map
+$sizes-fluid: (
+  'size-fluid-1': $size-fluid-1,
+  'size-fluid-2': $size-fluid-2,
+  'size-fluid-3': $size-fluid-3,
+  'size-fluid-4': $size-fluid-4,
+  'size-fluid-5': $size-fluid-5,
+  'size-fluid-6': $size-fluid-6,
+  'size-fluid-7': $size-fluid-7,
+  'size-fluid-8': $size-fluid-8,
+  'size-fluid-9': $size-fluid-9,
+  'size-fluid-10': $size-fluid-10,
 ) !default;
 
-// border-radius-variables
-$serato-border-radius: 0.25rem !default;
-$border-radius-small: 0.2rem !default;
-$border-radius-large: 0.3rem !default;
-$border-radius-round: 50rem !default;
-$border-radius-circle: 50% !default;
+// content sizes
+$size-content-1: var(--size-content-1);
+$size-content-2: var(--size-content-2);
+$size-content-3: var(--size-content-3);
 
-$border-radius-map: (
-  'small': $border-radius-small,
-  'normal': $serato-border-radius,
-  'large': $border-radius-large,
-  'round': $border-radius-round,
-  'circle': $border-radius-circle,
-);
+// content sizes map
+$sizes-content: (
+  'size-content-1': $size-content-1,
+  'size-content-2': $size-content-2,
+  'size-content-3': $size-content-3,
+) !default;
 
-// box-shadow-variables
-$serato-box-shadow: 0 0.5rem 1rem rgba(var(--black), 0.15) !default;
-$box-shadow-small: 0 0.125rem 0.25rem rgba(var(--black), 0.075) !default;
-$box-shadow-large: 0 1rem 3rem rgba(var(--black), 0.175) !default;
-$box-shadow-inset: inset 0 1px 2px rgba(var(--black), 0.075) !default;
+// header sizes
+$size-header-1: var(--size-header-1);
+$size-header-2: var(--size-header-2);
+$size-header-3: var(--size-header-3);
 
-// margin and padding variables
-$spacings: (margin, padding) !default;
-$spacing-directions: (top, right, bottom, left) !default;
-$responsive-spacing-directions: (left, right) !default;
-$spacing-horizontal: 'x' !default;
-$spacing-vertical: 'y' !default;
-$spacing-values: (
-  '0': 0,
-  '1': 0.25rem,
-  '2': 0.5rem,
-  '3': 0.75rem,
-  '4': 1rem,
-  '5': 1.5rem,
-  '6': 3rem,
-  '7': 4rem,
-  '8': 5rem,
-  '9': 6rem,
+// header sizes map
+$sizes-content: (
+  'size-header-1': $size-header-1,
+  'size-header-2': $size-header-2,
+  'size-header-3': $size-header-3,
+) !default;
+
+// * Animations
+// indeterminate state animations
+$animation-spin: var(--animation-spin);
+$animation-ping: var(--animation-ping);
+$animation-blink: var(--animation-blink);
+$animation-float: var(--animation-float);
+$animation-bounce: var(--animation-bounce);
+$animation-pulse: var(--animation-pulse);
+
+// indeterminate state animations map
+$animations: (
+  'animation-spin': $animation-spin,
+  'animation-ping': $animation-ping,
+  'animation-blink': $animation-blink,
+  'animation-float': $animation-float,
+  'animation-bounce': $animation-bounce,
+  'animation-pulse': $animation-pulse,
+) !default;
+
+// # attention grabber animations
+// We won't do maps for these, we will do their helper classes manually without sass auto generation as the case with animations.
+$animation-fade-in: var(--animation-fade-in);
+$animation-fade-out: var(--animation-fade-out);
+
+// shake animations
+$animation-shake-x: var(--animation-shake-x);
+$animation-shake-y: var(--animation-shake-y);
+
+// exit animations
+$animation-slide-out-up: var(--animation-slide-out-up);
+$animation-slide-out-down: var(--animation-slide-out-down);
+$animation-slide-out-left: var(--animation-slide-out-left);
+$animation-slide-out-right: var(--animation-slide-out-right);
+
+// entrace animations
+$animation-slide-in-up: var(--animation-slide-in-up);
+$animation-slide-in-down: var(--animation-slide-in-down);
+$animation-slide-in-left: var(--animation-slide-in-left);
+$animation-slide-in-right: var(--animation-slide-in-right);
+
+// * Easings
+// Since all easings are from 1 to 5, we will just loop through 5 for auto generation without making the maps for each ease group.
+
+// ease
+$ease-1: var(--ease-1);
+$ease-2: var(--ease-2);
+$ease-3: var(--ease-3);
+$ease-4: var(--ease-4);
+$ease-5: var(--ease-5);
+
+// ease ins
+$ease-in-1: var(--ease-in-1);
+$ease-in-2: var(--ease-in-2);
+$ease-in-3: var(--ease-in-3);
+$ease-in-4: var(--ease-in-4);
+$ease-in-5: var(--ease-in-5);
+
+// ease outs
+$ease-out-1: var(--ease-out-1);
+$ease-out-2: var(--ease-out-2);
+$ease-out-3: var(--ease-out-3);
+$ease-out-4: var(--ease-out-4);
+$ease-out-5: var(--ease-out-5);
+
+// ease in outs
+$ease-in-out-1: var(--ease-in-out-1);
+$ease-in-out-2: var(--ease-in-out-2);
+$ease-in-out-3: var(--ease-in-out-3);
+$ease-in-out-4: var(--ease-in-out-4);
+$ease-in-out-5: var(--ease-in-out-5);
+
+// ease elastics
+$ease-elastic-1: var(--ease-elastic-1);
+$ease-elastic-2: var(--ease-elastic-2);
+$ease-elastic-3: var(--ease-elastic-3);
+$ease-elastic-4: var(--ease-elastic-4);
+$ease-elastic-5: var(--ease-elastic-5);
+
+// ease squishies
+$ease-squish-1: var(--ease-squish-1);
+$ease-squish-2: var(--ease-squish-2);
+$ease-squish-3: var(--ease-squish-3);
+$ease-squish-4: var(--ease-squish-4);
+$ease-squish-5: var(--ease-squish-5);
+
+// ease steps
+$ease-step-1: var(--ease-step-1);
+$ease-step-2: var(--ease-step-2);
+$ease-step-3: var(--ease-step-3);
+$ease-step-4: var(--ease-step-4);
+$ease-step-5: var(--ease-step-5);
+
+/* custom serato variables */
+// * stuff that is still missing in open props, perhaps!
+
+// list styles
+$list-styles: (
   'auto': auto,
-) !default;
+  'none': none,
+  'circle': circle,
+  'square': square,
+  'disc': disc,
+  'decimal': decimal,
+  'disclosure-open': disclosure-open,
+  'disclosure-closed': disclosure-closed,
+);
 
 // responsive spacings -- only for the horizontal (x) axis eg. width not height, for height use the default spacings!
 $responsive-spacing-values: (
@@ -372,136 +447,3 @@ $opacities: (
   'medium': $opacity-medium,
   'normal': $opacity-normal,
 ) !default;
-
-// transitions
-$serato-transition: all 0.2s ease-in-out !default;
-$transition-smooth: all 0.3s ease !default;
-$transition-colors: color 0.2s ease-in-out !default;
-$transition-linear: all 0.2s linear !default;
-$transition-opacity: opacity 0.15s linear !default;
-$transition-height: height 0.35s ease !default;
-$transition-width: width 0.35s ease !default;
-
-// aspect-ratio declarations...
-$aspect-ratios: (
-  'auto': auto,
-  '1x1': 100%,
-  '4x3': calc(3 / 4 * 100%),
-  '16x9': calc(9 / 16 * 100%),
-  '21x9': calc(9 / 21 * 100%),
-) !default;
-
-// list styles
-$list-styles: (
-  'auto': auto,
-  'none': none,
-  'circle': circle,
-  'square': square,
-  'disc': disc,
-  'decimal': decimal,
-  'disclosure-open': disclosure-open,
-  'disclosure-closed': disclosure-closed,
-);
-
-// box shadows, todo: check cssscan.com box shadows!
-$box-shadow-normal: 0 0.5rem 1rem rgba(var(--black), 0.15) !default;
-$box-shadow-small: 0 0.125rem 0.25rem rgba(var(--black), 0.075) !default;
-$box-shadow-large: 0 1rem 3rem rgba(var(--black), 0.175) !default;
-$box-shadow-inset: inset 0 1px 2px rgba(var(--black), 0.075) !default;
-
-$shadows: (
-  'small': $box-shadow-small,
-  'normal': $box-shadow-normal,
-  'large': $box-shadow-large,
-  'inset': $box-shadow-inset,
-) !default;
-
-// border variables
-$serato-border-width: 1px !default;
-$serato-border-color: var(--gray-300) !default;
-$border-widths: (
-  1: 1px,
-  2: 2px,
-  3: 3px,
-  4: 4px,
-  5: 5px,
-) !default;
-
-// ~~~~~~~~~~~~~~ Typography ~~~~~~~~~~~~~ //
-
-// we use rem unit font scaling
-$font-size-root: null !default;
-$font-size-html: 100% !default; // for using rem units easily!
-$font-size-body: 1rem !default; // rem unit scale, browser default, typically `16px`
-$serato-font-size: $font-size-body;
-$font-size-small: $serato-font-size * 0.875 !default;
-$font-size-large: $serato-font-size * 1.25 !default;
-
-// line height declarations...
-$line-height-normal: 1.3 !default;
-$line-height-small: 1.25 !default;
-$line-height-large: 2 !default;
-
-// font weights variables
-$font-weights: (
-  'thin': 100,
-  'lighter': 200,
-  'light': 300,
-  'normal': 400,
-  'medium': 500,
-  'semibold': 600,
-  'bold': 700,
-  'bolder': 800,
-  'extra-bold': 900,
-) !default;
-$serato-font-weight: map-get($font-weights, normal) !default;
-
-// sizes
-$size-1: 0.5rem !default;
-$size-2: 0.75rem !default;
-$size-3: 1rem !default;
-$size-4: 1.25rem !default;
-$size-5: 1.5rem !default;
-$size-6: 2rem !default;
-$size-7: 2.5rem !default;
-$size-8: 3rem !default;
-$size-9: 3.5rem !default;
-
-// font-size declarations
-$font-size-1: $serato-font-size !default;
-$font-size-2: $serato-font-size * 2.25 !default;
-$font-size-3: $serato-font-size * 3.5 !default;
-$font-size-4: $serato-font-size * 4.75 !default;
-$font-size-5: $serato-font-size * 5 !default;
-$font-size-6: $serato-font-size * 5.5 !default;
-$small-font-size: 0.875em !default;
-$sub-sup-font-size: 0.75em !default;
-$serato-text-muted: var(--gray-600) !default;
-
-// font-size mapping
-$font-sizes: (
-  1: $font-size-1,
-  2: $font-size-2,
-  3: $font-size-3,
-  4: $font-size-4,
-  5: $font-size-5,
-  6: $font-size-6,
-) !default;
-
-// display-headings
-$display-font-sizes: (
-  1: 5rem,
-  2: 4.5rem,
-  3: 4rem,
-  4: 3.5rem,
-  5: 3rem,
-  6: 2.5rem,
-) !default;
-
-// font family declarations...
-$serato-header-font: Arial, Helvetica, sans-serif;
-$font-family-sans-serif: system-ui, -apple-system, 'Segoe UI', Roboto,
-  'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
-  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
-$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-  'Liberation Mono', 'Courier New', monospace !default;

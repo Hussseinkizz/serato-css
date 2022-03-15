@@ -40,5 +40,18 @@
 - Note: We still need to look into conditional props and also implement generators for all the added open prop variables.
 - Next: Sizes, reading content size and add the remaining open prop variables
 
+## [1.1.2] - Serato Version 2 - New Melody, 2022-03-12
+
+- Todo: Fix dark button colors in dark mode.
+- Theming: Started to make theme responsive components such as light / dark buttons. Will just need some more touchs offs.
+
+## [1.1.3] - Serato Version 2 - New Melody, 2022-03-14
+
+- Todo: Fix dark button colors in dark mode.
+- CSS: Added animations, all sizes variables and all easings.
+- CSS: completed adding in house variables for all open prop variables.
+- Note: Media Queries need some further inspection and perhaps some setup to work i.e the post css plugin.
+- Next: Start generating helper utility classes for all open prop variables.
+
 <!-- Todo: Fix custom scrollbar for firefox, eg. add block padding! -->
 
