@@ -1,12 +1,12 @@
-@use '../../utilities/global-variables' as *;
+// @use '../../utilities/global-variables' as *;
 
 // Compile with or without classes
 $includeClasses: true !default;
 
-// turn this all plugin on or off based on global preference!
-@if $awesome-animations-disabled {
-  $includeClasses: false;
-}
+// // turn this all plugin on or off based on global preference!
+// @if $awesome-animations-disabled {
+//   $includeClasses: false;
+// }
 
 // animation speed coefficients!
 // $faa-speed-coeff-fast: 0.5;

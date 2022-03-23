@@ -297,19 +297,19 @@
 @mixin make-hoverable-native($name, $hoverable-color) {
   // add color to element on-hover eg. color-gray-400-on-hover
   ._color-#{$name}-on-hover:hover {
-    transition: $serato-transition;
+    transition: $default-transition;
     color: $hoverable-color;
   }
   // add background color to element on-hover eg. background-gray-400-on-hover
   ._bg-#{$name}-on-hover:hover {
-    transition: $serato-transition;
+    transition: $default-transition;
     background-color: $hoverable-color;
   }
 
   // make a color hoverable when asigned a hoverable modifier eg. color-green--hoverable
   ._color-#{$name}--hoverable {
     color: $hoverable-color;
-    transition: $serato-transition;
+    transition: $default-transition;
 
     &:hover {
       color: color-modifier($hoverable-color);
@@ -318,7 +318,7 @@
   // make a background color hoverable when asigned a hoverable modifier eg. background-green--hoverable
   ._bg-#{$name}--hoverable {
     background-color: $hoverable-color;
-    transition: $serato-transition;
+    transition: $default-transition;
 
     &:hover {
       background-color: color-modifier($hoverable-color);
@@ -330,19 +330,19 @@
 @mixin make-hoverable-generic($name, $base-color, $hoverable-color) {
   // add color to element on-hover eg. color-gray-400-on-hover
   :where(.color-#{$name}-on-hover):hover {
-    transition: $serato-transition;
+    transition: $default-transition;
     color: $hoverable-color;
   }
   // add background color to element on-hover eg. background-gray-400-on-hover
   :where(.bg-#{$name}-on-hover):hover {
-    transition: $serato-transition;
+    transition: $default-transition;
     background-color: $hoverable-color;
   }
 
   // make a color hoverable when asigned a hoverable modifier eg. color-green--hoverable
   :where(.color-#{$name}--hoverable) {
     color: $base-color;
-    transition: $serato-transition;
+    transition: $default-transition;
 
     &:hover {
       color: $hoverable-color;
@@ -351,7 +351,7 @@
   // make a background color hoverable when asigned a hoverable modifier eg. background-green--hoverable
   :where(.bg-#{$name}--hoverable) {
     background-color: $base-color;
-    transition: $serato-transition;
+    transition: $default-transition;
 
     &:hover {
       background-color: $hoverable-color;
@@ -371,19 +371,19 @@
 
   // add color to element on-hover eg. color-gray-4-on-hover
   :where(.color-#{$name}-#{$base-shade}-on-hover):hover {
-    transition: $serato-transition;
+    transition: $default-transition;
     color: make-hover-shade($name, $base-shade);
   }
 
   // add background color to element on-hover eg. bg-gray-4-on-hover
   :where(.bg-#{$name}-#{$base-shade}-on-hover):hover {
-    transition: $serato-transition;
+    transition: $default-transition;
     background-color: make-hover-shade($name, $base-shade);
   }
 
   // make a color hoverable when asigned a hoverable modifier eg. color-green--hoverable
   :where(.color-#{$name}-#{$base-shade}--hoverable) {
-    transition: $serato-transition;
+    transition: $default-transition;
     color: var(--#{$name}-#{$base-shade}); // eg. var(--gray-5);
 
     &:hover {
@@ -393,7 +393,7 @@
 
   // make a background color hoverable when asigned a hoverable modifier eg. bg-green--hoverable
   :where(.bg-#{$name}-#{$base-shade}--hoverable) {
-    transition: $serato-transition;
+    transition: $default-transition;
     background-color: var(--#{$name}-#{$base-shade}); // eg. var(--gray-5);
 
     &:hover {

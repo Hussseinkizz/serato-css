@@ -16,75 +16,25 @@
 }
 
 .float-left {
-  float: left !important;
+  float: left;
 }
 
 .float-right {
-  float: right !important;
+  float: right;
 }
 // -> float styles end
 
 .shadow-none {
-  box-shadow: none !important;
+  box-shadow: none;
 }
 
 .is-clickable {
-  cursor: pointer !important;
-  pointer-events: all !important;
+  cursor: pointer;
+  pointer-events: all;
 }
 
 .overflow {
-  overflow: hidden !important;
-}
-
-// generate border-radius classes
-.border-radius-none {
-  border-radius: 0 !important;
-}
-// small, normal, large, circle
-@each $name, $radius in $border-radius-map {
-  .border-radius-#{$name} {
-    border-radius: $radius !important;
-  }
-}
-// border-radius-top
-@each $name, $radius in $border-radius-map {
-  .border-radius-top-#{$name} {
-    border-top-left-radius: $radius !important;
-    border-top-right-radius: $radius !important;
-  }
-}
-// border-radius-bottom
-@each $name, $radius in $border-radius-map {
-  .border-radius-bottom-#{$name} {
-    border-bottom-left-radius: $radius !important;
-    border-bottom-right-radius: $radius !important;
-  }
-}
-
-// border-radius specific for top-left
-@each $name, $radius in $border-radius-map {
-  .border-radius-top-left-#{$name} {
-    border-top-left-radius: $radius !important;
-  }
-}
-// border-radius specific for top-right
-@each $name, $radius in $border-radius-map {
-  .border-radius-top-right-#{$name} {
-    border-top-right-radius: $radius !important;
-  }
-}
-// border-radius specific for bottom-left
-@each $name, $radius in $border-radius-map {
-  .border-radius-bottom-left-#{$name} {
-    border-bottom-left-radius: $radius !important;
-  }
-}
-// border-radius specific for bottom-right
-@each $name, $radius in $border-radius-map {
-  .border-radius-bottom-right-#{$name} {
-    border-bottom-right-radius: $radius !important;
-  }
+  overflow: hidden;
 }
 
 img,
@@ -97,77 +47,77 @@ video {
 
 // width helpers
 .width-auto {
-  width: $width-auto !important;
+  width: $width-auto;
 }
 .width-none {
-  width: $width-none !important;
+  width: $width-none;
 }
 .width-content {
-  width: $width-content !important;
+  width: $width-content;
 }
 .width-small {
-  width: $width-small !important;
+  width: $width-small;
 }
 .width-normal {
-  width: $width-normal !important;
+  width: $width-normal;
 }
 .width-medium {
-  width: $width-medium !important;
+  width: $width-medium;
 }
 .width-full {
-  max-width: $width-full !important;
+  max-width: $width-full;
 }
 .width-viewport {
-  max-width: $width-viewport !important;
+  max-width: $width-viewport;
 }
 // height helpers
 .height-auto {
-  height: $height-auto !important;
+  height: $height-auto;
 }
 .height-none {
-  height: $height-none !important;
+  height: $height-none;
 }
 .height-content {
-  height: $height-content !important;
+  height: $height-content;
 }
 .height-small {
-  height: $height-small !important;
+  height: $height-small;
 }
 .height-normal {
-  height: $height-normal !important;
+  height: $height-normal;
 }
 .height-medium {
-  height: $height-medium !important;
+  height: $height-medium;
 }
 .height-full {
-  min-height: $height-full !important;
+  min-height: $height-full;
 }
 .height-viewport {
-  min-height: $height-viewport !important;
+  min-height: $height-viewport;
 }
 
 // generate aspect-ratio helpers
-@each $name, $ratio in $aspect-ratios {
+@each $name, $ratio in $ratios {
   .aspect-ratio-#{$name} {
-    aspect-ratio: $ratio !important;
+    aspect-ratio: $ratio;
   }
 }
 
 // object fit helpers
 .object-fit-none {
-  object-fit: none !important;
+  object-fit: none;
 }
 .object-fit-cover {
-  object-fit: cover !important;
+  object-fit: cover;
 }
 .object-fit-contain {
-  object-fit: contain !important;
+  object-fit: contain;
 }
 .object-fit-fill {
-  object-fit: fill !important;
+  object-fit: fill;
 }
 .object-fit-scale-down {
-  object-fit: scale-down !important;
+  object-fit: scale-down;
 }
 
 // opacity helpers
@@ -175,37 +125,37 @@ video {
 // generate opacity helpers
 @each $name, $opacity in $opacities {
   .opacity-#{$name} {
-    opacity: $opacity !important;
+    opacity: $opacity;
   }
 
   // on-hover
   .opacity-#{$name}-on-hover:hover {
     transition: $transition-opacity;
-    opacity: $opacity !important;
+    opacity: $opacity;
   }
 }
 
 // transition helpers
 .transition-normal {
-  transition: $serato-transition !important;
+  transition: $default-transition;
 }
 .transition-colors {
-  transition: $transition-colors !important;
+  transition: $transition-colors;
 }
 .transition-linear {
-  transition: $transition-linear !important;
+  transition: $transition-linear;
 }
 .transition-smooth {
-  transition: $transition-smooth !important;
+  transition: $transition-smooth;
 }
 .transition-opacity {
-  transition: $transition-opacity !important;
+  transition: $transition-opacity;
 }
 .transition-height {
-  transition: $transition-height !important;
+  transition: $transition-height;
 }
 .transition-width {
-  transition: $transition-width !important;
+  transition: $transition-width;
 }
 
 // list helpers
@@ -224,64 +174,267 @@ video {
 
 // spacing between list items, to list without space-on-hover effect
 .list li:not(:last-child) {
-  margin-bottom: $gap-x !important;
+  margin-bottom: $gap-00;
 }
 
 @each $name, $list-style in $list-styles {
-  .list-style-#{$list-style} {
-    list-style-type: $list-style !important;
+  :where(.listStyle-#{$list-style}) {
+    list-style-type: $list-style;
   }
 }
 
-// shadow helpers
+// * shadow helpers
 @each $shadowName, $shadow in $shadows {
   :where(.#{$shadowName}) {
     box-shadow: $shadow;
   }
+  // for hover states
+  :where(.#{$shadowName}--on-hover):hover {
+    transition: $transition-smooth;
+    box-shadow: $shadow;
+  }
 }
-// inner shadow helpers
+// * inner shadow helpers
 @each $innerShadowName, $inner-shadow in $inner-shadows {
   :where(.#{$innerShadowName}) {
     box-shadow: $inner-shadow;
   }
+  // for hover states
+  :where(.#{$innerShadowName}--on-hover):hover {
+    transition: $transition-smooth;
+    box-shadow: $inner-shadow;
+  }
 }
 
-/* Border Helpers */
-.border {
-  border: $serato-border-width solid $serato-border-color;
+// * Border Helpers
+.border-none {
+  border: none;
+}
+:where(.border) {
+  border: $default-borderWidth solid $color-current;
+}
+
+// for hover usecase
+:where(.border--on-hover):hover {
+  transition: $default-transition;
+  border: $border-size-1 solid $color-current;
+}
+
+// border styles
+.borderStyle-none {
+  border-style: none;
+}
+
+@each $name, $border-style in $border-styles {
+  :where(.borderStyle-#{$border-style}) {
+    border-style: $border-style;
+  }
 }
 
 // generate border widths
-@each $name, $border-width in $border-widths {
-  .border-width-#{$name} {
-    border-width: $border-width !important;
+@each $name, $border-size in $border-sizes {
+  :where(.#{$name}) {
+    border-width: $border-size;
   }
 }
 
-// generate border colors from gray shades eg. border-color-gray-100
-.border-color-gray {
-  border-color: $gray !important;
+:where(.borderColor-auto) {
+  border-color: auto;
+}
+
+// for hover usecase
+:where(.borderColor--on-hover):hover {
+  transition: $default-transition;
+  border-color: auto;
+}
+
+:where(.borderColor-current) {
+  border-color: $color-current;
+}
+:where(.borderColor-parent) {
+  border-color: $color-parent;
+}
+:where(.borderColor-transparent) {
+  border-color: $color-transparent;
+}
+
+// generate border colors from gray shades eg. borderColor-gray-100
+.borderColor-gray {
+  border-color: $gray;
 }
 
 @each $name, $gray-shade in $gray-shades {
-  .border-color-#{$name} {
-    border-color: $gray-shade !important;
+  :where(.borderColor-#{$name}) {
+    border-color: $gray-shade;
   }
 }
 
-// // generate border colors from basic colors eg. border-color-cyan-100 //
-// @each $shades-map, $value in $all-basic-color-shades-map {
-//   @each $name, $color-shade in $value {
-//     .border-color-#{$name} {
-//       border-color: $color-shade !important;
-//     }
-//   }
-// }
+// generate border colors from theme colors eg. borderColor-warning
+@each $name, $color in $theme-colors {
+  :where(.borderColor-#{$name}) {
+    border-color: $color;
+  }
+}
 
-// generate border colors from serato colors eg. border-color-hibiscus
-@each $name, $color in $serato-colors {
-  .border-color-#{$name} {
-    border-color: $color !important;
+// generate border-radius classes
+.radius-none {
+  border-radius: 0;
+}
+// radius-1, radius-round
+@each $name, $radius in $border-radii {
+  :where(.#{$name}) {
+    border-radius: $radius;
+  }
+  // border-radius-top
+  :where(.#{$name}-top) {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+  }
+  // border-radius-bottom
+  :where(.#{$name}-bottom) {
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+  }
+
+  // border-radius specific for top-left
+  :where(.#{$name}-top-left) {
+    border-top-left-radius: $radius;
+  }
+  // border-radius specific for top-right
+  :where(.#{$name}-top-right) {
+    border-top-right-radius: $radius;
+  }
+  // border-radius specific for bottom-left
+  :where(.#{$name}-bottom-left) {
+    border-bottom-left-radius: $radius;
+  }
+  // border-radius specific for bottom-right
+  :where(.#{$name}-bottom-right) {
+    border-bottom-right-radius: $radius;
+  }
+}
+
+// radius blobs
+@each $name, $radius-blob in $radii-blobs {
+  :where(.#{$name}) {
+    border-radius: $radius-blob;
+  }
+}
+
+// * Z Index Helpers
+@each $name, $layer in $layers {
+  :where(.#{$name}) {
+    z-index: $layer;
+  }
+}
+
+// * Ratio Helpers
+@each $name, $ratio in $ratios {
+  :where(.#{$name}) {
+    aspect-ratio: $ratio;
+  }
+}
+
+// * Typography
+// Font Families
+:where(.font-sans) {
+  font-family: $font-sans;
+}
+:where(.font-serif) {
+  font-family: $font-serif;
+}
+:where(.font-mono) {
+  font-family: $font-mono;
+}
+
+// Font Weights
+@each $name, $weight in $font-weights {
+  :where(.#{$name}) {
+    font-weight: $weight;
+  }
+}
+
+// Font Spacings
+@each $name, $font-spacing in $font-spacings {
+  :where(.#{$name}) {
+    letter-spacing: $font-spacing;
+  }
+}
+
+// Font Heights
+@each $name, $font-height in $font-heights {
+  :where(.#{$name}) {
+    line-height: $font-height;
+  }
+}
+
+// Font Sizes
+@each $name, $font-size in $font-sizes {
+  :where(.#{$name}) {
+    font-size: $font-size;
+  }
+}
+
+// Font Sizes fluid
+:where(.font-fluid-0) {
+  font-size: $font-fluid-0;
+}
+:where(.font-fluid-1) {
+  font-size: $font-fluid-1;
+}
+:where(.font-fluid-2) {
+  font-size: $font-fluid-2;
+}
+:where(.font-fluid-3) {
+  font-size: $font-fluid-3;
+}
+
+// * Sizes
+// relative sizes
+@each $name, $size in $sizes {
+  :where(.block-#{$name}) {
+    block-size: $size;
+  }
+  :where(.inline-#{$name}) {
+    inline-size: $size;
+  }
+}
+
+// icon sizes
+:where(.icon-size-sm) {
+  inline-size: $size-2;
+  block-size: $size-2;
+}
+:where(.icon-size) {
+  inline-size: $size-3;
+  block-size: $size-3;
+}
+:where(.icon-size-lg) {
+  inline-size: $size-4;
+  block-size: $size-4;
+}
+
+// fluid sizes
+@each $name, $fluid-size in $sizes-fluid {
+  :where(.block-#{$name}) {
+    block-size: $fluid-size;
+  }
+  :where(.inline-#{$name}) {
+    inline-size: $fluid-size;
+  }
+}
+
+// content sizes
+@each $name, $size-content in $sizes-content {
+  :where(.#{$name}) {
+    max-inline-size: $size-content;
+  }
+}
+
+// header sizes
+@each $name, $size-header in $sizes-header {
+  :where(.#{$name}) {
+    max-inline-size: $size-header;
   }
 }
 
@@ -325,7 +478,7 @@ a.link--no-underline {
   &:focus {
     transition: $transition-colors;
     color: $primary-hover;
-    text-decoration: none !important;
+    text-decoration: none;
   }
 }
 

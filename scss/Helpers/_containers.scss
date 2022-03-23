@@ -8,7 +8,7 @@
   width: 100%;
   max-width: 1170px;
 
-  padding: $serato-padding;
+  padding: $default-padding;
   @include center-with-margin;
 
   &-fluid {
@@ -30,6 +30,8 @@
   width: 100%;
 }
 
+$total-columns: 12; // per grid row!
+
 @for $i from 1 through $total-columns {
   .grid-column-#{$i} {
     flex: 0 0 math.div(100%, $total-columns) * $i;
@@ -42,7 +44,7 @@
     @for $i from 1 through $total-columns {
       .grid-column-#{$i}-on-#{$breakpoint} {
         width: math.div(100%, math.div($total-columns, $i));
-        padding: $serato-padding;
+        padding: $default-padding;
       }
     }
   }

@@ -1,5 +1,13 @@
 // All global variables in here!
 
+// ~~~~~~~~~~~~ config options ~~~~~~~~~~~ //
+
+// Allow Native built in animations
+$enable-native-animations: true !default;
+
+// Enable or Disable hvr-css Animations
+$hvr-animations-disabled: false !default;
+
 // * Open Prop in house variables
 
 // * Shadows
@@ -46,11 +54,11 @@ $border-size-5: var(--border-size-5);
 
 // border sizes map
 $border-sizes: (
-  'border-size-1': $border-size-1,
-  'border-size-2': $border-size-2,
-  'border-size-3': $border-size-3,
-  'border-size-4': $border-size-4,
-  'border-size-5': $border-size-5,
+  'borderSize-1': $border-size-1,
+  'borderSize-2': $border-size-2,
+  'borderSize-3': $border-size-3,
+  'borderSize-4': $border-size-4,
+  'borderSize-5': $border-size-5,
 ) !default;
 
 // Border radii
@@ -314,7 +322,7 @@ $size-header-2: var(--size-header-2);
 $size-header-3: var(--size-header-3);
 
 // header sizes map
-$sizes-content: (
+$sizes-header: (
   'size-header-1': $size-header-1,
   'size-header-2': $size-header-2,
   'size-header-3': $size-header-3,
@@ -427,6 +435,19 @@ $list-styles: (
   'disclosure-closed': disclosure-closed,
 );
 
+// Border styles
+$border-styles: (
+  'auto': auto,
+  'dashed': dashed,
+  'dotted': dotted,
+  'double': double,
+  'groove': groove,
+  'ridge': ridge,
+  'solid': solid,
+  'inset': inset,
+  'outset': outset,
+);
+
 // responsive spacings -- only for the horizontal (x) axis eg. width not height, for height use the default spacings!
 $responsive-spacing-values: (
   'small': 1.5vw,
@@ -435,7 +456,7 @@ $responsive-spacing-values: (
   'large': 10vw,
 ) !default;
 
-// opacity variables
+// opacities
 $opacity-none: 0;
 $opacity-low: 0.5;
 $opacity-medium: 0.6;
@@ -447,3 +468,86 @@ $opacities: (
   'medium': $opacity-medium,
   'normal': $opacity-normal,
 ) !default;
+
+// transitions
+$default-transition: all 0.2s ease-in-out !default;
+$transition-smooth: all 0.3s ease !default;
+$transition-colors: color 0.2s ease-in-out !default;
+$transition-linear: all 0.2s linear !default;
+$transition-opacity: opacity 0.15s linear !default;
+$transition-height: height 0.35s ease !default;
+$transition-width: width 0.35s ease !default;
+
+// crafted width measures
+$width-auto: auto;
+$width-none: 0;
+$width-small: 15%;
+$width-normal: 25%;
+$width-medium: 50%;
+$width-full: 100%;
+$width-content: fit-content;
+$width-viewport: 100vw;
+
+// crafted height measures
+$height-auto: auto;
+$height-none: 0;
+$height-small: 15%;
+$height-normal: 25%;
+$height-medium: 50%;
+$height-full: 100%;
+$height-content: fit-content;
+$height-viewport: 100vh;
+
+// gap variables & map
+$gap-0: 0;
+$gap-00: $size-1;
+$gap-1: $size-2;
+$gap-2: $size-5;
+$gap-3: $size-7;
+$gap-4: $size-fluid-5;
+$gap-5: $size-fluid-6;
+$gap-6: $size-fluid-7;
+
+$gap-values: (
+  '0': $gap-0,
+  '00': $gap-00,
+  '1': $gap-1,
+  '2': $gap-2,
+  '3': $gap-3,
+  '4': $gap-4,
+  '5': $gap-5,
+  '6': $gap-6,
+) !default;
+
+// margin and padding
+$spacings: (margin, padding) !default;
+$spacing-directions: (top, right, bottom, left) !default;
+$responsive-spacing-directions: (left, right) !default;
+$spacing-horizontal: 'x' !default;
+$spacing-vertical: 'y' !default;
+$spacing-values: (
+  '0': 0,
+  '1': 0.25rem,
+  '2': 0.5rem,
+  '3': 0.75rem,
+  '4': 1rem,
+  '5': 1.5rem,
+  '6': 3rem,
+  '7': 4rem,
+  '8': 5rem,
+  '9': 6rem,
+  'auto': auto,
+) !default;
+
+// * default variables
+$default-padding: $size-3;
+$elements-padding: $size-2 $size-3;
+
+$default-fontWeight: $font-weight-4;
+$default-fontSize: $font-size-1;
+$default-borderRadius: $radius-2;
+$default-borderWidth: $border-size-2;
+
+$color-parent: inherit;
+$color-current: currentColor;
+$color-transparent: transparent;

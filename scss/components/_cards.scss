@@ -6,7 +6,7 @@
 .card {
   width: clamp(250px, 300px, 350px);
   box-shadow: $shadow-1;
-  transition: $serato-transition;
+  transition: $default-transition;
   text-align: center;
   padding-inline: var(--size-4);
   padding-block: var(--size-3);

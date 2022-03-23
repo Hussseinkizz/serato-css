@@ -94,15 +94,15 @@ $text-alignments: (center, justify, left, right);
 $paragraph-margin-bottom: 1rem !default;
 
 // Generate font-size classes
-.font-size-normal {
-  font-size: $serato-font-size !important;
-}
-.font-size-small {
-  font-size: $font-size-small !important;
-}
-.font-size-large {
-  font-size: $font-size-large !important;
-}
+// .font-size-normal {
+//   font-size: $serato-font-size !important;
+// }
+// .font-size-small {
+//   font-size: $font-size-small !important;
+// }
+// .font-size-large {
+//   font-size: $font-size-large !important;
+// }
 
 @each $name, $font-size in $font-sizes {
   .font-size-#{$name} {

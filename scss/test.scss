@@ -3,17 +3,14 @@
 // @use './utilities/_mixins.scss' as *;
 // @use './themes/colors/serato-colors' as *;
 // @use './themes/colors/famous-colors' as *;
-// @use './utilities/global-variables' as *;
+@use './utilities/global-variables' as *;
+// @use './themes/colors/color-variables' as *;
 
-// // shadow helpers
-// @each $shadowName, $shadow in $shadows {
-//   :where(.#{$shadowName}) {
-//     box-shadow: $shadow;
-//   }
-// }
-// // inner shadow helpers
-// @each $innerShadowName, $inner-shadow in $inner-shadows {
-//   :where(.#{$innerShadowName}) {
-//     box-shadow: $inner-shadow;
-//   }
-// }
+// * Sizes
+
+// header sizes
+@each $name, $size-header in $sizes-header {
+  :where(.#{$name}) {
+    max-inline-size: $size-header;
+  }
+}

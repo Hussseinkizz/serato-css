@@ -1,11 +1,21 @@
 {
   "name": "serato-css",
-  "version": "1.0.6",
-  "description": "A Modern Mini Framework Full Of Handy Utilities, Colors And Animations Inspired To Be Most Predictable And Community Driven.",
-  "main": "index.js",
+  "version": "1.1.4",
+  "description": "A Modern Mini CSS Framework Built On Open Props And Sass. Full Of Handy Utilities, Colors And Animations Inspired To Be Most Predictable And Community Driven.",
+  "main": "public/index.html",
   "scripts": {
-    "start": "gulp watch",
-    "dev": "gulp compile"
+    "build:sass": "sass  --no-source-map scss:public/css",
+    "copy:assets": "copyfiles -u 1 ./assets/**/* public",
+    "copy:html": "copyfiles -u 1 /*.html public",
+    "copy": "npm-run-all --parallel copy:*",
+    "watch:assets": "onchange '/assets/**/*' -- npm run copy:html",
+    "watch:html": "onchange '/*.html' -- npm run copy:html",
+    "watch:sass": "sass  --no-source-map --watch scss:public/css",
+    "watch": "npm-run-all --parallel watch:*",
+    "serve": "browser-sync start --server public --files public",
+    "start": "npm-run-all copy --parallel watch serve",
+    "build": "npm-run-all copy:html build:*",
+    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map"
   },
   "repository": {
     "type": "git",
@@ -27,17 +37,17 @@
   },
   "homepage": "https://github.com/Hussseinkizz/serato-css#readme",
   "dependencies": {
+    "autoprefixer": "^10.4.2",
     "browser-sync": "^2.27.7",
-    "cssnano": "^5.0.14",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-imagemin": "^8.0.0",
-    "gulp-postcss": "^9.0.1",
-    "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-terser": "^2.1.0",
-    "gulp-webp": "^4.0.1",
+    "copyfiles": "^2.4.1",
+    "cssnano": "^5.0.17",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "open": "^8.4.0",
     "open-props": "^1.3.5",
-    "sass": "^1.46.0"
+    "postcss-cli": "^9.1.0",
+    "postcss-custom-media": "^8.0.0",
+    "props": "^0.3.0",
+    "sass": "^1.49.8"
   }
 }

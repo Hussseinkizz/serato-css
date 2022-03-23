@@ -5,15 +5,15 @@
 
 :where(.button) {
   display: inline-block;
-  padding: $simple-components-padding;
-  font-weight: map-get($font-weights, normal);
-  font-size: $serato-font-size;
-  border-radius: $serato-border-radius;
+  padding: $elements-padding;
+  font-weight: $default-fontWeight;
+  font-size: $default-fontSize;
+  border-radius: $default-borderRadius;
   text-transform: capitalize;
   box-shadow: $shadow-1;
   color: var(--text-1);
   background-color: var(--surface-3);
-  transition: $serato-transition;
+  transition: $default-transition;
 
   &:hover {
     background-color: var(--surface-4);
@@ -27,14 +27,14 @@
 @each $name, $color in $theme-colors {
   :where(.button-#{$name}) {
     display: inline-block;
-    padding: $simple-components-padding;
-    font-weight: map-get($font-weights, normal);
-    font-size: $serato-font-size;
-    border-radius: $serato-border-radius;
+    padding: $elements-padding;
+    font-weight: $default-fontWeight;
+    font-size: $default-fontSize;
+    border-radius: $default-borderRadius;
     text-transform: capitalize;
     box-shadow: $shadow-1;
 
-    transition: $serato-transition;
+    transition: $default-transition;
     background-color: $color;
     color: var(--gray-0);
 
@@ -78,14 +78,14 @@
   width: $width-content;
   height: $height-content;
   padding: 0px 8px;
-  border-radius: $border-radius-circle;
+  border-radius: $radius-round;
   font-size: $font-size-2;
-  box-shadow: $box-shadow-small;
+  box-shadow: $shadow-1;
   // background-color: $light;
-  color: $serato-text-color;
+  color: $color-current;
 
   // &:hover {
-  //   transition: $serato-transition;
+  //   transition: $default-transition;
   //   background-color: $light-hover;
   // }
 

@@ -1,0 +1,43 @@
+{
+  "name": "serato-css",
+  "version": "1.0.6",
+  "description": "A Modern Mini Framework Full Of Handy Utilities, Colors And Animations Inspired To Be Most Predictable And Community Driven.",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp watch",
+    "dev": "gulp compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hussseinkizz/serato-css.git"
+  },
+  "keywords": [
+    "CSS",
+    "Framework",
+    "Sass",
+    "SCSS",
+    "Serato",
+    "Friendly",
+    "Modern"
+  ],
+  "author": "Hussein Kizz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hussseinkizz/serato-css/issues"
+  },
+  "homepage": "https://github.com/Hussseinkizz/serato-css#readme",
+  "dependencies": {
+    "browser-sync": "^2.27.7",
+    "cssnano": "^5.0.14",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-webp": "^4.0.1",
+    "open-props": "^1.3.5",
+    "sass": "^1.46.0"
+  }
+}

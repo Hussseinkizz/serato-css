@@ -95,35 +95,5 @@
 }
 
 // ~~~~~~~~ serato theming classes ~~~~~~~~ //
-// use @exend to apply them...
 
-// default color theme
-.serato-theme {
-  // color: lighten($serato-primary-color, 90%);
-  background-color: $serato-primary-color;
-}
-
-// default color theme for hoverable coponents eg. buttons
-.serato-theme--hoverable {
-  // color: lighten($serato-primary-color, 90%);
-  background-color: $serato-primary-color;
-  box-shadow: $box-shadow-small;
-
-  &:hover {
-    transition: $serato-transition;
-    // background-color: lighten($serato-primary-color, 10%);
-  }
-}
-
-// default serato components styling eg. cards
-.serato-common-design {
-  color: $serato-component-color--light;
-  background-color: $serato-component-background--light;
-  border: 1px solid transparent;
-  border-radius: $serato-border-radius;
-  box-shadow: $serato-box-shadow;
-  padding: $medium-components-padding;
-  text-align: center;
-}
-
-// TODO: .serato-common-design--dark
+// TODO: make a common design for all components eg. default-design (border-radius, bg, color, padding, border etc)

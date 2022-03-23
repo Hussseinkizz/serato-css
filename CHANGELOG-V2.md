@@ -47,11 +47,31 @@
 
 ## [1.1.3] - Serato Version 2 - New Melody, 2022-03-14
 
-- Todo: Fix dark button colors in dark mode.
 - CSS: Added animations, all sizes variables and all easings.
 - CSS: completed adding in house variables for all open prop variables.
 - Note: Media Queries need some further inspection and perhaps some setup to work i.e the post css plugin.
 - Next: Start generating helper utility classes for all open prop variables.
 
-<!-- Todo: Fix custom scrollbar for firefox, eg. add block padding! -->
 
+## [1.1.4] - Serato Version 2 - New Melody, 2022-03-18
+
+- Dev: Changed and updated package.json now using a new build setup that now actually depends on npm scripts.
+- CSS: Removed font awesome animations lib integration in favor of open props's animations for basic stateless animations.
+
+## [1.1.5] - Serato Version 2 - New Melody, 2022-03-20
+
+- Dev: Re-installed open props and also installed the postcss-custom-media post css plugin to enable use of custom named media queries!
+- CSS: Updated shadow helpers, introduced hover state shadows!
+- CSS: Updated borders and added blob radii!
+
+## [1.1.6] - Serato Version 2 - New Melody, 2022-03-23
+
+- CSS: Added z-indexes, and aspect ratios.
+- CSS: Added font sizes, font heights, font spacings and fluid fonts.
+- CSS: Added sizes, fluid, content and header sizes.
+- Next: Configure the custom media plugin.
+
+<!-- Todo: Add and look into conditional radii. -->
+<!-- Todo: Add border hover state styling flexibility. -->
+<!-- Todo: Fix dark button colors in dark mode. -->
+<!-- Todo: Fix custom scrollbar for firefox, eg. add block padding! -->
