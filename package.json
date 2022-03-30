@@ -45,6 +45,7 @@
     "onchange": "^7.1.0",
     "open": "^8.4.0",
     "open-props": "^1.3.5",
+    "postcss": "^8.4.12",
     "postcss-cli": "^9.1.0",
     "postcss-custom-media": "^8.0.0",
     "props": "^0.3.0",

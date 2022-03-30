@@ -5,12 +5,26 @@
 // @use './themes/colors/famous-colors' as *;
 @use './utilities/global-variables' as *;
 // @use './themes/colors/color-variables' as *;
+@use './utilities/media-queries' as *;
 
-// * Sizes
+// * Grids
+@use 'sass:math';
+$total-columns: 12; // per grid row!
 
-// header sizes
-@each $name, $size-header in $sizes-header {
-  :where(.#{$name}) {
-    max-inline-size: $size-header;
+@for $i from 1 through $total-columns {
+  :where(.grid-column-#{$i}) {
+    flex: 0 0 math.div(100%, $total-columns) * $i;
+  }
+}
+
+// if we're at a breakpoint, generate respective grid column!
+@each $breakpoint, $value in $breakpoints-map {
+  @include breakpoint(#{$value}) {
+    @for $i from 1 through $total-columns {
+      .grid-column-#{$i}-on-#{$breakpoint} {
+        width: math.div(100%, math.div($total-columns, $i));
+        padding: $default-padding;
+      }
+    }
   }
 }

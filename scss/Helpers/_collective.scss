@@ -178,7 +178,7 @@ video {
 }
 
 @each $name, $list-style in $list-styles {
-  :where(.listStyle-#{$list-style}) {
+  :where(.list-style-#{$list-style}) {
     list-style-type: $list-style;
   }
 }
@@ -221,12 +221,12 @@ video {
 }
 
 // border styles
-.borderStyle-none {
+.border-style-none {
   border-style: none;
 }
 
 @each $name, $border-style in $border-styles {
-  :where(.borderStyle-#{$border-style}) {
+  :where(.border-style-#{$border-style}) {
     border-style: $border-style;
   }
 }
@@ -238,40 +238,40 @@ video {
   }
 }
 
-:where(.borderColor-auto) {
+:where(.border-color-auto) {
   border-color: auto;
 }
 
 // for hover usecase
-:where(.borderColor--on-hover):hover {
+:where(.border-color--on-hover):hover {
   transition: $default-transition;
   border-color: auto;
 }
 
-:where(.borderColor-current) {
+:where(.border-color-current) {
   border-color: $color-current;
 }
-:where(.borderColor-parent) {
+:where(.border-color-parent) {
   border-color: $color-parent;
 }
-:where(.borderColor-transparent) {
+:where(.border-color-transparent) {
   border-color: $color-transparent;
 }
 
-// generate border colors from gray shades eg. borderColor-gray-100
-.borderColor-gray {
+// generate border colors from gray shades eg. border-color-gray-100
+.border-color-gray {
   border-color: $gray;
 }
 
 @each $name, $gray-shade in $gray-shades {
-  :where(.borderColor-#{$name}) {
+  :where(.border-color-#{$name}) {
     border-color: $gray-shade;
   }
 }
 
-// generate border colors from theme colors eg. borderColor-warning
+// generate border colors from theme colors eg. border-color-warning
 @each $name, $color in $theme-colors {
-  :where(.borderColor-#{$name}) {
+  :where(.border-color-#{$name}) {
     border-color: $color;
   }
 }
@@ -485,4 +485,10 @@ a.link--no-underline {
 // selection disabled helper class
 .selection-disabled {
   @include selection-disabled;
+}
+
+// * icons
+:where(.icon) {
+  font-size: inherit; // inherit size
+  color: $color-current;
 }

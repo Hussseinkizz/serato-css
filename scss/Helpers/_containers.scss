@@ -2,27 +2,31 @@
 @use '../utilities/utilities.scss' as *;
 @use '../utilities/media-queries' as *;
 
-// container helpers
-.container {
+// * Container
+:where(.container) {
   display: block;
   width: 100%;
-  max-width: 1170px;
+  max-width: map-get($breakpoints-map, $lg);
 
   padding: $default-padding;
   @include center-with-margin;
-
-  &-fluid {
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-
-    padding: 1rem 0px;
-  }
 }
 
-// grid helpers
-.grid-columns {
+:where(.container-fluid) {
+  @include center-with-margin;
+  display: flex;
+  flex-direction: column;
+
+  min-width: 100%;
+  flex: 1 1 100%;
+
+  padding: $default-padding;
+}
+
+// * Grids
+$total-columns: 12; // per grid row!
+
+:where(.grid-columns) {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -30,19 +34,17 @@
   width: 100%;
 }
 
-$total-columns: 12; // per grid row!
-
 @for $i from 1 through $total-columns {
-  .grid-column-#{$i} {
+  :where(.grid-column-#{$i}) {
     flex: 0 0 math.div(100%, $total-columns) * $i;
   }
 }
 
-// generate grid columns for responsive viewports
+// if we're at a breakpoint, generate respective grid column!
 @each $breakpoint, $value in $breakpoints-map {
-  @media only screen and (min-width: $value) {
+  @include breakpoint(#{$value}) {
     @for $i from 1 through $total-columns {
-      .grid-column-#{$i}-on-#{$breakpoint} {
+      :where(.grid-column-#{$i}-on-#{$breakpoint}) {
         width: math.div(100%, math.div($total-columns, $i));
         padding: $default-padding;
       }
@@ -50,24 +52,15 @@ $total-columns: 12; // per grid row!
   }
 }
 
-// for extra small viewport.....needs revision!!!
-@media only screen and (max-width: $extra-small-screen-breakpoint) {
-  @for $i from 1 through $total-columns {
-    .grid-column-on-#{$i} {
-      width: math.div(100%, math.div($total-columns, $i));
-      padding: 0px 1rem;
-    }
-  }
-}
-
-// flex helpers
-.flex {
+// * Flex
+:where(.flex) {
   display: flex;
   gap: $gap-1;
-  flex: 1 1 100%;
 }
-.flex-all-center {
-  @extend .flex;
+
+:where(.flex-all-centered) {
+  display: flex;
+  gap: $gap-1;
   justify-content: center;
   align-items: center;
 }
@@ -114,137 +107,138 @@ $align-self-values: (auto, flex-start, flex-end, center, baseline, stretch);
 $flex-operators: (grow, shrink);
 
 @each $flex-direction-value in $flex-direction-values {
-  .flex-#{$flex-direction-value} {
-    flex-direction: $flex-direction-value !important;
-    @extend .flex;
+  :where(.flex-#{$flex-direction-value}) {
+    flex-direction: $flex-direction-value;
+    display: flex;
+    gap: $gap-1;
   }
 }
 @each $flex-wrap-value in $flex-wrap-values {
-  .flex-#{$flex-wrap-value} {
-    flex-wrap: $flex-wrap-value !important;
+  :where(.flex-#{$flex-wrap-value}) {
+    flex-wrap: $flex-wrap-value;
   }
 }
 
-// -> Doing the justify and align content stlyes manually for better dx based helper classes
+// -> Doing the justify and align content stlyes manually for better developer experience based helper classes
 // @each $justify-content-value in $justify-content-values {
 //   .justify-content-#{$justify-content-value} {
-//     justify-content: $justify-content-value !important;
+//     justify-content: $justify-content-value;
 //   }
 // }
 
 // -> Manual justify-content styles start...
-.justify-content-flex-start {
-  justify-content: flex-start !important;
+:where(.justify-content-flex-start) {
+  justify-content: flex-start;
 }
 
-.justify-content-flex-end {
-  justify-content: flex-end !important;
+:where(.justify-content-flex-end) {
+  justify-content: flex-end;
 }
 
-.justify-content-center {
-  justify-content: center !important;
+:where(.justify-content-center) {
+  justify-content: center;
 }
 
-.justify-content-between {
-  justify-content: space-between !important;
+:where(.justify-content-between) {
+  justify-content: space-between;
 }
 
-.justify-content-around {
-  justify-content: space-around !important;
+:where(.justify-content-around) {
+  justify-content: space-around;
 }
 
-.justify-content-evenly {
-  justify-content: space-evenly !important;
+:where(.justify-content-evenly) {
+  justify-content: space-evenly;
 }
 
-.justify-content-start {
-  justify-content: start !important;
+:where(.justify-content-start) {
+  justify-content: start;
 }
 
-.justify-content-end {
-  justify-content: end !important;
+:where(.justify-content-end) {
+  justify-content: end;
 }
 
-.justify-content-left {
-  justify-content: left !important;
+:where(.justify-content-left) {
+  justify-content: left;
 }
 
-.justify-content-right {
-  justify-content: right !important;
+:where(.justify-content-right) {
+  justify-content: right;
 }
 
 // -> Manual align-content styles start...
 
 // @each $align-content-value in $align-content-values {
 //   .align-content-#{$align-content-value} {
-//     align-content: $align-content-value !important;
+//     align-content: $align-content-value;
 //   }
 // }
-.align-content-flex-start {
-  align-content: flex-start !important;
+:where(.align-content-flex-start) {
+  align-content: flex-start;
 }
 
-.align-content-flex-end {
-  align-content: flex-end !important;
+:where(.align-content-flex-end) {
+  align-content: flex-end;
 }
 
-.align-content-center {
-  align-content: center !important;
+:where(.align-content-center) {
+  align-content: center;
 }
 
-.align-content-between {
-  align-content: space-between !important;
+:where(.align-content-between) {
+  align-content: space-between;
 }
 
-.align-content-around {
-  align-content: space-around !important;
+:where(.align-content-around) {
+  align-content: space-around;
 }
 
-.align-content-evenly {
-  align-content: space-evenly !important;
+:where(.align-content-evenly) {
+  align-content: space-evenly;
 }
 
-.align-content-stretch {
-  align-content: stretch !important;
+:where(.align-content-stretch) {
+  align-content: stretch;
 }
 
-.align-content-start {
-  align-content: start !important;
+:where(.align-content-start) {
+  align-content: start;
 }
 
-.align-content-end {
-  align-content: end !important;
+:where(.align-content-end) {
+  align-content: end;
 }
 
-.align-content-baseline {
-  align-content: baseline !important;
+:where(.align-content-baseline) {
+  align-content: baseline;
 }
 
 // -> Manual align-content styles ends...
 
 @each $align-items-value in $align-items-values {
-  .align-items-#{$align-items-value} {
-    align-items: $align-items-value !important;
+  :where(.align-items-#{$align-items-value}) {
+    align-items: $align-items-value;
   }
 }
 
 @each $align-self-value in $align-self-values {
-  .align-self-#{$align-self-value} {
-    align-self: $align-self-value !important;
+  :where(.align-self-#{$align-self-value}) {
+    align-self: $align-self-value;
   }
 }
 
 @each $flex-operator in $flex-operators {
   @for $i from 0 through 5 {
-    .#{$flex-operator}-#{$i} {
-      flex-#{$flex-operator}: $i !important;
+    :where(.#{$flex-operator}-#{$i}) {
+      flex-#{$flex-operator}: $i;
     }
   }
 }
 
 // generate gap helpers
 @each $name, $gap-value in $gap-values {
-  .flex-gap-#{$name} {
-    gap: $gap-value !important;
+  :where(.flex-gap-#{$name}) {
+    gap: $gap-value;
   }
 }

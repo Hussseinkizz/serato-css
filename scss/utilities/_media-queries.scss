@@ -1,45 +1,62 @@
 /* Media Queries */
 
-// breakpoints for varied device viewports, based on bootsrap 5 breakpoints!
+// breakpoints for varied device viewports, based on open prop breakpoints!
+$xxs: 240px; // watch
+$xs: 360px; // mini phone
+$sm: 480px; // small phone
+$md: 768px; // smart phone
+$lg: 1024px; // smart phone landscape
+$xl: 1440px; // laptop
+$xxl: 1920px; // desktop & HD Displays
 
-// Note that for the max values we subtract 0.02px. As mentioned in the Bootstrap docs this is because:
+// Note that for the max values we subtract 0.02px. As adapted from the Bootstrap docs, this is because:
 // Browsers don’t currently support range context queries, so we work around the limitations of min- and max- prefixes and viewports with fractional widths (which can occur under certain conditions on high-dpi devices, for instance) by using values with higher precision.
 
 $breakpoints: (
+  xxs: (
+    min: 240px,
+    max: 239.98px,
+  ),
+  xs: (
+    min: 360px,
+    max: 359.98px,
+  ),
   sm: (
-    min: 576px,
-    max: 575.98px,
+    min: 480px,
+    max: 479.98px,
   ),
   md: (
     min: 768px,
     max: 767.98px,
   ),
   lg: (
-    min: 992px,
-    max: 991.98px,
+    min: 1024px,
+    max: 1023.98px,
   ),
   xl: (
-    min: 1200px,
-    max: 1199.98px,
+    min: 1440px,
+    max: 1439.98px,
   ),
   xxl: (
-    min: 1400px,
-    max: 1399.98px,
+    min: 1920px,
+    max: 1919.98px,
   ),
 );
 
 // mapping out the breakpoints
-$extra-small-screen-breakpoint: 322px;
 $breakpoints-map: (
-  'small': 576px,
-  'medium': 768px,
-  'large': 992px,
-  'xlarge': 1200px,
+  'xxs': $xxs,
+  'xs': $xs,
+  'sm': $sm,
+  'md': $md,
+  'lg': $lg,
+  'xl': $xl,
+  'xxl': $xxl,
 );
 
 // breakpoints mixin!
 @mixin breakpoint($breakpoint, $direction: min) {
-  //check if the supplied breakpoint exists in our breakpoits map
+  //check if the supplied breakpoint exists in our breakpoints map
   @if map-has-key($breakpoints, $breakpoint) {
     $breakpoint-values: map-get($breakpoints, $breakpoint);
     $breakpoint-min: map-get($breakpoint-values, min);
@@ -72,7 +89,7 @@ $breakpoints-map: (
 
 // extra large device special mixin
 @mixin media-xl {
-  @media screen and (min-width: 1600px) {
+  @media screen and (min-width: $xl) {
     @content;
   }
 }

@@ -72,29 +72,18 @@
 }
 
 // for icons acting as buttons
-.iconic-button {
+:where(.button-icon) {
   display: grid;
   place-items: center;
   width: $width-content;
   height: $height-content;
-  padding: 0px 8px;
   border-radius: $radius-round;
-  font-size: $font-size-2;
-  box-shadow: $shadow-1;
-  // background-color: $light;
   color: $color-current;
-
-  // &:hover {
-  //   transition: $default-transition;
-  //   background-color: $light-hover;
-  // }
+  font-size: inherit; // inherit size
+  font-size: $font-size-2; // prefered size
+  box-shadow: $shadow-1;
 
   @if $enable-native-animations {
     @include animation-clickin;
   }
 }
-// for icons acting as buttons without background
-// .iconic-button--no-background {
-//   @extend .iconic-button;
-//   background: $transparent-color;
-// }

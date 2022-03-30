@@ -71,6 +71,16 @@
 - CSS: Added sizes, fluid, content and header sizes.
 - Next: Configure the custom media plugin.
 
+## [1.1.7] - Serato Version 2 - New Melody, 2022-03-26
+
+- CSS: Reverted naming convention to old way eg. border-size instead of borderSize.
+
+## [1.1.8] - Serato Version 2 - New Melody, 2022-03-29
+
+- CSS: Added in house breakpoint units.
+- Next: Update margin, padding and spacing classes!
+
+<!-- Todo: Test post css build commands. -->
 <!-- Todo: Add and look into conditional radii. -->
 <!-- Todo: Add border hover state styling flexibility. -->
 <!-- Todo: Fix dark button colors in dark mode. -->
