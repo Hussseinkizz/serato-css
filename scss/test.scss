@@ -7,24 +7,66 @@
 // @use './themes/colors/color-variables' as *;
 @use './utilities/media-queries' as *;
 
-// * Grids
-@use 'sass:math';
-$total-columns: 12; // per grid row!
+// // generate spacing helpers eg margins & paddings
+// .margin-none {
+//   margin: 0;
+// }
+// .padding-none {
+//   padding: 0;
+// }
 
-@for $i from 1 through $total-columns {
-  :where(.grid-column-#{$i}) {
-    flex: 0 0 math.div(100%, $total-columns) * $i;
-  }
-}
+// @each $spacing in $spacings {
+//   @each $name, $value in $spacing-values {
+//     // All directions
+//     :where(.#{$spacing}-#{$name}) {
+//       #{$spacing}: $value;
+//     }
 
-// if we're at a breakpoint, generate respective grid column!
-@each $breakpoint, $value in $breakpoints-map {
-  @include breakpoint(#{$value}) {
-    @for $i from 1 through $total-columns {
-      .grid-column-#{$i}-on-#{$breakpoint} {
-        width: math.div(100%, math.div($total-columns, $i));
-        padding: $default-padding;
-      }
-    }
-  }
-}
+//     // Cardinal directions
+//     @each $direction-name, $direction-value in $spacing-directions {
+//       :where(.#{$spacing}-#{$direction-name}-#{$name}) {
+//         #{$spacing}-#{$direction-value}: $value;
+//       }
+//     }
+//     // Horizontal axis
+//     @if ($spacing-horizontal != null) {
+//       :where(.#{$spacing}-#{$spacing-horizontal}-#{$name}) {
+//         #{$spacing}-#{$spacing-horizontal}: $value;
+//       }
+//     }
+//     // Vertical axis
+//     @if ($spacing-vertical != null) {
+//       :where(.#{$spacing}-#{$spacing-vertical}-#{$name}) {
+//         #{$spacing}-#{$spacing-vertical}: $value;
+//       }
+//     }
+//   }
+// }
+
+// // generate spacing helpers eg margins & paddings for fluid spacing!
+// @each $spacing in $spacings {
+//   @each $fluid-spacing, $value in $fluid-spacings {
+//     // All directions
+//     :where(.#{$spacing}-#{$fluid-spacing}) {
+//       #{$spacing}: $value;
+//     }
+//     // Cardinal directions
+//     @each $direction-name, $direction-value in $spacing-directions {
+//       :where(.#{$spacing}-#{$direction-name}--#{$fluid-spacing}) {
+//         #{$spacing}-#{$direction-value}: $value;
+//       }
+//     }
+//     // Horizontal axis
+//     @if ($spacing-horizontal != null) {
+//       :where(.#{$spacing}-#{$spacing-horizontal}--#{$fluid-spacing}) {
+//         #{$spacing}-#{$spacing-horizontal}: $value;
+//       }
+//     }
+//     // Vertical axis
+//     @if ($spacing-vertical != null) {
+//       :where(.#{$spacing}-#{$spacing-vertical}--#{$fluid-spacing}) {
+//         #{$spacing}-#{$spacing-vertical}: $value;
+//       }
+//     }
+//   }
+// }

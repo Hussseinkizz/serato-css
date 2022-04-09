@@ -448,12 +448,18 @@ $border-styles: (
   'outset': outset,
 );
 
-// responsive spacings -- only for the horizontal (x) axis eg. width not height, for height use the default spacings!
-$responsive-spacing-values: (
-  'small': 1.5vw,
-  'normal': 2.5vw,
-  'medium': 6.5vw,
-  'large': 10vw,
+// fluid spacings -- only recommended for the horizontal (x) axis eg. width not height, for height use the default spacings or flow helpers!
+$fluid-spacings: (
+  'fluid-1': $fluid-size-1,
+  'fluid-2': $fluid-size-2,
+  'fluid-3': $fluid-size-3,
+  'fluid-4': $fluid-size-4,
+  'fluid-5': $fluid-size-5,
+  'fluid-6': $fluid-size-6,
+  'fluid-7': $fluid-size-7,
+  'fluid-8': $fluid-size-8,
+  'fluid-9': $fluid-size-9,
+  'fluid-10': $fluid-size-10,
 ) !default;
 
 // opacities
@@ -521,21 +527,32 @@ $gap-values: (
 
 // margin and padding
 $spacings: (margin, padding) !default;
-$spacing-directions: (top, right, bottom, left) !default;
-$responsive-spacing-directions: (left, right) !default;
-$spacing-horizontal: 'x' !default;
-$spacing-vertical: 'y' !default;
+$spacing-directions: (
+  'top': 'block-start',
+  'left': 'inline-start',
+  'right': 'inline-end',
+  'bottom': 'block-end',
+) !default;
+$responsive-spacing-directions: (inline-start, inline-end) !default;
+$spacing-horizontal: 'inline' !default;
+$spacing-vertical: 'block' !default;
 $spacing-values: (
   '0': 0,
-  '1': 0.25rem,
-  '2': 0.5rem,
-  '3': 0.75rem,
-  '4': 1rem,
-  '5': 1.5rem,
-  '6': 3rem,
-  '7': 4rem,
-  '8': 5rem,
-  '9': 6rem,
+  '1': $size-1,
+  '2': $size-2,
+  '3': $size-3,
+  '4': $size-4,
+  '5': $size-5,
+  '6': $size-6,
+  '7': $size-7,
+  '8': $size-8,
+  '9': $size-9,
+  '10': $size-10,
+  '11': $size-11,
+  '12': $size-12,
+  '13': $size-13,
+  '14': $size-14,
+  '15': $size-15,
   'auto': auto,
 ) !default;
 

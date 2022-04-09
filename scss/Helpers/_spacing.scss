@@ -2,56 +2,63 @@
 
 // generate spacing helpers eg margins & paddings
 .margin-none {
-  margin: 0 !important;
+  margin: 0;
 }
 .padding-none {
-  padding: 0 !important;
+  padding: 0;
 }
 
 @each $spacing in $spacings {
   @each $name, $value in $spacing-values {
     // All directions
-    .#{$spacing}-#{$name} {
-      #{$spacing}: $value !important;
+    :where(.#{$spacing}-#{$name}) {
+      #{$spacing}: $value;
     }
 
     // Cardinal directions
-    @each $direction in $spacing-directions {
-      .#{$spacing}-#{$direction}-#{$name} {
-        #{$spacing}-#{$direction}: $value !important;
+    @each $direction-name, $direction-value in $spacing-directions {
+      :where(.#{$spacing}-#{$direction-name}-#{$name}) {
+        #{$spacing}-#{$direction-value}: $value;
       }
     }
     // Horizontal axis
     @if ($spacing-horizontal != null) {
-      .#{$spacing}-#{$spacing-horizontal}-#{$name} {
-        #{$spacing}-left: $value !important;
-        #{$spacing}-right: $value !important;
+      :where(.#{$spacing}-#{$spacing-horizontal}-#{$name}) {
+        #{$spacing}-#{$spacing-horizontal}: $value;
       }
     }
     // Vertical axis
     @if ($spacing-vertical != null) {
-      .#{$spacing}-#{$spacing-vertical}-#{$name} {
-        #{$spacing}-top: $value !important;
-        #{$spacing}-bottom: $value !important;
+      :where(.#{$spacing}-#{$spacing-vertical}-#{$name}) {
+        #{$spacing}-#{$spacing-vertical}: $value;
       }
     }
   }
 }
 
-// generate spacing helpers eg margins & paddings for responsive horizontal spacing!
+// generate spacing helpers eg margins & paddings for fluid spacing!
 @each $spacing in $spacings {
-  @each $name, $value in $responsive-spacing-values {
+  @each $fluid-spacing, $value in $fluid-spacings {
+    // All directions
+    :where(.#{$spacing}-#{$fluid-spacing}) {
+      #{$spacing}: $value;
+    }
     // Cardinal directions
-    @each $direction in $responsive-spacing-directions {
-      .responsive-#{$spacing}-#{$direction}-#{$name} {
-        #{$spacing}-#{$direction}: $value !important;
+    @each $direction-name, $direction-value in $spacing-directions {
+      :where(.#{$spacing}-#{$direction-name}--#{$fluid-spacing}) {
+        #{$spacing}-#{$direction-value}: $value;
       }
     }
     // Horizontal axis
     @if ($spacing-horizontal != null) {
-      .responsive-#{$spacing}-#{$spacing-horizontal}-#{$name} {
-        #{$spacing}-left: $value !important;
-        #{$spacing}-right: $value !important;
+      :where(.#{$spacing}-#{$spacing-horizontal}--#{$fluid-spacing}) {
+        #{$spacing}-#{$spacing-horizontal}: $value;
+      }
+    }
+    // Vertical axis
+    @if ($spacing-vertical != null) {
+      :where(.#{$spacing}-#{$spacing-vertical}--#{$fluid-spacing}) {
+        #{$spacing}-#{$spacing-vertical}: $value;
       }
     }
   }

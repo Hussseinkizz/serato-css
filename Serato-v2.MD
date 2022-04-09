@@ -26,7 +26,7 @@
  > We will fix the bugs identified in recent project studies and also include those essential utilities which were found missing apparently.
  > We will opt for a balance of great developer experience and easy type experience, that says... we will use short naming conventions for common known short names and leave the rest to flat naming carefully.
  > For example, background-color-red will be bg-red, margin-top-1 will be mt-1 and so on, we are sure these are widely common for css frameworks users and its kinda poor experience having to type long class names.This also means combining breaking names such as border-radius-circle to borderRadius-circle or text-decoration-none to textDecoration-none etc.
- > All modifiers and stateful classes such as hover states and hoverable will now start with a double hypen -- to allow easy recognition and avoid confusion with other stateless or un modified classes!
+ > All modifiers and stateful classes such as hover states and hoverable will now start with a double hypen -- eg. bg-blue--hoverable to allow easy recognition and avoid confusion with other stateless or un modified classes, while serato own classes or values off those from open props will now start with underscore to denote that they're scoped to serato only eg. _color-gold!
 
 * We will change the animations library except the hover animations
 

@@ -80,6 +80,10 @@
 - CSS: Added in house breakpoint units.
 - Next: Update margin, padding and spacing classes!
 
+## [1.1.9] - Serato Version 2 - New Melody, 2022-04-8
+
+- CSS: Updated margin, padding and spacing classes to use open prop and logical css and fluid stuff!
+
 <!-- Todo: Test post css build commands. -->
 <!-- Todo: Add and look into conditional radii. -->
 <!-- Todo: Add border hover state styling flexibility. -->
