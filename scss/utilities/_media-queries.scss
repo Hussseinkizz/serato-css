@@ -3,11 +3,23 @@
 // breakpoints for varied device viewports, based on open prop breakpoints!
 $xxs: 240px; // watch
 $xs: 360px; // mini phone
-$sm: 480px; // small phone
-$md: 768px; // smart phone
-$lg: 1024px; // smart phone landscape
-$xl: 1440px; // laptop
+$sm: 480px; // phone
+$md: 768px; // tablet
+$lg: 1024px; // notebook or something like
+$xl: 1440px; // laptop???
 $xxl: 1920px; // desktop & HD Displays
+
+// We should be able to refer to these breakpoints using common rather easy to grasp aliases despite the common xs-xxl stuff.
+// breakpoints aliases
+$breakpoints-alias: (
+  'watch': $xxs,
+  'mini-phone': $xs,
+  'phone': $sm,
+  'tablet': $md,
+  'notebook': $lg,
+  'laptop': $xl,
+  'desktop': $xxl,
+);
 
 // Note that for the max values we subtract 0.02px. As adapted from the Bootstrap docs, this is because:
 // Browsers don’t currently support range context queries, so we work around the limitations of min- and max- prefixes and viewports with fractional widths (which can occur under certain conditions on high-dpi devices, for instance) by using values with higher precision.

@@ -54,7 +54,7 @@ $text-alignments: (center, justify, left, right);
 }
 .font-small {
   font-size: $size-2;
-  font-weight: small; // fallback
+  font-weight: lighter; // fallback
   font-weight: map-get($font-weights, light);
   text-transform: lowercase;
 }
@@ -67,7 +67,7 @@ $text-alignments: (center, justify, left, right);
   white-space: nowrap;
 }
 
-.reset-text {
+.text-reset {
   // We deliberately do NOT reset font-size or overflow-wrap / word-wrap.
   // for font family and defualt line height see the typography partial in base direcotry...
   font-family: inherit;

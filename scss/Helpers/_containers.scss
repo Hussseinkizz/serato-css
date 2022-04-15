@@ -41,7 +41,7 @@ $total-columns: 12; // per grid row!
 }
 
 // if we're at a breakpoint, generate respective grid column!
-@each $breakpoint, $value in $breakpoints-map {
+@each $breakpoint, $value in $breakpoints-alias {
   @include breakpoint(#{$value}) {
     @for $i from 1 through $total-columns {
       :where(.grid-column-#{$i}-on-#{$breakpoint}) {
@@ -58,7 +58,7 @@ $total-columns: 12; // per grid row!
   gap: $gap-1;
 }
 
-:where(.flex-all-centered) {
+:where(.flex-all-center) {
   display: flex;
   gap: $gap-1;
   justify-content: center;
@@ -228,9 +228,10 @@ $flex-operators: (grow, shrink);
   }
 }
 
+// flex grow and flex shrink
 @each $flex-operator in $flex-operators {
   @for $i from 0 through 5 {
-    :where(.#{$flex-operator}-#{$i}) {
+    :where(.flex-#{$flex-operator}-#{$i}) {
       flex-#{$flex-operator}: $i;
     }
   }
@@ -241,4 +242,18 @@ $flex-operators: (grow, shrink);
   :where(.flex-gap-#{$name}) {
     gap: $gap-value;
   }
+}
+
+// flex basis helpers
+:where(.flex-basis-1) {
+  flex-basis: 1;
+}
+:where(.flex-basis-0) {
+  flex-basis: 0;
+}
+:where(.flex-basis-auto) {
+  flex-basis: auto;
+}
+:where(.flex-basis-full) {
+  flex-basis: 100%;
 }

@@ -10,6 +10,29 @@
 * Generate color classes & respective hoverable classes
 */
 
+// Inherit parent color
+:where(.color-parent) {
+  color: $color-parent;
+}
+:where(.bg-parent) {
+  background-color: $color-parent;
+}
+
+// respect current color
+:where(.color-current) {
+  color: $color-current;
+}
+:where(.bg-current) {
+  background-color: $color-current;
+}
+// transparent color
+:where(.color-transparent) {
+  color: $color-transparent;
+}
+:where(.bg-transparent) {
+  background-color: $color-transparent;
+}
+
 // basic flagging colors eg. success, info, danger etc
 @each $name, $color in $theme-colors {
   :where(.color-#{$name}) {

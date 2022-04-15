@@ -84,7 +84,24 @@
 
 - CSS: Updated margin, padding and spacing classes to use open prop and logical css and fluid stuff!
 
-<!-- Todo: Test post css build commands. -->
+## [1.2.0] - Serato Version 2 - New Melody, 2022-04-11
+
+- CSS: Added color-parent, color-transparent and color-current helper classes
+- CSS: Changed grow and shrink helper classes to flex-grow!
+- CSS: Added position helpers, the sticky, the fixed and the percentage positions.
+- CSS: Added flex basis helpers.
+
+## [1.2.1] - Serato Version 2 - New Melody, 2022-04-14
+
+- CSS: Introduced breakpoints aliases to enable great dev experience, they just need some revision though!
+- CSS: Changed default paddings to use fluid props.
+- CSS: Added text-reset class for quick text resetting to default.
+- CSS: Added display grid class.
+- Pending: flow utilities.
+
+
+<!-- Todo: Add grid helpers and place item helpers and more center helpers -->
+<!-- Todo: Post css build has issues with css comments but works otherwise, fix it. -->
 <!-- Todo: Add and look into conditional radii. -->
 <!-- Todo: Add border hover state styling flexibility. -->
 <!-- Todo: Fix dark button colors in dark mode. -->

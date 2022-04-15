@@ -1,12 +1,54 @@
-$position-values: (static, relative, sticky, absolute, fixed);
-$zindex-fixed: 1030 !default;
+@use '../utilities/global-variables' as *;
 
+$position-values: (static, relative, sticky, absolute, fixed);
+$position-directions: (top, right, bottom, left);
+$zindex-fixed: $layer-5;
+
+// positioning types / contexts
 @each $position-value in $position-values {
   .position-#{$position-value} {
     position: $position-value;
   }
 }
 
+// postions eg. top-00 to top-15
+@each $position in $position-directions {
+  @each $name, $size in $size-numbers {
+    :where(.#{$position}-#{$name}) {
+      #{$position}: $size;
+    }
+  }
+}
+
+// no position or none
+@each $position in $position-directions {
+  :where(.#{$position}-none) {
+    #{$position}: none;
+  }
+}
+
+// position auto
+@each $position in $position-directions {
+  :where(.#{$position}-auto) {
+    #{$position}: auto;
+  }
+}
+
+// postion percents eg. top: 50%;
+@each $position in $position-directions {
+  @each $name, $percentage in $percentages {
+    :where(.#{$position}-#{$name}-percent) {
+      #{$position}: $percentage;
+    }
+
+    // negative percents
+    :where(.-#{$position}-#{$name}-percent) {
+      #{$position}: -#{$percentage};
+    }
+  }
+}
+
+// combo helpers
 .fixed-to-top {
   position: fixed;
   top: 0;

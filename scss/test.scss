@@ -7,66 +7,24 @@
 // @use './themes/colors/color-variables' as *;
 @use './utilities/media-queries' as *;
 
-// // generate spacing helpers eg margins & paddings
-// .margin-none {
-//   margin: 0;
-// }
-// .padding-none {
-//   padding: 0;
-// }
+// * page flow helpers
 
-// @each $spacing in $spacings {
-//   @each $name, $value in $spacing-values {
-//     // All directions
-//     :where(.#{$spacing}-#{$name}) {
-//       #{$spacing}: $value;
-//     }
-
-//     // Cardinal directions
-//     @each $direction-name, $direction-value in $spacing-directions {
-//       :where(.#{$spacing}-#{$direction-name}-#{$name}) {
-//         #{$spacing}-#{$direction-value}: $value;
-//       }
-//     }
-//     // Horizontal axis
-//     @if ($spacing-horizontal != null) {
-//       :where(.#{$spacing}-#{$spacing-horizontal}-#{$name}) {
-//         #{$spacing}-#{$spacing-horizontal}: $value;
-//       }
-//     }
-//     // Vertical axis
-//     @if ($spacing-vertical != null) {
-//       :where(.#{$spacing}-#{$spacing-vertical}-#{$name}) {
-//         #{$spacing}-#{$spacing-vertical}: $value;
-//       }
-//     }
-//   }
-// }
-
-// // generate spacing helpers eg margins & paddings for fluid spacing!
-// @each $spacing in $spacings {
-//   @each $fluid-spacing, $value in $fluid-spacings {
-//     // All directions
-//     :where(.#{$spacing}-#{$fluid-spacing}) {
-//       #{$spacing}: $value;
-//     }
-//     // Cardinal directions
-//     @each $direction-name, $direction-value in $spacing-directions {
-//       :where(.#{$spacing}-#{$direction-name}--#{$fluid-spacing}) {
-//         #{$spacing}-#{$direction-value}: $value;
-//       }
-//     }
-//     // Horizontal axis
-//     @if ($spacing-horizontal != null) {
-//       :where(.#{$spacing}-#{$spacing-horizontal}--#{$fluid-spacing}) {
-//         #{$spacing}-#{$spacing-horizontal}: $value;
-//       }
-//     }
-//     // Vertical axis
-//     @if ($spacing-vertical != null) {
-//       :where(.#{$spacing}-#{$spacing-vertical}--#{$fluid-spacing}) {
-//         #{$spacing}-#{$spacing-vertical}: $value;
-//       }
-//     }
-//   }
-// }
+// flow bottom
+:where(.flow-bottom > *) {
+  margin-block-end: $fluid-size-1;
+}
+// flow top
+:where(.flow-top > *) {
+  margin-block-start: $fluid-size-1;
+}
+// flow right
+:where(.flow-right > *) {
+  display: flex;
+  flex-direction: row;
+  margin-inline-end: $fluid-size-1;
+}
+// flow left
+:where(.flow-left > *) {
+  display: flex;
+  margin-inline-start: $fluid-size-1;
+}
