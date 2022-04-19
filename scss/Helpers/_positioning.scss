@@ -6,7 +6,7 @@ $zindex-fixed: $layer-5;
 
 // positioning types / contexts
 @each $position-value in $position-values {
-  .position-#{$position-value} {
+  :where(.position-#{$position-value}) {
     position: $position-value;
   }
 }
@@ -49,7 +49,7 @@ $zindex-fixed: $layer-5;
 }
 
 // combo helpers
-.fixed-to-top {
+:where(.fixed-to-top) {
   position: fixed;
   top: 0;
   right: 0;
@@ -57,7 +57,7 @@ $zindex-fixed: $layer-5;
   z-index: $zindex-fixed;
 }
 
-.fixed-to-bottom {
+:where(.fixed-to-bottom) {
   position: fixed;
   right: 0;
   bottom: 0;

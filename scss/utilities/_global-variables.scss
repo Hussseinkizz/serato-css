@@ -350,6 +350,13 @@ $sizes-header: (
 ) !default;
 
 // * Animations
+// In House Animation Durations
+$fast-duration: 0.1s !default;
+$normal-duration: 0.3s !default;
+$slow-duration: 0.5s !default;
+$slower-duration: 10s !default;
+$slowest-duration: 15s !default;
+
 // indeterminate state animations
 $animation-spin: var(--animation-spin);
 $animation-ping: var(--animation-ping);

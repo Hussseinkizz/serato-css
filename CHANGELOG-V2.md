@@ -99,6 +99,20 @@
 - CSS: Added display grid class.
 - Pending: flow utilities.
 
+## [1.2.2] - Serato Version 2 - New Melody, 2022-04-19
+
+- CSS: Added page flow helper utilities.
+- CSS: Exposed media query device with values as custom props.
+- CSS: Removed almost all important flags, low or zero specificity now!
+
+## [1.2.3] - Serato Version 2 - New Melody, 2022-04-19
+
+- CSS: Started on open prop animations
+
+## [1.2.4] - Serato Version 2 - New Melody, 2022-04-20
+
+- CSS: Finished Open prop animations, they will just need tunning and adding more adjustment utilities like animation-delay.
+- Next: responsiveness, revision, beta release + documentation.
 
 <!-- Todo: Add grid helpers and place item helpers and more center helpers -->
 <!-- Todo: Post css build has issues with css comments but works otherwise, fix it. -->

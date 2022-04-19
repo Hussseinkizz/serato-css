@@ -4,8 +4,8 @@
 
 // Generate font weight classes
 @each $font-weight-name, $value in $font-weights {
-  .font-#{$font-weight-name} {
-    font-weight: $value !important;
+  :where(.font-#{$font-weight-name}) {
+    font-weight: $value;
   }
 }
 
@@ -13,46 +13,46 @@
 $text-alignments: (center, justify, left, right);
 
 @each $text-alignment in $text-alignments {
-  .text-align-#{$text-alignment} {
-    text-align: $text-alignment !important;
+  :where(.text-align-#{$text-alignment}) {
+    text-align: $text-alignment;
   }
 }
 
-.text-capitalize {
-  text-transform: capitalize !important;
+:where(.text-capitalize) {
+  text-transform: capitalize;
 }
 
-.text-lowercase {
-  text-transform: lowercase !important;
+:where(.text-lowercase) {
+  text-transform: lowercase;
 }
 
-.text-uppercase {
-  text-transform: uppercase !important;
+:where(.text-uppercase) {
+  text-transform: uppercase;
 }
 
-.font-italic {
-  font-style: italic !important;
+:where(.font-italic) {
+  font-style: italic;
 }
 
-.text-underlined {
-  text-decoration: underline !important;
+:where(.text-underlined) {
+  text-decoration: underline;
 }
 
 // font combos
-.font-heading {
+:where(.font-heading) {
   font-size: $size-9;
   font-weight: bold; // fallback
   font-weight: map-get($font-weights, bold);
   text-transform: uppercase;
   text-align: center;
 }
-.font-subheading {
+:where(.font-subheading) {
   font-size: $size-7;
   font-weight: medium; // fallback
   font-weight: map-get($font-weights, semibold);
   text-transform: capitalize;
 }
-.font-small {
+:where(.font-small) {
   font-size: $size-2;
   font-weight: lighter; // fallback
   font-weight: map-get($font-weights, light);
@@ -61,13 +61,13 @@ $text-alignments: (center, justify, left, right);
 
 // Text truncate
 // Requires inline-block or block for proper styling
-.text-truncate {
+:where(.text-truncate) {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.text-reset {
+:where(.text-reset) {
   // We deliberately do NOT reset font-size or overflow-wrap / word-wrap.
   // for font family and defualt line height see the typography partial in base direcotry...
   font-family: inherit;
@@ -95,37 +95,37 @@ $paragraph-margin-bottom: 1rem !default;
 
 // Generate font-size classes
 // .font-size-normal {
-//   font-size: $serato-font-size !important;
+//   font-size: $serato-font-size;
 // }
 // .font-size-small {
-//   font-size: $font-size-small !important;
+//   font-size: $font-size-small;
 // }
 // .font-size-large {
-//   font-size: $font-size-large !important;
+//   font-size: $font-size-large;
 // }
 
 @each $name, $font-size in $font-sizes {
-  .font-size-#{$name} {
-    font-size: $font-size !important;
+  :where(.font-size-#{$name}) {
+    font-size: $font-size;
   }
 }
 
 // text decorations
-.text-decoration-none {
-  text-decoration: none !important;
+:where(.text-decoration-none) {
+  text-decoration: none;
 }
-.text-decoration-line-through {
-  text-decoration: line-through !important;
+:where(.text-decoration-line-through) {
+  text-decoration: line-through;
 }
-.text-decoration-double {
-  text-decoration: double !important;
+:where(.text-decoration-double) {
+  text-decoration: double;
 }
-.text-decoration-dotted {
-  text-decoration: dotted !important;
+:where(.text-decoration-dotted) {
+  text-decoration: dotted;
 }
-.text-decoration-dashed {
-  text-decoration: dashed !important;
+:where(.text-decoration-dashed) {
+  text-decoration: dashed;
 }
-.text-decoration-overline {
-  text-decoration: overline !important;
+:where(.text-decoration-overline) {
+  text-decoration: overline;
 }

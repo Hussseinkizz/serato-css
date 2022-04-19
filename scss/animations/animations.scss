@@ -2,3 +2,187 @@
 
 @forward 'native-animations';
 @use '../plugins/plugins.scss' as *;
+@use '../utilities/global-variables' as *;
+
+.is-animating-fast {
+  animation-duration: $fast-duration;
+}
+.is-animating-normal {
+  animation-duration: $normal-duration;
+}
+.is-animating-slow {
+  animation-duration: $slow-duration;
+}
+.is-animating-slower {
+  animation-duration: $slower-duration;
+}
+.is-animating-slowest {
+  animation-duration: $slowest-duration;
+}
+
+// * generate open prop animation classes.
+
+@each $name, $animation in $animations {
+  :where(.#{$name}) {
+    animation: $animation;
+  }
+}
+
+// * fader animations
+:where(.animation-fade-in) {
+  animation: $animation-fade-in;
+}
+:where(.animation-fade-in--forwards) {
+  animation: $animation-fade-in forwards;
+}
+
+:where(.animation-fade-out) {
+  animation: $animation-fade-out;
+}
+:where(.animation-fade-out--forwards) {
+  animation: $animation-fade-out forwards;
+}
+
+// * shake animations
+:where(.animation-shake-inline) {
+  animation: $animation-shake-x;
+}
+:where(.animation-shake-inline--forwards) {
+  animation: $animation-shake-x forwards;
+}
+:where(.animation-shake-block) {
+  animation: $animation-shake-y;
+}
+:where(.animation-shake-block--forwards) {
+  animation: $animation-shake-y forwards;
+}
+
+// * exit animations
+// slide up
+:where(.animation-slide-out-up) {
+  animation: $animation-slide-out-up;
+}
+:where(.animation-slide-out-up--forwards) {
+  animation: $animation-slide-out-up forwards;
+}
+// slide down
+:where(.animation-slide-out-down) {
+  animation: $animation-slide-out-down;
+}
+:where(.animation-slide-out-down--forwards) {
+  animation: $animation-slide-out-down forwards;
+}
+// slide left
+:where(.animation-slide-out-left) {
+  animation: $animation-slide-out-left;
+}
+:where(.animation-slide-out-left--forwards) {
+  animation: $animation-slide-out-left forwards;
+}
+// slide right
+:where(.animation-slide-out-right) {
+  animation: $animation-slide-out-right;
+}
+:where(.animation-slide-out-right--forwards) {
+  animation: $animation-slide-out-right forwards;
+}
+
+// * entrace animations
+// slide up
+:where(.animation-slide-in-up) {
+  animation: $animation-slide-in-up;
+}
+:where(.animation-slide-in-up--forwards) {
+  animation: $animation-slide-in-up forwards;
+}
+// slide down
+:where(.animation-slide-in-down) {
+  animation: $animation-slide-in-down;
+}
+:where(.animation-slide-in-down--forwards) {
+  animation: $animation-slide-in-down forwards;
+}
+// slide left
+:where(.animation-slide-in-left) {
+  animation: $animation-slide-in-left;
+}
+:where(.animation-slide-in-left--forwards) {
+  animation: $animation-slide-in-left forwards;
+}
+// slide right
+:where(.animation-slide-in-right) {
+  animation: $animation-slide-in-right;
+}
+:where(.animation-slide-in-right--forwards) {
+  animation: $animation-slide-in-right forwards;
+}
+
+// * Easing Functions
+$ease-in-1: var(--ease-in-1);
+
+$total-easings: 5;
+
+// ease
+@for $i from 1 through $total-easings {
+  :where(.animation-ease-#{$i}) {
+    animation-timing-function: var(--ease-#{$i});
+  }
+}
+// ease ins
+@for $i from 1 through $total-easings {
+  :where(.animation-ease-in-#{$i}) {
+    animation-timing-function: var(--ease-in-#{$i});
+  }
+}
+
+// ease outs
+@for $i from 1 through $total-easings {
+  :where(.animation-ease-out-#{$i}) {
+    animation-timing-function: var(--ease-out-#{$i});
+  }
+}
+// ease in outs
+@for $i from 1 through $total-easings {
+  :where(.animation-ease-in-out-#{$i}) {
+    animation-timing-function: var(--ease-in-out-#{$i});
+  }
+}
+// ease elastics
+@for $i from 1 through $total-easings {
+  :where(.animation-ease-elastic-#{$i}) {
+    animation-timing-function: var(--ease-elastic-#{$i});
+  }
+}
+// ease squishies
+@for $i from 1 through $total-easings {
+  :where(.animation-ease-squish-#{$i}) {
+    animation-timing-function: var(--ease-squish-#{$i});
+  }
+}
+// ease steps
+@for $i from 1 through $total-easings {
+  :where(.animation-ease-step-#{$i}) {
+    animation-timing-function: var(--ease-step-#{$i});
+  }
+}
+
+// * open prop combos
+
+// slide-fade or toast / popup close
+:where(.animation-popup-close) {
+  animation: var(--animation-fade-out) forwards, var(--animation-slide-out-down);
+  animation-timing-function: var(--ease-squish-3);
+  animation-duration: 1s;
+}
+
+// shake-in or toast come in left
+:where(.animation-popup-enters) {
+  animation: var(--animation-shake-y), var(--animation-fade-in),
+    var(--animation-slide-in-left);
+}
+
+// push out or item get lost / delete
+:where(.animation-delete) {
+  animation: var(--animation-scale-down), var(--animation-fade-out);
+  animation-timing-function: var(--ease-squish-4);
+}

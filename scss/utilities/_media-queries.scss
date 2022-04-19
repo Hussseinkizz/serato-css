@@ -21,6 +21,17 @@ $breakpoints-alias: (
   'desktop': $xxl,
 );
 
+// expose these values as alias variables
+:where(html) {
+  --device-watch: 240px;
+  --device-mini-phone: 360px;
+  --device-phone: 480px;
+  --device-tablet: 768px;
+  --device-notebook: 1024px;
+  --device-laptop: 1440px;
+  --device-desktop: 1920px;
+}
+
 // Note that for the max values we subtract 0.02px. As adapted from the Bootstrap docs, this is because:
 // Browsers don’t currently support range context queries, so we work around the limitations of min- and max- prefixes and viewports with fractional widths (which can occur under certain conditions on high-dpi devices, for instance) by using values with higher precision.
 

@@ -51,7 +51,7 @@
 }
 
 // generate nuetral color classes eg. color-white
-
+// don't wrap these in where() selector!!!
 .color-white {
   color: $white;
 }
@@ -95,6 +95,7 @@
   }
 }
 
+// * don't wrap these in where() selector!!!
 // generate other serato colors eg. _color-hibiscus
 @each $name, $color in $serato-colors {
   ._color-#{$name} {

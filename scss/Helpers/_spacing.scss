@@ -63,3 +63,13 @@
     }
   }
 }
+
+// * page flow helpers
+
+// flow bottom
+:where(.flow-auto > :not(:last-child)) {
+  margin-block-end: $fluid-size-1;
+}
+:where(.flow-all > *) {
+  margin-block-end: $fluid-size-1;
+}
