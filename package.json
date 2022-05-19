@@ -13,7 +13,7 @@
     "watch:sass": "sass  --no-source-map --watch scss:public/css",
     "watch": "npm-run-all --parallel watch:*",
     "serve": "browser-sync start --server public --files public",
-    "start": "npm-run-all copy --parallel watch serve",
+    "dev": "npm-run-all copy --parallel watch serve",
     "build": "npm-run-all copy:html build:*",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map"
   },

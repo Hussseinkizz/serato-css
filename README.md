@@ -21,7 +21,9 @@
 
 ### 🚀 [Development](https://github.com/Hussseinkizz/serato-css#readme)
 
-### 📖 [Documentation](https://seratocss.vercel.app/)
+### 📖 [Documentation](https://github.com/Hussseinkizz/serato-css-docs)
+
+### 📖 [Contribution Guide](https://seratocss.vercel.app/)
 
 ## Install
 
@@ -46,11 +48,13 @@ yarn start
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Hussseinkizz/serato-css/issues). You can also take a look at the [contributing guide](https://github.com/Hussseinkizz/serato-css/blob/master/CONTRIBUTING.md).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Hussseinkizz/serato-css/issues). And you can also take a look at the [contributing guide](https://github.com/Hussseinkizz/serato-css/blob/master/CONTRIBUTING.md) to know how to contribute to Serato CSS, we can't wait what you will add in 😻
+
+Also contacting or following the project creator is a thing, so feel free on twitter at [Hussein kizz](https://twitter.com/Husseinkizz)
 
 ## Show your support
 
-Give a ⭐️ if this project helped you!
+Give a ⭐️ if this project impressed you!
 
 ## 📝 License
 
@@ -58,4 +62,4 @@ Copyright © 2022 [Hussein Kizz](https://github.com/Hussseinkizz).<br />
 This project is [MIT](https://github.com/Hussseinkizz/serato-css/blob/master/LICENSE) licensed.
 
 ***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+_This README before modifications was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

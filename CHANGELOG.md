@@ -1,138 +1,129 @@
-# Changelog
+# This is the log for the fresh version 2 of serato css, new melody
 
-## [1.0.0] - 2021-11-21
+## [1.0.6] - Serato Version 2 - New Melody, 2022-02-26
 
-- dev: Added this CHANGELOG file
-- dev: Structured project
-- css: Added all base resets
-- css: Added utilities (media queries & variables)
-- css: Added helpers and it's subsidiaries
-- css: Started on animation stlyes
-- dev: Added test.scss to test sass output in isolation
+- dev: started altering the project structure and architecture to better.
 
-## [1.0.0] - 2022-01-01
+## [1.0.6] - Serato Version 2 - New Melody, 2022-02-27
 
-- dev: Back to coding...
-- css: Added flex helper classes
-- css: Added spacing helpers
-- css: Added typography
-- css: Added positioning
-- css: Added displays
-- css: Added buttons
-- css: Added components
+- dev: scrapped the project to use open Props
+- CSS: updated base and added new custom scrollbar
+- CSS: added theme modes eg. dark theme.
 
-## [1.0.0] - Log Per Feature, 2022-01-02
+## [1.0.7] - Serato Version 2 - New Melody, 2022-03-3
 
-- css: Added plugins
-- plugins: Added and modified hvr.css animations
-- css: renamed variables to global variables
+- CSS: changed colors to use open props, almost done with the transition of grays and the core theme colors.
+- CSS: changed class names to the new proposed convention of balancing between predictability and seamless experience.
+- CSS: Changed some helper classes to :where and reduced specificity issues!
 
-## [1.0.0] - Breaking Changes, 2022-01-06
+## [1.0.8] - Serato Version 2 - New Melody, 2022-03-3
 
-- css: Changed highlight color in experiment partial
-- css: played with scrollbar colors in experiment partial
-- css: renamed various variables and arranged global variables
-- colors: created about 3 reusable color styles
-- css: made button styles and with native builtin click animation
-- css: added a mixin
-- testing: added more test html markup to test things out
-- colors: added more color variables
-- css: started on card component
+- CSS: Done with grays and core theme colors, their implementation might shape how we will work with the rest of colors from open props.
+- CSS: finally rolled up all open prop colors, they just need per feature testing, specificity fixes and some other minor fixes!
 
-## [1.0.0] - Time to style up, 2022-01-07
+## [1.0.9] - Serato Version 2 - New Melody, 2022-03-5
 
-- colors: added colors variables
-- colors: added serato color system colors, a bunch of them!
-- colors: generated color classes
+- CSS: fixed the glitch with shade-1 and shades basic color helpers eg. color-grape-1 now are included!
+- **Colors**: done with colors finally, but we still need to work on gradients and make internal components like cards have dark mode built in. We will need to make --glass a separate modifier with ranges eg. glass-low, medium etc to reduce the current bloatness of implementing it on every color!
+- Issue: in house or serato colors have been given a higher specificity than other colors but we're still getting some specificity issues, this needs further inspection!
 
-## [1.0.0] - Tune up the looks, 2022-01-08
+## [1.1.0] - Serato Version 2 - New Melody, 2022-03-6
 
-- colors: added famous brands colors like linked & twitter's blue,
-- css: added serato css brand colors for default components styling
-- colors: started on color gradients, serato-gradient ready!
-- flexbox: added flex-all-center class helper
-- css: added border radius classes, they might need some revison!
-- colors: modularized all colors into partials
-- colors: Completed this module, with basic, grays, extended and famous brand colors all blended in with their respective shades!
-- css: added more and old serato (tie-and-dye) mixins
-- gradients: added text gradient helpers
-- animations: added font-awesome animations, done with animations for now!
+- Todo: use open prop transitions instead of the current!
+- CSS: Added in open prop gradients, now border gradients pending...
+- CSS: started experimenting with open props built in darkmode
+- Next: borders, border radius,z-index, aspect ratio, spacing and more!
 
- **warning: button light needs some fixing!**
- **Todo: Animations should be in repect to prefers-reduced-motion media query**
+## [1.1.1] - Serato Version 2 - New Melody, 2022-03-7
 
-## [1.0.1 Beta] - Beta relaese finally!, 2022-01-09
+- CSS: added various open prop variables and also mapped them out to in house sass variables. Added aspect ratios, typography stuff, z-index, border stuff and more!
+- Note: We still need to look into conditional props and also implement generators for all the added open prop variables.
+- Next: Sizes, reading content size and add the remaining open prop variables
 
-- css: Added media queries, next working on responsiveness
-- css: added more mixins, just non configured yet but coming...
-- Dev: release of beta v1.0.1 pending...
-- Dev: starteed to work on gulp and other preprocessing tasks to compile production ready css!
+## [1.1.2] - Serato Version 2 - New Melody, 2022-03-12
 
-*Warning: Dev dependencies and packages need to be installed along with gulp-cli
+- Todo: Fix dark button colors in dark mode.
+- Theming: Started to make theme responsive components such as light / dark buttons. Will just need some more touchs offs.
 
-## [1.0.2 Beta] - Beta relaese fixes & improvements!, 2022-01-12
+## [1.1.3] - Serato Version 2 - New Melody, 2022-03-14
 
-- fixies: fixed button light issue,
-- css: added height and width helpers,
-- css: added responsive margin and padding helpers,
-- css: added gap spacing helpers for flexbox,
-- css: added aspect ratio helpers but need revision,
-- css: added object-fit property helpers,
-- css: added list-style-type helpers,
-- css: added opacity & opacity on-hover helpers
+- CSS: Added animations, all sizes variables and all easings.
+- CSS: completed adding in house variables for all open prop variables.
+- Note: Media Queries need some further inspection and perhaps some setup to work i.e the post css plugin.
+- Next: Start generating helper utility classes for all open prop variables.
 
-## [1.0.3 Beta] - More improvements!, 2022-01-13
+## [1.1.4] - Serato Version 2 - New Melody, 2022-03-18
 
-- css: added transition helpers
-- css: fixed spacing between list items
-- css: added functions & make hoverable mixin
-- css: button-light variant made default variant for button component and removed the button-light helper class!
-- css: added color helpers for hover states!
-- css: added box-shadow helpers
-- css: added width-content helper for buttons to not span the whole width but respect their content within!
-- animations: fixed colors in hover animations!
-- css: added text decoration helpers
-- css: added link helpers
-- css: added iconic button helpers
+- Dev: Changed and updated package.json now using a new build setup that now actually depends on npm scripts.
+- CSS: Removed font awesome animations lib integration in favor of open props's animations for basic stateless animations.
 
-## [1.0.3 Beta] - Almost ready to launch!, 2022-01-14
+## [1.1.5] - Serato Version 2 - New Melody, 2022-03-20
 
-- css: added gradient borders
-- mixins: added space-on-hover mixin
-- css: changed transiton helpers to more predictable class names!
-- css: added more list helpers, plus hoverable variant which uses space-on-hover as default animation
-- css: disabled user selection on all gradient and glass-morphic styled elements!
-- css: added transition smooth
-- css: added smallest gap helper gap-x
-- css: added glass morphism helper
-- css: added layouts and started working on them!
-- layouts: completed the standard layout!
-- responsiveness: added breakpoints & breakpoints mixin
+- Dev: Re-installed open props and also installed the postcss-custom-media post css plugin to enable use of custom named media queries!
+- CSS: Updated shadow helpers, introduced hover state shadows!
+- CSS: Updated borders and added blob radii!
 
-## [1.0.4] - First Official Release, 2022-01-19
+## [1.1.6] - Serato Version 2 - New Melody, 2022-03-23
 
-- dev: changed project structure to more standardized structure optimized for npm publishing.
-- dev: configured development environment with gulp and plugins, moved away from using live sass compiler extesion to jump start development.
-- dev: Removed irrelevant files, some are moved to serato docs repo.
-- dev: Fixed slash div sass deprecation warning!
-- dev: Updated Readme!
-- dev: Created new zip archive for download,
-- dev: Updated package on npm registry!
+- CSS: Added z-indexes, and aspect ratios.
+- CSS: Added font sizes, font heights, font spacings and fluid fonts.
+- CSS: Added sizes, fluid, content and header sizes.
+- Next: Configure the custom media plugin.
 
-## [1.0.5] - First Official Release - patch, 2022-01-19
+## [1.1.7] - Serato Version 2 - New Melody, 2022-03-26
 
-- dev: removed more irrelevant folders and file eg. /dist
-- dev: added .npmignore to avoid pushing uncessary files to npm package.
+- CSS: Reverted naming convention to old way eg. border-size instead of borderSize.
 
-### Back log ( Todos )
+## [1.1.8] - Serato Version 2 - New Melody, 2022-03-29
 
-*Add dark mode for all components
-*Improve color functions and mixins - rabit hole!
-*Add hoverable border-colors & border helpers*
-*Add form & input helpers*
-*design product page, product card and layout components*
-*Animations should be in repect to prefers-reduced-motion media query*
+- CSS: Added in house breakpoint units.
+- Next: Update margin, padding and spacing classes!
 
-#### Special Issue
+## [1.1.9] - Serato Version 2 - New Melody, 2022-04-8
 
-> Get an appropriate color for text and background based on whether the text is on a light / dark background and vis a vis for the background, also use tint and shade functions respectively to highlight or darkify any given color on hover instead of using lightness and darken sass builtin functions. This is really a rabbit hole!!!
+- CSS: Updated margin, padding and spacing classes to use open prop and logical css and fluid stuff!
+
+## [1.2.0] - Serato Version 2 - New Melody, 2022-04-11
+
+- CSS: Added color-parent, color-transparent and color-current helper classes
+- CSS: Changed grow and shrink helper classes to flex-grow!
+- CSS: Added position helpers, the sticky, the fixed and the percentage positions.
+- CSS: Added flex basis helpers.
+
+## [1.2.1] - Serato Version 2 - New Melody, 2022-04-14
+
+- CSS: Introduced breakpoints aliases to enable great dev experience, they just need some revision though!
+- CSS: Changed default paddings to use fluid props.
+- CSS: Added text-reset class for quick text resetting to default.
+- CSS: Added display grid class.
+- Pending: flow utilities.
+
+## [1.2.2] - Serato Version 2 - New Melody, 2022-04-19
+
+- CSS: Added page flow helper utilities.
+- CSS: Exposed media query device with values as custom props.
+- CSS: Removed almost all important flags, low or zero specificity now!
+
+## [1.2.3] - Serato Version 2 - New Melody, 2022-04-19
+
+- CSS: Started on open prop animations
+
+## [1.2.4] - Serato Version 2 - New Melody, 2022-04-20
+
+- CSS: Finished Open prop animations, they will just need tunning and adding more adjustment utilities like animation-delay.
+- Next: responsiveness, revision, beta release + documentation.
+
+## [1.2.5] - Serato Version 2 - New Melody, 2022-05-19
+
+- dev: Changed the dev environment starter command from `yarn start` to `yarn dev`
+- dev: changed CHANGELOG.md to `CHANGELOG.old.md` and then CHANGELOG-v2.md to `CHANGELOG.md`
+- dev: Added `CONTRIBUTING.md` for guiding new contributors
+- dev: Updated `README.md`
+
+
+<!-- Todo: Add grid helpers and place item helpers and more center helpers -->
+<!-- Todo: Post css build has issues with css comments but works otherwise, fix it. -->
+<!-- Todo: Add and look into conditional radii. -->
+<!-- Todo: Add border hover state styling flexibility. -->
+<!-- Todo: Fix dark button colors in dark mode. -->
+<!-- Todo: Fix custom scrollbar for firefox, eg. add block padding! -->
