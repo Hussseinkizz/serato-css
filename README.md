@@ -23,7 +23,7 @@
 
 ### 📖 [Documentation](https://github.com/Hussseinkizz/serato-css-docs)
 
-### 📖 [Contribution Guide](https://seratocss.vercel.app/)
+### 📖 [Contribution Guide](https://github.com/Hussseinkizz/serato-css/blob/master/CONTRIBUTING.md)
 
 ## Install
 
